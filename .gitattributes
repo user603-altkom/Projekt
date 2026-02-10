@@ -1,0 +1,9 @@
+# Domyślnie: normalizacja końców linii na LF w repozytorium, LF też w
+# roboczej kopii (eol=lf) - niezależnie od core.autocrlf uczestnika.
+* text=auto eol=lf
+
+# Pliki w dane/ to dane wejściowe (wyciągi, logi, JSON) - git nie ma
+# normalizować ich końców linii ani przepisywać kodowania. Dla tego
+# katalogu wyłączamy jakąkolwiek normalizację, żeby pliki zostały bit
+# w bit takie, jakie są w źródle.
+dane/** -text

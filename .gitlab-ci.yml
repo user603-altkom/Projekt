@@ -1,0 +1,23 @@
+# Prosty pipeline na potrzeby szkolenia - materiał do pokazania na sali,
+# nie produkcyjny CI. Dwa zadania: typecheck i testy, oba na obrazie node.
+
+image: node:24
+
+stages:
+  - build
+
+.zaleznosci: &zaleznosci
+  before_script:
+    - npm ci
+
+typecheck:
+  stage: build
+  <<: *zaleznosci
+  script:
+    - npm run typecheck
+
+test:
+  stage: build
+  <<: *zaleznosci
+  script:
+    - npm test

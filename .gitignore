@@ -1,0 +1,12 @@
+node_modules/
+
+# Pliki tymczasowe
+*.log.local
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Ustawienia IDE
+.vscode/
+.idea/
+*.swp
