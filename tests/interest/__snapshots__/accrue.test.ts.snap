@@ -1,0 +1,182 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`accrueInterest — utrwalone wyniki dla zestawu przypadków > nalicza odsetki dla lokaty terminowej rozliczanej na koniec okresu 1`] = `
+{
+  "kapitalizacja": "NA_KONIEC_OKRESU",
+  "kapitalizacje": [
+    {
+      "bruttoGrosze": 66164,
+      "data": "2026-08-31",
+      "nettoGrosze": 53593,
+      "podatekGrosze": 12571,
+      "saldoPoGrosze": 5053593,
+    },
+  ],
+  "korekty": [],
+  "liczbaDni": 92,
+  "niezakapitalizowaneGrosze": 0,
+  "nrRachunku": "15999987650000223344556677",
+  "odsetkiBruttoGrosze": 66164,
+  "odsetkiNettoGrosze": 53593,
+  "okres": {
+    "do": "2026-08-31",
+    "od": "2026-06-01",
+  },
+  "ostrzezenia": [
+    "brak operacji w okresie — naliczenie od salda otwarcia",
+  ],
+  "podatekGrosze": 12571,
+  "produkt": "LOKATA",
+  "saldoOtwarcieGrosze": 5000000,
+  "saldoZamknieciaGrosze": 5053593,
+  "waluta": "PLN",
+}
+`;
+
+exports[`accrueInterest — utrwalone wyniki dla zestawu przypadków > nalicza odsetki dla rachunków oszczędnościowych z kapitalizacją miesięczną > p01 1`] = `
+{
+  "kapitalizacja": "MIESIECZNA",
+  "kapitalizacje": [
+    {
+      "bruttoGrosze": 3627,
+      "data": "2026-08-31",
+      "nettoGrosze": 2938,
+      "podatekGrosze": 689,
+      "saldoPoGrosze": 2122938,
+    },
+  ],
+  "korekty": [],
+  "liczbaDni": 31,
+  "niezakapitalizowaneGrosze": 0,
+  "nrRachunku": "61999912340000456789012345",
+  "odsetkiBruttoGrosze": 3627,
+  "odsetkiNettoGrosze": 2938,
+  "okres": {
+    "do": "2026-08-31",
+    "od": "2026-08-01",
+  },
+  "ostrzezenia": [],
+  "podatekGrosze": 689,
+  "produkt": "OSZCZEDNOSCIOWE",
+  "saldoOtwarcieGrosze": 1850000,
+  "saldoZamknieciaGrosze": 2122938,
+  "waluta": "PLN",
+}
+`;
+
+exports[`accrueInterest — utrwalone wyniki dla zestawu przypadków > nalicza odsetki dla rachunków oszczędnościowych z kapitalizacją miesięczną > p03 1`] = `
+{
+  "kapitalizacja": "MIESIECZNA",
+  "kapitalizacje": [
+    {
+      "bruttoGrosze": 65507,
+      "data": "2026-08-31",
+      "nettoGrosze": 53061,
+      "podatekGrosze": 12446,
+      "saldoPoGrosze": 33553061,
+    },
+  ],
+  "korekty": [],
+  "liczbaDni": 31,
+  "niezakapitalizowaneGrosze": -0,
+  "nrRachunku": "84999943210000998877665544",
+  "odsetkiBruttoGrosze": 65507,
+  "odsetkiNettoGrosze": 53061,
+  "okres": {
+    "do": "2026-08-31",
+    "od": "2026-08-01",
+  },
+  "ostrzezenia": [],
+  "podatekGrosze": 12446,
+  "produkt": "OSZCZEDNOSCIOWE",
+  "saldoOtwarcieGrosze": 31000000,
+  "saldoZamknieciaGrosze": 33553061,
+  "waluta": "PLN",
+}
+`;
+
+exports[`accrueInterest — utrwalone wyniki dla zestawu przypadków > nalicza odsetki dla rachunków oszczędnościowych z kapitalizacją miesięczną > p18 1`] = `
+{
+  "kapitalizacja": "MIESIECZNA",
+  "kapitalizacje": [
+    {
+      "bruttoGrosze": 4416,
+      "data": "2026-08-31",
+      "nettoGrosze": 3577,
+      "podatekGrosze": 839,
+      "saldoPoGrosze": 2603577,
+    },
+  ],
+  "korekty": [],
+  "liczbaDni": 31,
+  "niezakapitalizowaneGrosze": 0,
+  "nrRachunku": "61999912340000456789012345",
+  "odsetkiBruttoGrosze": 4416,
+  "odsetkiNettoGrosze": 3577,
+  "okres": {
+    "do": "2026-08-31",
+    "od": "2026-08-01",
+  },
+  "ostrzezenia": [
+    "brak operacji w okresie — naliczenie od salda otwarcia",
+  ],
+  "podatekGrosze": 839,
+  "produkt": "OSZCZEDNOSCIOWE",
+  "saldoOtwarcieGrosze": 2600000,
+  "saldoZamknieciaGrosze": 2603577,
+  "waluta": "PLN",
+}
+`;
+
+exports[`accrueInterest — utrwalone wyniki dla zestawu przypadków > utrwala sumę odsetek brutto dla rachunków oszczędnościowych i lokat 1`] = `169742`;
+
+exports[`accrueInterest — utrwalone wyniki dla zestawu przypadków > zachowuje kształt wyniku dla rachunku z operacjami w trakcie miesiąca 1`] = `
+[
+  "kapitalizacja",
+  "kapitalizacje",
+  "korekty",
+  "liczbaDni",
+  "niezakapitalizowaneGrosze",
+  "nrRachunku",
+  "odsetkiBruttoGrosze",
+  "odsetkiNettoGrosze",
+  "okres",
+  "ostrzezenia",
+  "podatekGrosze",
+  "produkt",
+  "saldoOtwarcieGrosze",
+  "saldoZamknieciaGrosze",
+  "waluta",
+]
+`;
+
+exports[`accrueInterest — utrwalone wyniki dla zestawu przypadków > zachowuje kształt wyniku dla rachunku z operacjami w trakcie miesiąca 2`] = `
+{
+  "kapitalizacja": "MIESIECZNA",
+  "kapitalizacje": [
+    {
+      "bruttoGrosze": 6267,
+      "data": "2026-08-31",
+      "nettoGrosze": 5076,
+      "podatekGrosze": 1191,
+      "saldoPoGrosze": 9005076,
+    },
+  ],
+  "korekty": [],
+  "liczbaDni": 31,
+  "niezakapitalizowaneGrosze": 0,
+  "nrRachunku": "84999943210000998877665544",
+  "odsetkiBruttoGrosze": 6267,
+  "odsetkiNettoGrosze": 5076,
+  "okres": {
+    "do": "2026-08-31",
+    "od": "2026-08-01",
+  },
+  "ostrzezenia": [],
+  "podatekGrosze": 1191,
+  "produkt": "OSZCZEDNOSCIOWE",
+  "saldoOtwarcieGrosze": 9000000,
+  "saldoZamknieciaGrosze": 9005076,
+  "waluta": "PLN",
+}
+`;

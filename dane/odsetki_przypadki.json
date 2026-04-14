@@ -1,0 +1,583 @@
+{
+  "opis": "Zestaw wejść do accrueInterest — dane syntetyczne, numery rachunków nie odpowiadają żadnemu realnemu klientowi.",
+  "przypadki": [
+    {
+      "id": "p01",
+      "opis": "Rachunek oszczędnościowy w drugim progu, kapitalizacja miesięczna, dwie operacje w sierpniu.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "61999912340000456789012345",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 1850000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00001",
+            "nrRachunku": "61999912340000456789012345",
+            "kwotaGrosze": 420000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-07T09:14:22+02:00",
+            "dataWaluty": "2026-08-07",
+            "tytul": "Przelew z rachunku osobistego"
+          },
+          {
+            "id": "TX-2026-00002",
+            "nrRachunku": "61999912340000456789012345",
+            "kwotaGrosze": 150000,
+            "waluta": "PLN",
+            "typ": "OBCIAZENIE",
+            "bookedAt": "2026-08-21T09:14:22+02:00",
+            "dataWaluty": "2026-08-21",
+            "tytul": "Wyplata do rachunku osobistego"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02",
+      "opis": "Rachunek oszczędnościowy w pierwszym progu (poniżej 5 000 zł), kapitalizacja dzienna.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "27999956780000112233445566",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "DZIENNA",
+          "saldoOtwarcieGrosze": 320000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00003",
+            "nrRachunku": "27999956780000112233445566",
+            "kwotaGrosze": 45000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-12T09:14:22+02:00",
+            "dataWaluty": "2026-08-12",
+            "tytul": "Wplata gotowkowa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03",
+      "opis": "Rachunek oszczędnościowy powyżej trzeciego progu — nadwyżka oprocentowana stawką podstawową.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "84999943210000998877665544",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 31000000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00004",
+            "nrRachunku": "84999943210000998877665544",
+            "kwotaGrosze": 2500000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-18T09:14:22+02:00",
+            "dataWaluty": "2026-08-18",
+            "tytul": "Wplyw ze sprzedazy obligacji"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04",
+      "opis": "Rachunek oszczędnościowy objęty promocją nowych środków — podwyższona stawka w progu pierwszym.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "61999912340000456789012345",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 180000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "parametry": {
+          "promocjaNowySrodek": true
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00005",
+            "nrRachunku": "61999912340000456789012345",
+            "kwotaGrosze": 260000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-05T09:14:22+02:00",
+            "dataWaluty": "2026-08-05",
+            "tytul": "Nowe srodki - promocja"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05",
+      "opis": "Rachunek oszczędnościowy z kapitalizacją kwartalną, okres obejmujący dwa kwartały.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "27999956780000112233445566",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "KWARTALNA",
+          "saldoOtwarcieGrosze": 7400000
+        },
+        "okres": {
+          "od": "2026-05-01",
+          "do": "2026-09-30"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00006",
+            "nrRachunku": "27999956780000112233445566",
+            "kwotaGrosze": 900000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-06-15T09:14:22+02:00",
+            "dataWaluty": "2026-06-15",
+            "tytul": "Premia roczna"
+          },
+          {
+            "id": "TX-2026-00007",
+            "nrRachunku": "27999956780000112233445566",
+            "kwotaGrosze": 1200000,
+            "waluta": "PLN",
+            "typ": "OBCIAZENIE",
+            "bookedAt": "2026-07-20T09:14:22+02:00",
+            "dataWaluty": "2026-07-20",
+            "tytul": "Przelew na rachunek maklerski"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06",
+      "opis": "Duża wypłata w połowie miesiąca i zwrot tych samych środków przed końcem miesiąca, na rachunku oszczędnościowym z kapitalizacją miesięczną.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "84999943210000998877665544",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 9000000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00008",
+            "nrRachunku": "84999943210000998877665544",
+            "kwotaGrosze": 8500000,
+            "waluta": "PLN",
+            "typ": "OBCIAZENIE",
+            "bookedAt": "2026-08-04T09:14:22+02:00",
+            "dataWaluty": "2026-08-04",
+            "tytul": "Zakup nieruchomosci - zadatek"
+          },
+          {
+            "id": "TX-2026-00009",
+            "nrRachunku": "84999943210000998877665544",
+            "kwotaGrosze": 8500000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-28T09:14:22+02:00",
+            "dataWaluty": "2026-08-28",
+            "tytul": "Zwrot zadatku"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p07",
+      "opis": "Rachunek oszczędnościowy, na którym saldo chwilowo spada poniżej zera w trakcie okresu rozliczeniowego.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "61999912340000456789012345",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 120000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00010",
+            "nrRachunku": "61999912340000456789012345",
+            "kwotaGrosze": 200000,
+            "waluta": "PLN",
+            "typ": "OBCIAZENIE",
+            "bookedAt": "2026-08-10T09:14:22+02:00",
+            "dataWaluty": "2026-08-10",
+            "tytul": "Oplata za przewalutowanie"
+          },
+          {
+            "id": "TX-2026-00011",
+            "nrRachunku": "61999912340000456789012345",
+            "kwotaGrosze": 350000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-24T09:14:22+02:00",
+            "dataWaluty": "2026-08-24",
+            "tytul": "Zwrot nadplaty"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p08",
+      "opis": "Lokata terminowa, oprocentowanie w punktach bazowych, kapitalizacja dopiero na koniec okresu.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "15999987650000223344556677",
+          "produkt": "LOKATA",
+          "waluta": "PLN",
+          "kapitalizacja": "NA_KONIEC_OKRESU",
+          "oprocentowanieBp": 525,
+          "saldoOtwarcieGrosze": 5000000
+        },
+        "okres": {
+          "od": "2026-06-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": []
+      }
+    },
+    {
+      "id": "p09",
+      "opis": "Lokata z oprocentowaniem w starym formacie tekstowym (\"4,75%\") i kapitalizacją miesięczną.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "73999911220000334455667788",
+          "produkt": "LOKATA",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "oprocentowanie": "4,75%",
+          "saldoOtwarcieGrosze": 2500000
+        },
+        "okres": {
+          "od": "2026-07-01",
+          "do": "2026-09-30"
+        },
+        "transakcje": []
+      }
+    },
+    {
+      "id": "p10",
+      "opis": "Lokata zerwana w trakcie okresu rozliczeniowego (pole zerwanaDnia).",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "15999987650000223344556677",
+          "produkt": "LOKATA",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "oprocentowanieBp": 610,
+          "saldoOtwarcieGrosze": 8000000,
+          "zerwanaDnia": "2026-08-18"
+        },
+        "okres": {
+          "od": "2026-07-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": []
+      }
+    },
+    {
+      "id": "p11",
+      "opis": "Lokata w EUR — baza 360 dni, data waluty przesunięta o dwa dni robocze.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "73999911220000334455667788",
+          "produkt": "LOKATA",
+          "waluta": "EUR",
+          "kapitalizacja": "MIESIECZNA",
+          "oprocentowanieBp": 240,
+          "saldoOtwarcieGrosze": 1200000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-09-30"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00012",
+            "nrRachunku": "73999911220000334455667788",
+            "kwotaGrosze": 300000,
+            "waluta": "EUR",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-14T11:02:47+02:00",
+            "dataWaluty": "2026-08-14",
+            "tytul": "Przelew SEPA"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p12",
+      "opis": "Kredyt odnawialny wykorzystany w granicach limitu, kapitalizacja miesięczna.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "48999955440000445566778899",
+          "produkt": "KREDYT_ODNAWIALNY",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": -1500000,
+          "limitGrosze": 3000000,
+          "marzaBp": 480
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "parametry": {
+          "stopaBazowaBp": 575
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00013",
+            "nrRachunku": "48999955440000445566778899",
+            "kwotaGrosze": 400000,
+            "waluta": "PLN",
+            "typ": "OBCIAZENIE",
+            "bookedAt": "2026-08-11T09:14:22+02:00",
+            "dataWaluty": "2026-08-11",
+            "tytul": "Platnosc kartowa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p13",
+      "opis": "Kredyt odnawialny z przekroczeniem limitu — nadwyżka obciążona stawką karną.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "92999966330000556677889900",
+          "produkt": "KREDYT_ODNAWIALNY",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": -2800000,
+          "limitGrosze": 3000000,
+          "marzaBp": 520
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "parametry": {
+          "stopaBazowaBp": 575,
+          "karneBp": 650
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00014",
+            "nrRachunku": "92999966330000556677889900",
+            "kwotaGrosze": 900000,
+            "waluta": "PLN",
+            "typ": "OBCIAZENIE",
+            "bookedAt": "2026-08-06T09:14:22+02:00",
+            "dataWaluty": "2026-08-06",
+            "tytul": "Przelew wychodzacy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p14",
+      "opis": "Kredyt odnawialny spłacony w całości w trakcie okresu rozliczeniowego.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "48999955440000445566778899",
+          "produkt": "KREDYT_ODNAWIALNY",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": -2000000,
+          "limitGrosze": 2500000,
+          "marzaBp": 450
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-09-30"
+        },
+        "parametry": {
+          "stopaBazowaBp": 575
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00015",
+            "nrRachunku": "48999955440000445566778899",
+            "kwotaGrosze": 2000000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-19T09:14:22+02:00",
+            "dataWaluty": "2026-08-19",
+            "tytul": "Splata calosci zadluzenia"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p15",
+      "opis": "Wejście w starym układzie pól: sekcja \"konto\" zamiast \"rachunek\" i kod produktu \"OSZ\".",
+      "wejscie": {
+        "konto": {
+          "nrRachunku": "27999956780000112233445566",
+          "typProduktu": "OSZ",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 6400000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00016",
+            "nrRachunku": "27999956780000112233445566",
+            "kwotaGrosze": 180000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-09T09:14:22+02:00",
+            "dataWaluty": "2026-08-09",
+            "tytul": "Przelew przychodzacy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p16",
+      "opis": "Przeliczenie reklamacyjne lokaty w trybie zgodności z regulacją IP-04/2019 (parametr trybZgodnosciZ2019).",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "15999987650000223344556677",
+          "produkt": "LOKATA",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "oprocentowanieBp": 385,
+          "saldoOtwarcieGrosze": 3300000
+        },
+        "okres": {
+          "od": "2026-07-01",
+          "do": "2026-08-31"
+        },
+        "parametry": {
+          "trybZgodnosciZ2019": true
+        },
+        "transakcje": []
+      }
+    },
+    {
+      "id": "p17",
+      "opis": "Rachunek oszczędnościowy z korektą ręczną z rejestru reklamacji.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "84999943210000998877665544",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 4200000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": [
+          {
+            "id": "TX-2026-00017",
+            "nrRachunku": "84999943210000998877665544",
+            "kwotaGrosze": 700000,
+            "waluta": "PLN",
+            "typ": "UZNANIE",
+            "bookedAt": "2026-08-13T09:14:22+02:00",
+            "dataWaluty": "2026-08-13",
+            "tytul": "Wplata wlasna"
+          }
+        ],
+        "korekty": [
+          {
+            "opis": "Reklamacja RK-2026-0418, dopłata odsetek za lipiec",
+            "kwotaGrosze": 1240
+          }
+        ]
+      }
+    },
+    {
+      "id": "p18",
+      "opis": "Brak operacji w okresie — naliczenie wyłącznie od salda otwarcia.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "61999912340000456789012345",
+          "produkt": "OSZCZEDNOSCIOWE",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 2600000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": []
+      }
+    },
+    {
+      "id": "p19",
+      "opis": "Okres jednodniowy — przypadek brzegowy, pierwszy dzień jest jednocześnie ostatnim.",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "73999911220000334455667788",
+          "produkt": "LOKATA",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "oprocentowanieBp": 500,
+          "saldoOtwarcieGrosze": 10000000
+        },
+        "okres": {
+          "od": "2026-08-31",
+          "do": "2026-08-31"
+        },
+        "transakcje": []
+      }
+    },
+    {
+      "id": "p20",
+      "opis": "Rachunek prowadzony jako produkt spoza standardowego katalogu (rachunek powierniczy).",
+      "wejscie": {
+        "rachunek": {
+          "nrRachunku": "27999956780000112233445566",
+          "produkt": "RACHUNEK_POWIERNICZY",
+          "waluta": "PLN",
+          "kapitalizacja": "MIESIECZNA",
+          "saldoOtwarcieGrosze": 1500000
+        },
+        "okres": {
+          "od": "2026-08-01",
+          "do": "2026-08-31"
+        },
+        "transakcje": []
+      }
+    }
+  ]
+}
