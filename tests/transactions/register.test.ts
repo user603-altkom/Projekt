@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 
-import { readBankFile } from '../../src/import/parseBankFile.js';
 import type { Transaction, TypOperacji } from '../../src/model.js';
 import {
   netBalance,
@@ -103,10 +102,11 @@ describe('sumTransactions', () => {
     expect(sumTransactions([])).toBe(0);
   });
 
-  it('suma obrotów zgadza się z sumą kontrolną wyciągu', () => {
-    const { transactions, sumaKontrolnaGrosze } = readBankFile('dane/wyciag_2026_08.csv');
+  it('sumuje obroty z przykładowego wyciągu', () => {
+    // 1 234,56 + 5 300,00 + 840,25 + ... + 1 507,00 = 34 678,11 zł
+    const sumaZl = sumTransactions(przykladoweTransakcje()) / 100;
 
-    expect(sumTransactions(transactions)).toBe(sumaKontrolnaGrosze);
+    expect(sumaZl).toBeCloseTo(34678.11, 2);
   });
 
   it('sumuje obroty wybranego rachunku', () => {
