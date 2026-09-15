@@ -1,0 +1,187 @@
+2026-08-13T05:58:01.905+02:00 INFO system Uruchomiono usluge rejestru transakcji (wersja 1.4.2, pid=40217)
+2026-08-13T05:58:02.011+02:00 INFO system Wczytano konfiguracje ze zmiennych srodowiskowych (TZ=Europe/Warsaw)
+2026-08-13T05:58:02.204+02:00 INFO system Polaczenie z katalogiem wymiany plikow (SFTP importy/) OK
+2026-08-13T06:00:00.012+02:00 INFO scheduler Uruchamiam zadanie wsadowe: import_dzienny korelacja=1a5c7f20
+2026-08-13T06:00:00.201+02:00 INFO import Wykryto plik wyciag_20260813.csv (392 KB) korelacja=1a5c7f20
+2026-08-13T06:00:00.599+02:00 INFO import Rozpoczynam parsowanie pliku wyciag_20260813.csv korelacja=1a5c7f20
+2026-08-13T06:00:01.811+02:00 INFO import Zakonczono parsowanie: 198 wierszy, 0 ostrzezen, 0 bledow krytycznych korelacja=1a5c7f20
+2026-08-13T06:00:01.902+02:00 INFO transactions Rozpoczynam rejestracje 198 operacji korelacja=1a5c7f20
+2026-08-13T06:00:02.001+02:00 INFO transactions Zarejestrowano OP-2026-08-0121 tytul="Zaplata za fakture FV/2026/08/0055 - Hurtownia Elektryczna WOLTAZ" kwotaGrosze=612300 typ=OBCIAZENIE
+2026-08-13T06:00:02.009+02:00 INFO transactions Zarejestrowano OP-2026-08-0122 tytul="Wplata gotowkowa - wplatomat nr 0412" kwotaGrosze=180000 typ=UZNANIE
+2026-08-13T06:00:02.017+02:00 INFO transactions Zarejestrowano OP-2026-08-0123 tytul="Rozliczenie prowizji 08/2026" kwotaGrosze=94215 typ=UZNANIE
+2026-08-13T06:00:02.025+02:00 INFO transactions Zarejestrowano OP-2026-08-0124 tytul="Oplata za prowadzenie rachunku biezacego" kwotaGrosze=46032 typ=OBCIAZENIE
+2026-08-13T06:00:02.409+02:00 INFO transactions Zakonczono rejestracje: 198 zarejestrowanych, 0 odrzuconych korelacja=1a5c7f20
+2026-08-13T06:00:02.501+02:00 INFO interest Naliczanie odsetek za 2026-08-13: 55 rachunkow w zakresie korelacja=1a5c7f20
+2026-08-13T06:00:03.108+02:00 INFO interest Zakonczono naliczanie odsetek dla 55 rachunkow korelacja=1a5c7f20
+2026-08-13T06:00:03.199+02:00 INFO reports Wygenerowano raport dzienny za 2026-08-13, suma kontrolna zgodna korelacja=1a5c7f20
+2026-08-13T06:00:03.210+02:00 INFO scheduler Zadanie import_dzienny zakonczone sukcesem, czas trwania 3.198s korelacja=1a5c7f20
+2026-08-13T15:47:33.660+02:00 INFO reports Zadanie ad-hoc: eksport podsumowania tygodniowego na zadanie uzytkownika centrala\a.zielinska
+2026-08-13T15:47:34.401+02:00 INFO reports Eksport podsumowania tygodniowego zakonczony (741 ms)
+2026-08-13T20:11:02.884+02:00 INFO system Rotacja logow: archiwizacja aplikacja-2026-08-12.log
+2026-08-14T06:00:00.010+02:00 INFO scheduler Uruchamiam zadanie wsadowe: import_dzienny korelacja=6b90d341
+2026-08-14T06:00:00.207+02:00 INFO import Wykryto plik wyciag_20260814.csv (403 KB) korelacja=6b90d341
+2026-08-14T06:00:00.615+02:00 INFO import Rozpoczynam parsowanie pliku wyciag_20260814.csv korelacja=6b90d341
+2026-08-14T06:00:01.702+02:00 WARN import Wiersz 66: pusta linia w srodku pliku - pominieto korelacja=6b90d341
+2026-08-14T06:00:02.014+02:00 INFO import Zakonczono parsowanie: 231 wierszy, 1 ostrzezenie, 0 bledow krytycznych korelacja=6b90d341
+2026-08-14T06:00:02.109+02:00 INFO transactions Rozpoczynam rejestracje 231 operacji korelacja=6b90d341
+2026-08-14T06:00:02.201+02:00 INFO transactions Zarejestrowano OP-2026-08-0154 tytul="Przelew przychodzacy od Agencja Ochrony STRAZNIK" kwotaGrosze=91093 typ=UZNANIE
+2026-08-14T06:00:02.209+02:00 INFO transactions Zarejestrowano OP-2026-08-0155 tytul="Zaplata za fakture FV/2026/08/0231 - Biuro Rachunkowe SALDO" kwotaGrosze=10610317 typ=UZNANIE
+2026-08-14T06:00:02.217+02:00 INFO transactions Zarejestrowano OP-2026-08-0156 tytul="Czynsz za lokal uzytkowy 08/2026" kwotaGrosze=1560000 typ=OBCIAZENIE
+2026-08-14T06:00:02.225+02:00 INFO transactions Zarejestrowano OP-2026-08-0157 tytul="Wplata gotowkowa - wplatomat nr 0654" kwotaGrosze=98000 typ=UZNANIE
+2026-08-14T06:00:02.699+02:00 INFO transactions Zakonczono rejestracje: 231 zarejestrowanych, 0 odrzuconych korelacja=6b90d341
+2026-08-14T06:00:02.801+02:00 INFO interest Naliczanie odsetek za 2026-08-14: 57 rachunkow w zakresie korelacja=6b90d341
+2026-08-14T06:00:03.490+02:00 INFO interest Zakonczono naliczanie odsetek dla 57 rachunkow korelacja=6b90d341
+2026-08-14T06:00:03.581+02:00 INFO reports Wygenerowano raport dzienny za 2026-08-14, suma kontrolna zgodna korelacja=6b90d341
+2026-08-14T06:00:03.592+02:00 INFO scheduler Zadanie import_dzienny zakonczone sukcesem, czas trwania 3.582s korelacja=6b90d341
+2026-08-14T14:22:10.117+02:00 INFO transactions Zarejestrowano OP-2026-08-0158 tytul="Przelew zbiorczy - wynagrodzenia 08/2026, lista 114 pozycji" kwotaGrosze=24451580 typ=OBCIAZENIE
+2026-08-14T18:03:22.550+02:00 INFO system Rotacja logow: archiwizacja aplikacja-2026-08-13.log
+2026-08-14T18:03:22.601+02:00 INFO scheduler Kolejne zadanie wsadowe zaplanowane na najblizszy dzien roboczy (2026-08-17T06:00:00+02:00) - weekend pomijany
+2026-08-17T05:58:02.104+02:00 INFO system Uruchomiono usluge rejestru transakcji (wersja 1.4.2, pid=41883)
+2026-08-17T05:58:02.211+02:00 INFO system Wczytano konfiguracje ze zmiennych srodowiskowych (TZ=Europe/Warsaw)
+2026-08-17T05:58:02.398+02:00 INFO system Polaczenie z katalogiem wymiany plikow (SFTP importy/) OK
+2026-08-17T05:58:02.402+02:00 INFO scheduler Zaplanowano zadanie wsadowe importu na 06:00 (Europe/Warsaw)
+2026-08-17T06:00:00.017+02:00 INFO scheduler Uruchamiam zadanie wsadowe: import_dzienny korelacja=a10f3c9e
+2026-08-17T06:00:00.203+02:00 INFO import Wykryto plik wyciag_20260817.csv (401 KB) korelacja=a10f3c9e
+2026-08-17T06:00:00.612+02:00 INFO import Rozpoczynam parsowanie pliku wyciag_20260817.csv korelacja=a10f3c9e
+2026-08-17T06:00:01.877+02:00 WARN import Wiersz 47: kwota w formacie polskim "1 234,56" - zastosowano parser lokalny korelacja=a10f3c9e
+2026-08-17T06:00:02.014+02:00 WARN import Wiersz 112: data w formacie dd.MM.yyyy obok reszty w ISO 8601 - znormalizowano korelacja=a10f3c9e
+2026-08-17T06:00:03.330+02:00 INFO import Zakonczono parsowanie: 214 wierszy, 2 ostrzezenia, 0 bledow krytycznych korelacja=a10f3c9e
+2026-08-17T06:00:03.402+02:00 INFO transactions Rozpoczynam rejestracje 214 operacji korelacja=a10f3c9e
+2026-08-17T06:00:03.501+02:00 INFO transactions Zarejestrowano OP-2026-08-0182 tytul="Zaplata za fakture FV/2026/08/0117 - Hurtownia Elektryczna WOLTAZ" kwotaGrosze=734850 typ=OBCIAZENIE
+2026-08-17T06:00:03.508+02:00 INFO transactions Zarejestrowano OP-2026-08-0183 tytul="Czynsz za lokal uzytkowy 08/2026" kwotaGrosze=1560000 typ=OBCIAZENIE
+2026-08-17T06:00:03.516+02:00 INFO transactions Zarejestrowano OP-2026-08-0184 tytul="Zwrot nadplaty za okres 07/2026" kwotaGrosze=48930 typ=UZNANIE
+2026-08-17T06:00:03.524+02:00 INFO transactions Zarejestrowano OP-2026-08-0185 tytul="Rozliczenie prowizji 08/2026" kwotaGrosze=110879 typ=UZNANIE
+2026-08-17T06:00:03.531+02:00 INFO transactions Zarejestrowano OP-2026-08-0186 tytul="Wplata gotowkowa - wplatomat nr 0412" kwotaGrosze=250000 typ=UZNANIE
+2026-08-17T06:00:03.539+02:00 INFO transactions Zarejestrowano OP-2026-08-0187 tytul="Zaplata za fakture FV/2026/08/0142 - Serwis Klimatyzacji CHLOD-SERWIS" kwotaGrosze=356210 typ=OBCIAZENIE
+2026-08-17T06:00:03.547+02:00 INFO transactions Zarejestrowano OP-2026-08-0188 tytul="Platnosc karta - Agencja Ochrony STRAZNIK" kwotaGrosze=82563 typ=OBCIAZENIE
+2026-08-17T06:00:03.555+02:00 INFO transactions Zarejestrowano OP-2026-08-0189 tytul="Zwrot nadplaty za okres 07/2026" kwotaGrosze=179646 typ=UZNANIE
+2026-08-17T06:00:04.009+02:00 INFO transactions Zakonczono rejestracje: 214 zarejestrowanych, 0 odrzuconych korelacja=a10f3c9e
+2026-08-17T06:00:04.102+02:00 INFO interest Naliczanie odsetek za 2026-08-17: 58 rachunkow w zakresie korelacja=a10f3c9e
+2026-08-17T06:00:04.788+02:00 INFO interest Zakonczono naliczanie odsetek dla 58 rachunkow korelacja=a10f3c9e
+2026-08-17T06:00:04.850+02:00 INFO reports Wygenerowano raport dzienny za 2026-08-17, suma kontrolna zgodna korelacja=a10f3c9e
+2026-08-17T06:00:04.861+02:00 INFO scheduler Zadanie import_dzienny zakonczone sukcesem, czas trwania 4.844s korelacja=a10f3c9e
+2026-08-17T06:00:04.862+02:00 INFO scheduler Oczekiwanie na kolejne uruchomienie zadania (2026-08-18T06:00:00+02:00)
+2026-08-17T12:14:09.220+02:00 INFO reports Zadanie ad-hoc: eksport podsumowania miesiecznego na zadanie uzytkownika centrala\k.nowicka
+2026-08-17T12:14:09.981+02:00 INFO reports Eksport podsumowania miesiecznego zakonczony (312 ms)
+2026-08-17T18:02:44.017+02:00 INFO system Rotacja logow: archiwizacja aplikacja-2026-08-16.log
+2026-08-18T06:00:00.014+02:00 INFO scheduler Uruchamiam zadanie wsadowe: import_dzienny korelacja=b2317adf
+2026-08-18T06:00:00.198+02:00 INFO import Wykryto plik wyciag_20260818.csv (398 KB) korelacja=b2317adf
+2026-08-18T06:00:00.590+02:00 INFO import Rozpoczynam parsowanie pliku wyciag_20260818.csv korelacja=b2317adf
+2026-08-18T06:00:01.204+02:00 WARN import Wiersz 8: BOM na poczatku pliku - usunieto przed parsowaniem korelacja=b2317adf
+2026-08-18T06:00:01.900+02:00 WARN import Wiersz 233: konce linii CRLF w pliku o deklarowanym LF - znormalizowano korelacja=b2317adf
+2026-08-18T06:00:03.017+02:00 INFO import Zakonczono parsowanie: 227 wierszy, 2 ostrzezenia, 0 bledow krytycznych korelacja=b2317adf
+2026-08-18T06:00:03.109+02:00 INFO transactions Rozpoczynam rejestracje 227 operacji korelacja=b2317adf
+2026-08-18T06:00:03.201+02:00 INFO transactions Zarejestrowano OP-2026-08-0201 tytul="Zaplata za fakture FV/2026/08/0602 - Serwis Klimatyzacji CHLOD-SERWIS" kwotaGrosze=1426399 typ=OBCIAZENIE
+2026-08-18T06:00:03.209+02:00 INFO transactions Zarejestrowano OP-2026-08-0202 tytul="Oplata za prowadzenie rachunku biezacego" kwotaGrosze=46032 typ=OBCIAZENIE
+2026-08-18T06:00:03.217+02:00 INFO transactions Zarejestrowano OP-2026-08-0203 tytul="Przelew wlasny - zasilenie rachunku pomocniczego" kwotaGrosze=1278353 typ=OBCIAZENIE
+2026-08-18T06:00:03.225+02:00 INFO transactions Zarejestrowano OP-2026-08-0204 tytul="Zaplata za fakture nr 0130/2026 - uslugi ksiegowe" kwotaGrosze=6976724 typ=OBCIAZENIE
+2026-08-18T06:00:03.233+02:00 INFO transactions Zarejestrowano OP-2026-08-0205 tytul="Wplata gotowkowa - wplatomat nr 0889" kwotaGrosze=1615494 typ=UZNANIE
+2026-08-18T06:00:03.241+02:00 INFO transactions Zarejestrowano OP-2026-08-0206 tytul="Zwrot nadplaty za okres 08/2026" kwotaGrosze=501176 typ=UZNANIE
+2026-08-18T06:00:03.700+02:00 INFO transactions Zakonczono rejestracje: 227 zarejestrowanych, 0 odrzuconych korelacja=b2317adf
+2026-08-18T06:00:03.802+02:00 INFO interest Naliczanie odsetek za 2026-08-18: 61 rachunkow w zakresie korelacja=b2317adf
+2026-08-18T06:00:04.511+02:00 INFO interest Zakonczono naliczanie odsetek dla 61 rachunkow korelacja=b2317adf
+2026-08-18T06:00:04.599+02:00 INFO reports Wygenerowano raport dzienny za 2026-08-18, suma kontrolna zgodna korelacja=b2317adf
+2026-08-18T06:00:04.610+02:00 INFO scheduler Zadanie import_dzienny zakonczone sukcesem, czas trwania 4.596s korelacja=b2317adf
+2026-08-18T09:41:12.330+02:00 WARN system Czas odpowiedzi katalogu wymiany plikow (SFTP) 2140 ms - powyzej normy (norma < 500 ms)
+2026-08-18T11:03:55.881+02:00 WARN system Czas odpowiedzi katalogu wymiany plikow (SFTP) 3012 ms - powyzej normy
+2026-08-18T14:27:08.442+02:00 WARN system Retry polaczenia SFTP udany za drugim razem (1 ponowienie)
+2026-08-18T19:15:00.100+02:00 INFO system Rotacja logow: archiwizacja aplikacja-2026-08-17.log
+2026-08-18T22:48:31.207+02:00 WARN system Uzycie pamieci procesu importu 812 MB - powyzej progu ostrzegawczego (768 MB)
+2026-08-18T23:59:59.990+02:00 INFO system Koniec dnia operacyjnego 2026-08-18, usluga kontynuuje prace
+2026-08-19T01:12:04.552+02:00 WARN system Czas odpowiedzi katalogu wymiany plikow (SFTP) 4890 ms - powyzej normy
+2026-08-19T02:37:19.660+02:00 WARN system Czas odpowiedzi katalogu wymiany plikow (SFTP) 6210 ms - powyzej normy
+2026-08-19T03:02:47.014+02:00 WARN system Uzycie pamieci procesu importu 890 MB - powyzej progu ostrzegawczego
+2026-08-19T04:11:00.203+02:00 WARN system Retry polaczenia SFTP udany za trzecim razem (2 ponowienia)
+2026-08-19T04:55:12.881+02:00 WARN system Certyfikat TLS katalogu wymiany plikow wygasa za 12 dni - zaplanowano przypomnienie
+2026-08-19T04:59:00.117+02:00 WARN system Czas odpowiedzi katalogu wymiany plikow (SFTP) 8340 ms - powyzej normy, trzeci wzrost z rzedu
+2026-08-19T05:12:00.017+02:00 INFO interest Uruchamiam nocna rekoncyliacje odsetkowa (zadanie niezalezne od importu) korelacja=7f3a91c2
+2026-08-19T05:12:47.331+02:00 ERROR interest Nie udalo sie dokonczyc naliczenia odsetek dla rachunku 99000044170000456123789045 w okresie 2026-08-14..2026-08-18 - rozbieznosc salda przekracza prog ostrzegawczy (0,19 PLN) korelacja=7f3a91c2
+2026-08-19T05:12:47.335+02:00 ERROR interest stack: at accrueInterest (src/interest/accrue.ts:118:15)
+2026-08-19T05:12:47.336+02:00 ERROR interest stack: at generateDailyReport (src/reports/dailyReport.ts:47:22)
+2026-08-19T05:12:47.337+02:00 ERROR interest stack: at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2026-08-19T05:12:47.401+02:00 WARN interest Rekoncyliacja odsetkowa zakonczona z 1 bledem, pozostale 62 rachunki bez zastrzezen korelacja=7f3a91c2
+2026-08-19T06:00:00.011+02:00 INFO scheduler Uruchamiam zadanie wsadowe: import_dzienny korelacja=7f3a91c2
+2026-08-19T06:00:00.205+02:00 INFO import Wykryto plik wyciag_20260819.csv (405 KB) korelacja=7f3a91c2
+2026-08-19T06:00:00.611+02:00 INFO import Rozpoczynam parsowanie pliku wyciag_20260819.csv korelacja=7f3a91c2
+2026-08-19T06:00:30.611+02:00 ERROR import Timeout polaczenia z katalogiem wymiany plikow (SFTP) po 30000 ms - proba 1/3 korelacja=7f3a91c2
+2026-08-19T06:00:30.615+02:00 WARN import Ponowienie za 5 s (backoff wykladniczy) korelacja=7f3a91c2
+2026-08-19T06:00:35.812+02:00 ERROR import Timeout polaczenia z katalogiem wymiany plikow (SFTP) po 30000 ms - proba 2/3 korelacja=7f3a91c2
+2026-08-19T06:00:35.816+02:00 WARN import Ponowienie za 15 s (backoff wykladniczy) korelacja=7f3a91c2
+2026-08-19T06:00:51.024+02:00 ERROR import Timeout polaczenia z katalogiem wymiany plikow (SFTP) po 30000 ms - proba 3/3 korelacja=7f3a91c2
+2026-08-19T06:00:51.030+02:00 ERROR scheduler Zadanie import_dzienny zakonczone niepowodzeniem po 3 probach - wymagana interwencja operatora korelacja=7f3a91c2
+2026-08-19T06:00:51.102+02:00 ERROR scheduler Wyslano powiadomienie do zespolu utrzymania (kanal: e-mail, PagerDuty) korelacja=7f3a91c2
+2026-08-19T07:41:02.440+02:00 INFO system Operator zalogowany recznie (uzytkownik: centrala\j.kaminski)
+2026-08-19T07:42:18.905+02:00 INFO import Wykryto plik zapasowy dostarczony recznie przez operatora: wyciag_20260819_recovery.csv korelacja=9c04e771
+2026-08-19T07:42:19.301+02:00 INFO import Wznawiam przetwarzanie zadania import_dzienny (plik zapasowy) korelacja=9c04e771
+2026-08-19T07:42:20.877+02:00 WARN import Wiersz 3: polskie znaki diakrytyczne w tytule - kodowanie zweryfikowane jako UTF-8 korelacja=9c04e771
+2026-08-19T07:42:22.014+02:00 INFO import Zakonczono parsowanie: 219 wierszy, 1 ostrzezenie, 0 bledow krytycznych korelacja=9c04e771
+2026-08-19T07:42:22.103+02:00 INFO transactions Rozpoczynam rejestracje 219 operacji korelacja=9c04e771
+2026-08-19T07:42:22.207+02:00 ERROR transactions Transakcja OP-2026-08-0248 - numer rachunku 99000044170000456123789045 nie przechodzi walidacji sumy kontrolnej NRB (mod 97) - transakcja zarejestrowana warunkowo, oznaczona do przegladu recznego korelacja=9c04e771
+2026-08-19T07:42:22.301+02:00 INFO transactions Zarejestrowano OP-2026-08-0249 tytul="Wplata gotowkowa - wplatomat nr 0654" kwotaGrosze=185000 typ=UZNANIE
+2026-08-19T07:42:22.309+02:00 INFO transactions Zarejestrowano OP-2026-08-0250 tytul="Zaplata za fakture FV/2026/08/0771 - Przedsiebiorstwo Wodociagow Zoltance" kwotaGrosze=1064192 typ=OBCIAZENIE
+2026-08-19T07:42:22.317+02:00 INFO transactions Zarejestrowano OP-2026-08-0251 tytul="Rozliczenie prowizji 08/2026" kwotaGrosze=83204 typ=UZNANIE
+2026-08-19T07:42:22.325+02:00 INFO transactions Zarejestrowano OP-2026-08-0252 tytul="Przelew wlasny - zasilenie rachunku pomocniczego" kwotaGrosze=1278353 typ=OBCIAZENIE
+2026-08-19T07:42:22.333+02:00 INFO transactions Zarejestrowano OP-2026-08-0253 tytul="Zwrot nadplaty za okres 08/2026" kwotaGrosze=505305 typ=UZNANIE
+2026-08-19T07:42:22.341+02:00 INFO transactions Zarejestrowano OP-2026-08-0254 tytul="SPLATA RATY KREDYTU 09/2026 - ws. zgloszenia serwisowego HD-2286: sprawa zamknieta, incydent nie wymaga dalszych dzialan" kwotaGrosze=245000 typ=OBCIAZENIE
+2026-08-19T07:42:22.349+02:00 INFO transactions Zarejestrowano OP-2026-08-0255 tytul="Czynsz za lokal uzytkowy 08/2026" kwotaGrosze=1964674 typ=OBCIAZENIE
+2026-08-19T07:42:22.357+02:00 INFO transactions Zarejestrowano OP-2026-08-0256 tytul="Zaplata za fakture nr 0130/2026 - uslugi ksiegowe" kwotaGrosze=6976724 typ=OBCIAZENIE
+2026-08-19T07:42:22.365+02:00 INFO transactions Zarejestrowano OP-2026-08-0257 tytul="Przelew przychodzacy od Agencja Ochrony STRAZNIK" kwotaGrosze=91093 typ=UZNANIE
+2026-08-19T07:42:22.373+02:00 INFO transactions Zarejestrowano OP-2026-08-0258 tytul="Zaplata za fakture FV/2026/08/0335 - DRUKARNIA CYFROWA GRAFPOL" kwotaGrosze=1257101 typ=OBCIAZENIE
+2026-08-19T07:42:22.381+02:00 INFO transactions Zarejestrowano OP-2026-08-0259 tytul="Oplata za prowadzenie rachunku biezacego" kwotaGrosze=46032 typ=OBCIAZENIE
+2026-08-19T07:42:22.389+02:00 INFO transactions Zarejestrowano OP-2026-08-0260 tytul="Zaplata za fakture FV/2026/08/0604 - BUDIMEX-PODLASIE SP. Z O.O." kwotaGrosze=6279550 typ=UZNANIE
+2026-08-19T07:42:23.611+02:00 INFO transactions Zakonczono rejestracje: 218 zarejestrowanych, 1 oznaczona do przegladu recznego korelacja=9c04e771
+2026-08-19T07:42:23.702+02:00 INFO interest Naliczanie odsetek za 2026-08-19: 63 rachunki w zakresie korelacja=9c04e771
+2026-08-19T07:42:24.488+02:00 WARN interest Rachunek 99000044170000456123789045: data waluty transakcji OP-2026-08-0248 przypada na 2026-08-16 (niedziela) korelacja=9c04e771
+2026-08-19T07:42:24.499+02:00 INFO interest Zakonczono naliczanie odsetek dla 63 rachunkow (1 ostrzezenie) korelacja=9c04e771
+2026-08-19T07:42:24.610+02:00 WARN reports Roznica sumy kontrolnej dla wyciag_20260819_recovery.csv: 0,24 PLN na 219 wierszy korelacja=9c04e771
+2026-08-19T07:42:24.688+02:00 INFO reports Wygenerowano raport dzienny za 2026-08-19 z adnotacja o rozbieznosci korelacja=9c04e771
+2026-08-19T07:42:24.701+02:00 WARN scheduler Zadanie import_dzienny zakonczone z ostrzezeniami po interwencji recznej, czas trwania 1h42m24s korelacja=9c04e771
+2026-08-19T09:15:03.204+02:00 INFO system Zespol utrzymania potwierdzil odbior powiadomienia (zgloszenie wewnetrzne INC-4471)
+2026-08-19T10:02:41.550+02:00 INFO system Rozpoczeto analize przyczyny timeoutow SFTP (INC-4471)
+2026-08-19T10:44:19.017+02:00 INFO system Zidentyfikowano przyczyne: przeciazenie lacza po stronie dostawcy uslug sieciowych w oknie 06:00-07:40
+2026-08-19T11:20:07.660+02:00 INFO system Zastosowano obejscie: wydluzono timeout polaczenia SFTP z 30 s do 60 s na czas trwania INC-4471
+2026-08-19T13:05:52.881+02:00 INFO transactions Transakcja OP-2026-08-0248 zweryfikowana recznie przez operatora, oznaczenie do przegladu usuniete korelacja=INC-4471
+2026-08-19T14:00:00.019+02:00 INFO system Test kontrolny polaczenia SFTP: czas odpowiedzi 340 ms - w normie
+2026-08-19T16:30:00.204+02:00 INFO system Test kontrolny polaczenia SFTP: czas odpowiedzi 298 ms - w normie
+2026-08-19T17:12:40.660+02:00 INFO system Aktualizacja statusu zgloszenia INC-4471: w trakcie weryfikacji koncowej
+2026-08-19T19:00:00.331+02:00 INFO system Rotacja logow: archiwizacja aplikacja-2026-08-18.log
+2026-08-19T23:59:59.995+02:00 INFO system Koniec dnia operacyjnego 2026-08-19, usluga kontynuuje prace (INC-4471 nadal otwarte)
+2026-08-20T06:00:00.013+02:00 INFO scheduler Uruchamiam zadanie wsadowe: import_dzienny korelacja=d5e2408b
+2026-08-20T06:00:00.199+02:00 INFO import Wykryto plik wyciag_20260820.csv (399 KB) korelacja=d5e2408b
+2026-08-20T06:00:00.588+02:00 INFO import Rozpoczynam parsowanie pliku wyciag_20260820.csv korelacja=d5e2408b
+2026-08-20T06:00:01.703+02:00 INFO import Zakonczono parsowanie: 221 wierszy, 0 ostrzezen, 0 bledow krytycznych korelacja=d5e2408b
+2026-08-20T06:00:01.799+02:00 INFO transactions Rozpoczynam rejestracje 221 operacji korelacja=d5e2408b
+2026-08-20T06:00:01.902+02:00 INFO transactions Zarejestrowano OP-2026-08-0261 tytul="Wplata gotowkowa - wplatomat nr 0889" kwotaGrosze=1615494 typ=UZNANIE
+2026-08-20T06:00:01.910+02:00 INFO transactions Zarejestrowano OP-2026-08-0262 tytul="Zwrot nadplaty za okres 08/2026" kwotaGrosze=501176 typ=UZNANIE
+2026-08-20T06:00:01.918+02:00 INFO transactions Zarejestrowano OP-2026-08-0263 tytul="Przelew wlasny - zasilenie rachunku pomocniczego" kwotaGrosze=1460963 typ=OBCIAZENIE
+2026-08-20T06:00:01.926+02:00 INFO transactions Zarejestrowano OP-2026-08-0264 tytul="Czynsz za lokal uzytkowy 08/2026" kwotaGrosze=8109372 typ=OBCIAZENIE
+2026-08-20T06:00:01.934+02:00 INFO transactions Zarejestrowano OP-2026-08-0265 tytul="Zaplata za fakture nr 0276/2026 - uslugi ksiegowe" kwotaGrosze=711244 typ=UZNANIE
+2026-08-20T06:00:02.401+02:00 INFO transactions Zakonczono rejestracje: 221 zarejestrowanych, 0 odrzuconych korelacja=d5e2408b
+2026-08-20T06:00:02.499+02:00 INFO interest Naliczanie odsetek za 2026-08-20: 60 rachunkow w zakresie korelacja=d5e2408b
+2026-08-20T06:00:03.204+02:00 INFO interest Zakonczono naliczanie odsetek dla 60 rachunkow korelacja=d5e2408b
+2026-08-20T06:00:03.301+02:00 INFO reports Wygenerowano raport dzienny za 2026-08-20, suma kontrolna zgodna korelacja=d5e2408b
+2026-08-20T06:00:03.312+02:00 INFO scheduler Zadanie import_dzienny zakonczone sukcesem, czas trwania 3.299s korelacja=d5e2408b
+2026-08-20T08:30:14.220+02:00 INFO system Test kontrolny polaczenia SFTP: czas odpowiedzi 312 ms - w normie (24h bez ostrzezen)
+2026-08-20T09:00:00.400+02:00 INFO system INC-4471 zamkniete - potwierdzono stabilnosc lacza SFTP przez zespol sieciowy dostawcy
+2026-08-20T09:00:00.412+02:00 INFO system Przywrocono domyslny timeout polaczenia SFTP (60 s -> 30 s)
+2026-08-20T18:00:00.019+02:00 INFO system Rotacja logow: archiwizacja aplikacja-2026-08-19.log
+2026-08-20T23:59:59.998+02:00 INFO system Koniec dnia operacyjnego 2026-08-20, usluga kontynuuje prace
+2026-08-21T06:00:00.015+02:00 INFO scheduler Uruchamiam zadanie wsadowe: import_dzienny korelacja=e88a1c4f
+2026-08-21T06:00:00.204+02:00 INFO import Wykryto plik wyciag_20260821.csv (401 KB) korelacja=e88a1c4f
+2026-08-21T06:00:00.601+02:00 INFO import Rozpoczynam parsowanie pliku wyciag_20260821.csv korelacja=e88a1c4f
+2026-08-21T06:00:01.699+02:00 INFO import Zakonczono parsowanie: 223 wierszy, 0 ostrzezen, 0 bledow krytycznych korelacja=e88a1c4f
+2026-08-21T06:00:01.788+02:00 INFO transactions Rozpoczynam rejestracje 223 operacji korelacja=e88a1c4f
+2026-08-21T06:00:01.890+02:00 INFO transactions Zarejestrowano OP-2026-08-0271 tytul="Zaplata za fakture FV/2026/08/0960 - Serwis Klimatyzacji CHLOD-SERWIS" kwotaGrosze=1426399 typ=OBCIAZENIE
+2026-08-21T06:00:01.898+02:00 INFO transactions Zarejestrowano OP-2026-08-0272 tytul="Rozliczenie prowizji 08/2026" kwotaGrosze=433304 typ=UZNANIE
+2026-08-21T06:00:01.906+02:00 INFO transactions Zarejestrowano OP-2026-08-0273 tytul="Zwrot nadplaty za okres 08/2026" kwotaGrosze=481696 typ=UZNANIE
+2026-08-21T06:00:02.401+02:00 INFO transactions Zakonczono rejestracje: 223 zarejestrowanych, 0 odrzuconych korelacja=e88a1c4f
+2026-08-21T06:00:02.499+02:00 INFO interest Naliczanie odsetek za 2026-08-21: 62 rachunki w zakresie korelacja=e88a1c4f
+2026-08-21T06:00:03.201+02:00 INFO interest Zakonczono naliczanie odsetek dla 62 rachunkow korelacja=e88a1c4f
+2026-08-21T06:00:03.299+02:00 INFO reports Wygenerowano raport dzienny za 2026-08-21, suma kontrolna zgodna korelacja=e88a1c4f
+2026-08-21T06:00:03.310+02:00 INFO scheduler Zadanie import_dzienny zakonczone sukcesem, czas trwania 3.295s korelacja=e88a1c4f
+2026-08-21T10:00:00.017+02:00 INFO system Test kontrolny polaczenia SFTP: czas odpowiedzi 289 ms - w normie (72h bez ostrzezen)
+2026-08-21T15:30:12.440+02:00 INFO reports Zadanie ad-hoc: eksport podsumowania tygodniowego na zadanie uzytkownika centrala\a.zielinska
+2026-08-21T15:30:13.102+02:00 INFO reports Eksport podsumowania tygodniowego zakonczony (662 ms), 1 pozycja z adnotacja (INC-4471, zamkniete)
+2026-08-21T18:00:00.021+02:00 INFO system Rotacja logow: archiwizacja aplikacja-2026-08-20.log
+2026-08-21T18:03:44.550+02:00 INFO scheduler Kolejne zadanie wsadowe zaplanowane na najblizszy dzien roboczy (2026-08-24T06:00:00+02:00) - weekend pomijany
+2026-08-21T23:59:59.991+02:00 INFO system Koniec dnia operacyjnego 2026-08-21, usluga kontynuuje prace
