@@ -1,0 +1,76 @@
+# Ćw. 6 — Testy dla modułu bez testów
+
+**Czas:** 45 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+
+Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
+
+## Cel
+
+Umieć powiedzieć, czego wygenerowany zestaw testów nie pokrywa, i sprawdzić to na danych, a nie na słowo modelu.
+
+## Zgłoszenie
+
+> Od: Marcin (kierownik zespołu)
+> Temat: import wyciągów — brak testów
+>
+> Moduł importu wchodzi w listopadzie do rozliczeń dziennych i nie ma pod sobą
+> ani jednego testu. Zanim zaczniemy go zmieniać, chcę mieć tam siatkę.
+>
+> Piszcie to tak, jak są napisane testy w `tests/transactions/` — te same nazwy,
+> ten sam układ, ten sam sposób budowania danych wejściowych. Nie chcę drugiego
+> stylu w jednym repozytorium, bo za pół roku nikt nie będzie wiedział, który
+> jest nasz.
+>
+> Plik, na którym można się oprzeć: `dane/wyciag_probka.csv`. Jest krótki
+> i celowo różnorodny — siedzą w nim wszystkie warianty, jakie przychodzą do nas
+> z systemu źródłowego.
+
+## Kroki
+
+1. **Pokaż modelowi konwencję, zanim poprosisz o testy.** Załącz `tests/transactions/validate.test.ts` jako wzór: nazwy testów po polsku, funkcja budująca poprawne dane, jedno pole zmieniane na test.
+2. **Zleć testy dla `src/import/parseBankFile.ts`** w oparciu o `dane/wyciag_probka.csv`. Nowe pliki idą do `tests/import/`.
+3. **Uruchom `npm test`.** Test, który nie przechodzi, jest informacją, nie porażką — rozstrzygnij, czy błąd siedzi w teście, czy w module.
+4. **Przypisz każdy wiersz próbki do testu, który go dotyka.** Rób to w otwartym pliku, wiersz po wierszu, nie z pamięci.
+5. **Dopisz testy do wierszy, które zostały bez przypisania.**
+
+> **Jeśli utknąłeś po 10 minutach**
+> Nie zaczynaj od modułu, zacznij od pliku. Otwórz `dane/wyciag_probka.csv`
+> i wypisz, czym każdy wiersz różni się od poprzedniego. Czego jest tam dokładnie
+> jedno wystąpienie? Ta lista jest listą twoich testów.
+
+> **Wolisz opisać, co ma działać, niż to zaprogramować**
+> Robisz to samo ćwiczenie bez pisania kodu testu:
+>
+> 1. Otwórz `dane/wyciag_probka.csv` i opisz, co odróżnia każdy wiersz od reszty:
+>    format kwoty, format daty, waluta, kierunek operacji, komplet kolumn, znaki
+>    diakrytyczne, wiersze, które nie są danymi.
+> 2. Przekuj tę listę w tabelę scenariuszy: wejście — oczekiwany wynik — co ma się
+>    stać, kiedy wynik jest inny. Po jednym wierszu na przypadek, bez łączenia dwóch
+>    wariantów w jeden.
+> 3. Dopisz kryteria akceptacji dla całego pliku: ile operacji ma wejść, co ma się
+>    stać z wierszem, którego nie da się odczytać, i co z liczbami zadeklarowanymi
+>    w nagłówku technicznym.
+> 4. Daj tabelę modelowi i każ mu wskazać przypadki z pliku, których w niej nie ma.
+>    Każdy jego punkt sprawdź w pliku — na wierszu, nie na słowo.
+>
+> Twoja tabela jest materiałem wejściowym dla osoby, która pisze testy obok. Wymieńcie
+> się: ona sprawdza, czy jej testy pokrywają twoje scenariusze, ty sprawdzasz, czy
+> któregoś scenariusza nie da się z jej testów odtworzyć.
+
+> **Skończyłeś wcześniej**
+> Drugi cel na przypadki brzegowe: `addBusinessDays` w `src/interest/valueDate.ts`.
+> Napisz testy dla dat wpadających w piątek, w sobotę, w poniedziałek po dniu
+> ustawowo wolnym i dla `n` równego zero. Oczekiwany wynik ustalaj w kalendarzu,
+> zanim zobaczysz, co zwraca funkcja.
+
+## Gotowe, gdy
+
+- [ ] `npm test` przechodzi, a w `tests/import/` są testy, których rano nie było
+- [ ] umiesz wskazać w `dane/wyciag_probka.csv` wiersz, którego nie dotyka żaden test, i powiedzieć, czym ten wiersz różni się od pozostałych
+- [ ] druga osoba w parze potrafi z samych nazw twoich testów odtworzyć, co moduł ma robić z plikiem
+
+## Na koniec ćwiczenia
+
+```
+git switch -c imie/cw06 && git add -A && git commit -m "cw06" --allow-empty && git switch main
+```
