@@ -1,6 +1,8 @@
 # szkolenie-ai-rejestr-rozliczen
 
-Repozytorium ćwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. **Dane w `dane/` są syntetyczne** (żadnych prawdziwych danych osobowych ani rachunków) - to materiał do ćwiczeń, nie produkcyjna aplikacja.
+Repozytorium ćwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. Udaje zastany system rozliczeniowy: rejestr transakcji, naliczanie odsetek, raport dzienny.
+
+**Wszystko w `dane/` jest zmyślone.** Numery rachunków mają nieistniejący kod banku i niepoprawne cyfry kontrolne, nazwiska i firmy nie istnieją, zgłoszenia klientów zostały napisane na potrzeby ćwiczeń. Żaden plik w tym repozytorium nie pochodzi z systemu produkcyjnego ani z żadnej instytucji finansowej. To materiał dydaktyczny, nie aplikacja.
 
 ## Start
 

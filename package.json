@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Repozytorium ćwiczeniowe do szkolenia z AI w pracy programisty. Dane syntetyczne.",
+  "description": "Repozytorium cwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. Dane syntetyczne.",
   "engines": {
     "node": ">=20"
   },
