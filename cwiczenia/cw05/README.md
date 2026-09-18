@@ -29,7 +29,7 @@ Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z kom
 ## Kroki
 
 1. **Przeczytaj `src/interest/accrue.ts` sam, zanim otworzysz czat.** Nie całość — wejście funkcji, kształt wyniku i miejsca, w których kod się rozgałęzia.
-2. **Zleć modelowi streszczenie modułu:** co liczy, od czego zależy, co zwraca.
+2. **Zleć modelowi streszczenie modułu:** co liczy, od czego zależy, co zwraca. Powiedz mu wprost, żeby nie generował przy tym kodu. Kod w odpowiedzi na tym etapie przeszkadza: zaczynasz go czytać, zamiast rozumieć moduł.
 3. **Podłóż pod każde zdanie streszczenia linię z kodu.** Które zdania da się podpisać numerem linii, a pod które linii nie ma?
 4. **Zestaw z wersją w Javie.** `legacy-java/OdsetkiCalculator.java` liczy to samo, rok wcześniej. Wypisz różnice i przy każdej rozstrzygnij: inny algorytm czy funkcja dorobiona później?
 5. **Przejdź `src/transactions/validate.ts` pod kątem tego, co przez niego przechodzi.** Kontrakt pól stoi w `src/model.ts`. Szukasz danych, które kod przepuszcza, mimo że kontrakt ich zabrania.

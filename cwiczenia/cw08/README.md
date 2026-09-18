@@ -30,7 +30,7 @@ Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim za
 1. **Uruchom `npm test`.** Zobacz, co jest zielone, zanim uznasz, że coś cię chroni.
 2. **Ustal, czego te testy nie dotykają.** Zestaw `tests/interest/accrue.test.ts` z listą wejść w `dane/odsetki_przypadki.json` i z rozgałęzieniami w `src/interest/accrue.ts`. Wypisz gałęzie, przez które nie przechodzi ani jeden test.
 3. **Domknij siatkę, zanim ruszysz kod.** Dopisz przypadki tak, żeby utrwalały dzisiejsze wyniki gałęzi, które zostały bez pokrycia.
-4. **Wyodrębnij dobór stawki i naliczenie dzienne do `src/interest/stawki.ts`.** Do środka idzie to, co wylicza odsetki za jeden dzień przy danym saldzie, produkcie i parametrach. W `accrueInterest` zostaje pętla dnia, kapitalizacja, podatek i saldo.
+4. **Wyodrębnij dobór stawki i naliczenie dzienne do `src/interest/stawki.ts`.** Do środka idzie to, co wylicza odsetki za jeden dzień przy danym saldzie, produkcie i parametrach. W `accrueInterest` zostaje pętla dnia, kapitalizacja, podatek i saldo. Tnij po teście, nie po pliku: kawałek nadaje się do wyjęcia wtedy, gdy umiesz wskazać test, który spadnie, jeśli go zepsujesz.
 5. **Uruchamiaj testy po każdym cięciu, nie na końcu.** Migawka, która się zmieniła, jest sygnałem, że zmieniłeś zachowanie — nie powodem, żeby ją zaktualizować.
 
 > **Jeśli utknąłeś po 15 minutach**
