@@ -1,12 +1,18 @@
 # Prosty pipeline na potrzeby szkolenia - materiał do pokazania na sali,
-# nie produkcyjny CI. Dwa zadania: typecheck i testy, oba na obrazie node.
-
-image: node:24
+# nie produkcyjny CI. Trzy zadania: typecheck, testy i wykrywanie sekretów.
+#
+# Obraz node jest ustawiony przy zadaniach, a nie globalnie, żeby zadanie
+# skanujące mogło użyć własnego obrazu z szablonu GitLaba.
 
 stages:
   - build
+  - secret-detection
+
+variables:
+  SECRET_DETECTION_ENABLED: 'true'
 
 .zaleznosci: &zaleznosci
+  image: node:24
   before_script:
     - npm ci
 
@@ -21,3 +27,9 @@ test:
   <<: *zaleznosci
   script:
     - npm test
+
+secret_detection:
+  stage: secret-detection
+
+include:
+  - template: Security/Secret-Detection.gitlab-ci.yml
