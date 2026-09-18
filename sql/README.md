@@ -7,10 +7,14 @@ w dialekcie, na którym pracuje bank, zamiast w TypeScripcie.
 **Dialekt: Oracle Database (SQL + PL/SQL, składnia zgodna z Oracle 19c+).**
 Nie DB2, nie PostgreSQL, nie T-SQL.
 
-**Nikt tego nie uruchamia.** W środowisku szkoleniowym nie ma bazy danych —
-te pliki są materiałem do czytania, wyjaśniania i analizy przez model AI,
-nie do wykonania. Nie próbuj `sqlplus` ani żadnego klienta Oracle na tych
-plikach — nie ma do czego się podłączyć.
+**Tych plików nikt nie uruchamia.** Instancji Oracle tu nie ma — są materiałem
+do czytania, wyjaśniania i analizy przez model AI, nie do wykonania. Nie próbuj
+`sqlplus` ani żadnego klienta Oracle na tych plikach, nie ma do czego się
+podłączyć.
+
+Wyjątkiem jest podkatalog **`lokalnie/`** — tam jest SQLite, który działa od
+razu, bez instalacji i bez serwera (`npm run sql:setup`, `npm run sql:raport`).
+Opis w `lokalnie/README.md`.
 
 ## Pliki
 

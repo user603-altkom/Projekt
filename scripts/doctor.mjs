@@ -17,6 +17,7 @@
 
 import { execFile } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
+import { builtinModules } from 'node:module';
 import net from 'node:net';
 import os from 'node:os';
 import path from 'node:path';
@@ -138,6 +139,25 @@ function sprawdzWersjeNode() {
     );
   } else {
     zapisz('ok', 'Wersja Node.js', `Spełnia wymaganie z package.json (${wymagana}).`);
+  }
+
+  // Moduł `node:sqlite` jest potrzebny wyłącznie w ścieżce SQL (`npm run sql:setup`).
+  // Reszta repozytorium działa bez niego, więc jego brak to informacja, nie błąd.
+  //
+  // Sprawdzamy przez listę modułów wbudowanych, a nie przez import - import
+  // wypisałby ExperimentalWarning w środek diagnostyki.
+  const maSqlite = builtinModules.includes('node:sqlite');
+
+  if (maSqlite) {
+    zapisz('ok', 'Moduł node:sqlite', 'Dostępny - ścieżka SQL zadziała.');
+  } else {
+    zapisz(
+      'info',
+      'Moduł node:sqlite',
+      `Niedostępny w node ${aktualna}. Reszta repozytorium działa normalnie.\n` +
+        'Potrzebny tylko wtedy, gdy będziesz robić ścieżkę SQL ("npm run sql:setup").\n' +
+        'Co zrobić: zainstaluj node 24, np. nvm install 24 && nvm use 24'
+    );
   }
 }
 

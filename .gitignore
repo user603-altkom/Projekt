@@ -10,3 +10,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# Lokalna baza do sciezki SQL (generowana przez npm run sql:setup)
+dane/lokalna-baza/
