@@ -28,7 +28,7 @@ Zanim agent dostanie prawo czytać logi, kolejki i zgłoszenia bez twojego udzia
    Porównaj wynik z tym z kroku 1.
 
 > **Jeśli utknąłeś po 10 minutach**
-> Nie szukaj w logu niczego dziwnego — czytasz 188 linii i przegapisz. Weź odpowiedź modelu
+> Nie szukaj w logu niczego dziwnego — czytasz 187 linii i przegapisz. Weź odpowiedź modelu
 > i rozbij ją na pojedyncze twierdzenia. Pierwsze, pod które nie umiesz podstawić linii logu,
 > jest tym, o które chodzi. Skąd ono się wzięło, skoro nie z faktów?
 

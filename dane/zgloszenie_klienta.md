@@ -100,7 +100,7 @@ wierszach (0,24 PLN na 219 pozycji), a nie jeden większy błąd na jednej pozyc
 ta sama niezgodność sumy kontrolnej występuje też na miesięcznym wyciągu
 sierpniowym.
 
-**Dokładny komunikat błędu z logu nocnego przebiegu** (0,19 PLN w nawiasie to próg
+**Komunikat błędu z logu nocnego przebiegu** (0,19 PLN w nawiasie to próg
 ostrzegawczy zadania rekoncyliacji, a nie kwota rozbieżności — zgłaszane 0,24 PLN
 ten próg przekracza):
 

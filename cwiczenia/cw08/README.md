@@ -12,7 +12,7 @@ Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim za
 
 > Z notatki po przeglądzie kodu, 15.09:
 >
-> `accrueInterest` ma dwieście linii, `any` na wejściu i `any` na wyjściu, i nikt
+> `accrueInterest` ma ponad dwieście linii, `any` na wejściu i `any` na wyjściu, i nikt
 > z nas nie wchodzi tam bez potrzeby. W kwartale wchodzą nowe stawki promocyjne
 > i ktoś będzie musiał.
 >
