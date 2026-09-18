@@ -68,6 +68,13 @@ Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast 
 > pytanie: `npm test` jest zielone i było zielone przez cały czas, kiedy to trwało.
 > Który test powinien był to złapać i dlaczego nie złapał? `git log -p` na pliku
 > z tym testem powie ci więcej niż sam plik.
+>
+> Zostało ci jeszcze czasu? Każ modelowi zbudować podgląd tych danych. Jeden
+> plik `.html`, otwierany podwójnym kliknięciem, bez zależności i bez
+> internetu: wiersze, które wnoszą odchylenie, i suma narastająca. Wynik ma
+> policzyć z pliku, nie dostać od ciebie. Inaczej dostaniesz ekran, który
+> ładnie pokazuje to, co sam podyktowałeś. Dowodem jest zgodność z
+> `npm run raport` co do grosza. Plik zostaw poza `src/`.
 
 ## Gotowe, gdy
 
