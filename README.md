@@ -23,6 +23,11 @@ Codzienna praca:
 - `npm run typecheck` - sprawdzenie typów bez kompilacji
 - `npm run raport` - generuje raport dzienny z `dane/wyciag_2026_08.csv`
 
+Ścieżka SQL (potrzebna tylko do jednego ćwiczenia, opis w `sql/lokalnie/README.md`):
+
+- `npm run sql:setup` - buduje lokalną bazę SQLite, bez instalowania czegokolwiek
+- `npm run sql:raport` - uruchamia raport obrotów, mierzy czas i sprawdza liczby
+
 ## Windows
 
 Uczestnicy pracują na Windowsie z Git for Windows i PowerShell 7 - **używaj Git Bash** jako domyślnego terminala do poleceń z tego repo (`npm ci`, `npm test`, `git ...`).
