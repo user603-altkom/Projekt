@@ -82,27 +82,41 @@ for (const t of surowe) {
 }
 
 const bledy = [];
+// Kazdy rodzaj bledu zglaszamy raz na oddzial - inaczej jedna zla kolumna
+// zalewa liste tym samym komunikatem i nie widac skali szkody.
+const juzZgloszone = new Set();
+let wszystkichBledow = 0;
+
+function zglos(klucz, tekst) {
+  wszystkichBledow++;
+  if (juzZgloszone.has(klucz) || bledy.length >= 5) return;
+  juzZgloszone.add(klucz);
+  bledy.push(tekst);
+}
+
 if (wiersze.length !== dzienne.size) {
-  bledy.push(`liczba wierszy: raport ${wiersze.length}, a powinno byc ${dzienne.size}`);
+  zglos('liczba-wierszy', `liczba wierszy: raport ${wiersze.length}, a powinno byc ${dzienne.size}`);
 }
 for (const w of wiersze) {
   const oczekiwane = dzienne.get(w.kod_oddzialu + '|' + w.data_waluty);
   if (!oczekiwane) {
-    bledy.push(`wiersz spoza zbioru: ${w.kod_oddzialu} ${w.data_waluty}`);
+    zglos('spoza|' + w.kod_oddzialu, `wiersz spoza zbioru: ${w.kod_oddzialu} ${w.data_waluty}`);
   } else if (Number(w.suma_grosze) !== oczekiwane.suma) {
-    bledy.push(
+    zglos(
+      'suma|' + w.kod_oddzialu,
       `${w.kod_oddzialu} ${w.data_waluty}: suma ${w.suma_grosze}, a powinno byc ${oczekiwane.suma}`
     );
   } else if (Number(w.liczba_operacji) !== oczekiwane.liczba) {
-    bledy.push(
+    zglos(
+      'operacji|' + w.kod_oddzialu,
       `${w.kod_oddzialu} ${w.data_waluty}: operacji ${w.liczba_operacji}, a powinno byc ${oczekiwane.liczba}`
     );
   } else if (Number(w.obrot_roczny_grosze) !== roczne.get(w.kod_oddzialu)) {
-    bledy.push(
+    zglos(
+      'roczny|' + w.kod_oddzialu,
       `${w.kod_oddzialu}: obrot roczny ${w.obrot_roczny_grosze}, a powinno byc ${roczne.get(w.kod_oddzialu)}`
     );
   }
-  if (bledy.length >= 5) break;
 }
 
 db.close();
@@ -120,7 +134,7 @@ console.log(`\nCzas wykonania:      ${czasMs} ms`);
 console.log(`Budzet:              ${BUDZET_MS} ms`);
 
 if (bledy.length > 0) {
-  console.log('\nLICZBY SIE NIE ZGADZAJA:');
+  console.log(`\nLICZBY SIE NIE ZGADZAJA (niezgodnych wierszy: ${wszystkichBledow}):`);
   for (const b of bledy) console.log('  - ' + b);
   console.log('\nRaport ma byc szybszy, nie inny. Cofnij zmiane, ktora zmienila wynik.');
   process.exit(1);

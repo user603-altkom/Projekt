@@ -47,8 +47,8 @@ Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast 
 1. **Zreprodukuj.** `npm run raport`
 2. **Postaw hipotezę, zanim zapytasz model.** Zapisz ją — wrócisz do niej na końcu.
 3. **Zawęź kontekst do plików, które podejrzewasz, i zleć modelowi znalezienie przyczyny.** Nie wklejaj wyciągu — to czterysta wierszy.
-4. **W połowie czasu przenieś to samo zadanie do drugiego narzędzia.** Pracowałeś w Copilocie — daj to Claude'owi. Pracowałeś w Claude — daj to Copilotowi. Drugie narzędzie zaczyna od tego samego zgłoszenia, bez twojej hipotezy i bez tego, co powiedziało pierwsze. Potem zestaw obie odpowiedzi: co znalazł jeden, czego nie znalazł drugi, o czym nie powiedział żaden.
-5. **Zweryfikuj poprawkę liczbą, nie wzrokiem.** `npm run raport` po zmianie, `npm test` po nim.
+4. **W połowie czasu przenieś to samo zadanie do drugiego narzędzia.** Pracowałeś w Copilocie — daj to Claude'owi. Pracowałeś w Claude — daj to Copilotowi. Drugie narzędzie zaczyna od tego samego zgłoszenia, bez twojej hipotezy i bez tego, co powiedziało pierwsze. Potem zestaw obie odpowiedzi: co znalazł jeden, czego nie znalazł drugi, o czym nie powiedział żaden. Masz pod ręką tylko jedno narzędzie? Zadaj to samo pytanie drugi raz, w nowej sesji, bez kontekstu i bez swojej hipotezy.
+5. **Zweryfikuj poprawkę liczbą, nie wzrokiem.** `npm run raport` po zmianie, `npm test` po nim. Potem odpowiedz na drugie pytanie: ten zestaw testów był zielony przez cały czas, kiedy raport się nie zgadzał. Który test powinien był to złapać i dlaczego nie złapał? `git log -p` na pliku z tym testem powie ci więcej niż sam plik.
 
 > **Jeśli utknąłeś po 15 minutach**
 > Porównaj sumę zadeklarowaną w nagłówku pliku z sumą policzoną po imporcie —
@@ -64,10 +64,10 @@ Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast 
 > narzędzie dostaje ten sam plik i to samo zgłoszenie.
 
 > **Skończyłeś wcześniej**
-> Napisz test, który złapałby to przed wdrożeniem. Potem odpowiedz na drugie
-> pytanie: `npm test` jest zielone i było zielone przez cały czas, kiedy to trwało.
-> Który test powinien był to złapać i dlaczego nie złapał? `git log -p` na pliku
-> z tym testem powie ci więcej niż sam plik.
+> Napisz test, który złapałby to przed wdrożeniem, i uruchom go na kodzie sprzed
+> poprawki. Potem sprawdź jeszcze jedno miejsce: czy ta sama konwersja nie
+> powtarza się gdzieś poza `src/`. Jeśli powtarza, to twoja poprawka niczego
+> tam nie naprawiła.
 >
 > Zostało ci jeszcze czasu? Każ modelowi zbudować podgląd tych danych. Jeden
 > plik `.html`, otwierany podwójnym kliknięciem, bez zależności i bez
