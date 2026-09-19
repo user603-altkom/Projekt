@@ -20,7 +20,7 @@ const PLIK_SCHEMATU = path.join(ROOT, 'sql', 'lokalnie', '001_schemat.sql');
 
 const ZIARNO = 20260921;
 const LICZBA_ODDZIALOW = 24;
-const DNI = 240;
+const DNI = 140;
 const OPERACJI_NA_DZIEN = 200;
 const PIERWSZY_DZIEN = Date.UTC(2025, 8, 1); // 2025-09-01
 

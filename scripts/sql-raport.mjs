@@ -20,8 +20,16 @@ const ROOT = path.resolve(KATALOG_SKRYPTU, '..');
 const PLIK_BAZY = path.join(ROOT, 'dane', 'lokalna-baza', 'rozliczenia.db');
 const PLIK_ZAPYTANIA = path.join(ROOT, 'sql', 'lokalnie', 'raport_obrotow.sql');
 
-/** Okno nocne przeliczone na skale tego zbioru danych. */
-const BUDZET_MS = 1000;
+/**
+ * Okno nocne przeliczone na skale tego zbioru danych.
+ *
+ * Dobrane tak, zeby dzialalo na roznym sprzecie: wersja z wadami przekracza
+ * budzet nawet na szybkiej maszynie, a wersja poprawiona miesci sie w nim
+ * na wyrazie wolniejszym laptopie firmowym. Zmierzone 19.09.2026 na dwoch
+ * maszynach: 1344 ms kontra 20 ms na MacBooku, 10-11 s kontra ok. 160 ms
+ * na Windowsie z 2019 roku.
+ */
+const BUDZET_MS = 500;
 
 let DatabaseSync;
 try {
