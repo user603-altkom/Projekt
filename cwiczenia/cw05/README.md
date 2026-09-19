@@ -71,7 +71,7 @@ Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z kom
 > **Skończyłeś wcześniej**
 > Napisz notatkę dla osoby, która przejmie moduł po tobie: co robi, czego nie
 > wolno w nim ruszyć bez testu, które zdania twojego opisu nie mają oparcia
-> w kodzie. Potem daj tę notatkę modelowi i każ mu ją podważyć — co da się z niej
+> w kodzie. Potem daj tę notatkę modelowi i każ mu ją podważyć: co da się z niej
 > wykreślić, bo nie da się tego sprawdzić w repozytorium?
 >
 > Potem wróć do listy różnic między wersją w TypeScripcie a tą w Javie i wybierz jedną,
