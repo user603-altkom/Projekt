@@ -60,7 +60,9 @@ Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast 
 > Instancji tutaj nie ma, więc zapytanie czytasz i tłumaczysz, nie uruchamiasz.
 > Każ modelowi wyjaśnić je linia po linii, ustal dokładnie, co dzieje się z kwotą,
 > zanim trafi do sumy, i zaproponuj poprawkę razem z zapytaniem kontrolnym, które
-> pokazałoby różnicę przed nią i po niej. Krok 4 obowiązuje tak samo — drugie
+> pokazałoby różnicę przed nią i po niej. Sprawdź przy tym, jakiego typu jest
+> kolumna `kwota` w `sql/001_init_transakcje.sql` - i czy odpowiedź modelu
+> nadal się broni, kiedy już to wiesz. Krok 4 obowiązuje tak samo — drugie
 > narzędzie dostaje ten sam plik i to samo zgłoszenie.
 
 > **Skończyłeś wcześniej**
