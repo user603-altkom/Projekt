@@ -53,6 +53,15 @@ Umieć przyspieszyć cudze zapytanie bez zmiany jego wyniku i pokazać dowód, �
 > wystarczyłoby porównanie samego czasu wykonania. Potem odtwórz tę samą
 > kontrolę na kartce dla `sql/raport_dzienny.sql` w dialekcie Oracle: co
 > musiałbyś policzyć niezależnie, żeby wychwycić taką zmianę na produkcji?
+>
+> Potem poszukaj granicy tej kontroli od drugiej strony. Zmień w zapytaniu okno
+> `90 PRECEDING` na `30 PRECEDING` i uruchom raport. Przechodzi na zielono? Jeśli
+> tak, to raport zwraca teraz inne liczby, a kontrola tego nie widzi. Znajdź jeszcze
+> jedną taką zmianę, której nie złapie.
+>
+> Na koniec dopisz do `scripts/sql-raport.mjs` sprawdzenie, które łapie to, co
+> znalazłeś. Potem zdecyduj, czy zostawiłbyś je na produkcji: kosztuje czas przy
+> każdym przebiegu, a chroni przed błędem, którego nikt jeszcze nie popełnił.
 
 ## Gotowe, gdy
 

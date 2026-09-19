@@ -51,6 +51,16 @@ Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim za
 > Skasuj `tests/interest/accrue.test.ts` razem z katalogiem `__snapshots__` i napisz
 > testy charakteryzujące od zera, tak żeby każda gałąź `accrueInterest` była dotknięta
 > co najmniej raz. Ile przypadków było na to potrzeba? Czego z nich nadal nie widać?
+>
+> Potem zrób coś odwrotnego i nieprzyjemnego: wróć do oryginalnego zestawu wejść
+> i usuń z niego trzy przypadki tak, żeby `npm test` nadal był zielony, a pokrycie
+> gałęzi spadło jak najmocniej. Które trzy wybrałeś i skąd wiedziałeś, że akurat te?
+> To jest dokładnie ta operacja, którą ktoś robi nieświadomie, kasując „zbędny"
+> przypadek, bo wygląda na powtórzenie innego.
+>
+> Na koniec jedno pytanie do zapisania na omówienie: gdyby w module siedział dziś
+> błąd, twoje migawki utrwaliłyby go jako poprawny wynik. Po czym poznasz różnicę
+> między migawką, która chroni zachowanie, a migawką, która betonuje błąd?
 
 ## Gotowe, gdy
 

@@ -73,6 +73,16 @@ Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z kom
 > wolno w nim ruszyć bez testu, które zdania twojego opisu nie mają oparcia
 > w kodzie. Potem daj tę notatkę modelowi i każ mu ją podważyć — co da się z niej
 > wykreślić, bo nie da się tego sprawdzić w repozytorium?
+>
+> Potem wróć do listy różnic między wersją w TypeScripcie a tą w Javie i wybierz jedną,
+> przy której nie umiałeś rozstrzygnąć, czy to inny algorytm, czy funkcja dorobiona
+> później. Rozstrzygnij ją liczbą. `dane/odsetki_przypadki.json` ma wejścia z opisami,
+> a `npm test` pokaże, co dzisiejszy kod z nimi robi. Która wersja liczy zgodnie
+> z opisem, a która tylko wygląda na zgodną?
+>
+> Jeśli i to masz za sobą: znajdź w module miejsce, w którym nazwa obiecuje co innego
+> niż robi ciało funkcji. Jest przynajmniej jedno. Jak byś to wykrył, gdyby nikt ci nie
+> powiedział, że tam jest?
 
 ## Gotowe, gdy
 

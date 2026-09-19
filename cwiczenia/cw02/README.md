@@ -41,6 +41,15 @@ Trzy razy, w narzędziu, za każdym razem precyzyjniej.
 > **Skończyłeś wcześniej**
 > Weź najlepsze z trzech poleceń i usuń z niego dokładnie jedno zdanie. Zapytaj jeszcze raz,
 > w nowej rozmowie. Które zdanie naprawdę niosło odpowiedź, a które tylko dobrze wyglądało?
+>
+> Potem zrób to samo od drugiej strony: weź najgorsze z trzech poleceń i dokładaj do niego
+> po jednym zdaniu z najlepszego, za każdym razem w nowej rozmowie, aż odpowiedź stanie się
+> użyteczna. Przy którym zdaniu to się stało?
+>
+> Na koniec połóż trzy odpowiedzi obok siebie i znajdź twierdzenie, które pada w jednej,
+> a w pozostałych go nie ma. Sprawdź w kodzie, czy jest prawdziwe. Jedno z dwojga jest
+> ciekawe: albo lepsze polecenie wydobyło coś, czego gorsze nie ruszyło, albo model dopisał
+> szczegół, którego nie ma nigdzie.
 
 ## Gotowe, gdy
 
