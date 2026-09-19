@@ -24,6 +24,10 @@ Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast 
 > wewnętrzny pytał już, skąd bierze się ta pozycja. Chcielibyśmy to zamknąć,
 > zanim zapyta drugi raz.
 >
+> Audyt prosi konkretnie o **listę operacji, których to dotyczyło** - identyfikatory
+> z wyciągu, żeby dało się je zestawić z naszą korektą. Samo wyjaśnienie, skąd bierze
+> się różnica, im nie wystarczy; pytają, które pozycje mamy poprawić.
+>
 > Wklejam, co wychodzi u nas:
 >
 > ```
@@ -46,7 +50,7 @@ Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast 
 
 1. **Zreprodukuj.** `npm run raport`
 2. **Postaw hipotezę, zanim zapytasz model.** Zapisz ją — wrócisz do niej na końcu.
-3. **Zawęź kontekst do plików, które podejrzewasz, i zleć modelowi znalezienie przyczyny.** Nie wklejaj wyciągu — to czterysta wierszy.
+3. **Zawęź kontekst do plików, które podejrzewasz, i zleć modelowi znalezienie przyczyny oraz listy operacji, których dotyczy.** Nie wklejaj wyciągu — to czterysta wierszy. Zwróć uwagę, czy model listę policzył, czy oszacował: słowo „najpewniej" przy liczbie znaczy, że zgadł.
 4. **W połowie czasu przenieś to samo zadanie do drugiego narzędzia.** Pracowałeś w Copilocie — daj to Claude'owi. Pracowałeś w Claude — daj to Copilotowi. Drugie narzędzie zaczyna od tego samego zgłoszenia, bez twojej hipotezy i bez tego, co powiedziało pierwsze. Potem zestaw obie odpowiedzi: co znalazł jeden, czego nie znalazł drugi, o czym nie powiedział żaden. Masz pod ręką tylko jedno narzędzie? Zadaj to samo pytanie drugi raz, w nowej sesji, bez kontekstu i bez swojej hipotezy.
 5. **Zweryfikuj poprawkę liczbą, nie wzrokiem.** `npm run raport` po zmianie, `npm test` po nim. Potem odpowiedz na drugie pytanie: ten zestaw testów był zielony przez cały czas, kiedy raport się nie zgadzał. Który test powinien był to złapać i dlaczego nie złapał? `git log -p` na pliku z tym testem powie ci więcej niż sam plik.
 
@@ -81,7 +85,7 @@ Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast 
 ## Gotowe, gdy
 
 - [ ] umiesz wskazać linię i wyjaśnić mechanizm własnymi słowami, nie cytatem z modelu
-- [ ] masz przebieg `npm run raport` sprzed poprawki i po niej, i umiesz wytłumaczyć różnicę między nimi co do grosza
+- [ ] masz policzoną listę identyfikatorów dla audytu oraz przebieg `npm run raport` sprzed poprawki i po niej - i umiesz wytłumaczyć obie liczby co do grosza
 - [ ] umiesz powiedzieć, o czym nie powiedziało żadne z dwóch narzędzi — i czy dowiedziałbyś się tego, pytając tylko jednego
 
 ## Na koniec ćwiczenia

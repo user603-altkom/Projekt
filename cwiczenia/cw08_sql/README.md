@@ -31,7 +31,7 @@ Umieć przyspieszyć cudze zapytanie bez zmiany jego wyniku i pokazać dowód, �
 1. **Zbuduj bazę i zobacz stan wyjściowy.** `npm run sql:setup`, potem `npm run sql:raport`
 2. **Postaw hipotezę, zanim zapytasz model.** Które miejsce w tym zapytaniu wykonuje się raz, a które raz na wiersz wyniku? Zapisz odpowiedź.
 3. **Daj modelowi zapytanie i poproś o wskazanie kosztownych miejsc.** Nie proś od razu o gotową poprawkę. Najpierw lista miejsc razem z uzasadnieniem, potem dopiero zmiana.
-4. **Poprawiaj po jednej rzeczy naraz.** Po każdej zmianie `npm run sql:raport`. Zapisuj czas po każdym kroku. Licz się z tym, że nie każda poprawka coś da - i wtedy odpowiedz sobie na pytanie, dlaczego mimo to ją zostawiasz.
+4. **Poprawiaj po jednej rzeczy naraz.** Po każdej zmianie `npm run sql:raport`. Zapisuj czas po każdym kroku. Model wskaże ci kilka kosztownych miejsc naraz - po tej tabeli będziesz wiedział, **które z nich faktycznie coś dały, a które nic**. Przy tych drugich odpowiedz sobie, dlaczego mimo to zostawiasz poprawkę.
 5. **Sprawdź, czy model nie kupił czasu za wynik.** Zapytaj go wprost, czy jego wersja może zwrócić inne wiersze niż oryginał i w jakiej sytuacji.
 
 > **Jeśli utknąłeś po 15 minutach**
