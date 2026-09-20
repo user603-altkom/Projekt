@@ -1,6 +1,12 @@
 # Ćw. 8 (ścieżka SQL) — Bezpieczna optymalizacja
 
-**Czas:** 50 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D2 · 14:45–15:30 · 45 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Raport jest poprawny, ale kawa stygnie, zanim się policzy”.
+
+**Zakres:** Alternatywa dla cw08, nie dodatkowy obowiązek. Lokalny SQLite jest dostępny; bez instalowania Dockera na sali.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 Bierzesz tę kartę zamiast Ćw. 8, jeśli na co dzień pracujesz z bazą, a nie z TypeScriptem. Materiał jest ten sam: zmieniasz cudzy kod i musisz udowodnić, że wynik się nie zmienił.
 
@@ -71,6 +77,11 @@ Umieć przyspieszyć cudze zapytanie bez zmiany jego wyniku i pokazać dowód, �
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw08sql && git add -A && git commit -m "cw08 sql" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

@@ -39,8 +39,8 @@ const TIMEOUT_SIECIOWY_MS = 5000;
 // samego startu, ale warto o tym wiedzieć wcześniej niż w dniu 2 albo 3.
 const HOSTY_DO_SPRAWDZENIA = [
   { host: 'registry.npmjs.org', krytyczny: true, opis: 'rejestr paczek npm - potrzebny do "npm ci"' },
-  { host: 'api.githubcopilot.com', krytyczny: false, opis: 'GitHub Copilot - potrzebny w dniach 2-3' },
-  { host: 'api.anthropic.com', krytyczny: false, opis: 'Claude / Anthropic - potrzebny w dniach 2-3' },
+  { host: 'api.githubcopilot.com', krytyczny: false, opis: 'GitHub Copilot - używany od dnia 1' },
+  { host: 'api.anthropic.com', krytyczny: false, opis: 'Claude / Anthropic - używany od dnia 1' },
   { host: 'gitlab.com', krytyczny: false, opis: 'GitLab - hosting repozytorium' },
 ];
 
@@ -134,7 +134,7 @@ function sprawdzWersjeNode() {
       `Masz node ${aktualna}, a repozytorium wymaga wersji ${wymagana}.\n` +
         'Co zrobić: zainstaluj aktualną wersję LTS ze strony https://nodejs.org ' +
         'i uruchom ten skrypt ponownie.\n' +
-        'Jeśli używasz nvm (albo nvm-windows), wystarczy: nvm install 20 && nvm use 20',
+        'Jeśli używasz nvm (albo nvm-windows), wystarczy: nvm install 24 && nvm use 24',
       { krytyczny: true }
     );
   } else {

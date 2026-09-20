@@ -1,6 +1,12 @@
 # Ćw. 4 — Od wymagania do planu
 
-**Czas:** 35 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D1 · 14:45–15:20 · 35 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Limit miał być prosty, dopóki nie padło pytanie: w jakiej walucie?”.
+
+**Zakres:** Zapisz kryteria w portfolio/kryteria-limitow.md. Oddziel szerokie zgłoszenie od podstawy finału z historia/brief_operatora.md. Nie implementuj dziś całego zgłoszenia.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 ## Cel
 
@@ -60,6 +66,11 @@ zbudowania własnej. Zapisz kryteria tak, żeby były zrozumiałe dla ciebie za 
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw04 && git add -A && git commit -m "cw04" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

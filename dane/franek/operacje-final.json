@@ -1,0 +1,32 @@
+[
+  {
+    "id": "FR-001",
+    "nrRachunku": "20000089180903978540630428",
+    "kwotaGrosze": 6000,
+    "waluta": "PLN",
+    "typ": "OBCIAZENIE",
+    "bookedAt": "2026-08-20T10:00:00",
+    "dataWaluty": "2026-08-20",
+    "tytul": "Syntetyczna operacja 1"
+  },
+  {
+    "id": "FR-002",
+    "nrRachunku": "20000089180903978540630428",
+    "kwotaGrosze": 5000,
+    "waluta": "PLN",
+    "typ": "OBCIAZENIE",
+    "bookedAt": "2026-08-20T10:01:00",
+    "dataWaluty": "2026-08-20",
+    "tytul": "Syntetyczna operacja 2"
+  },
+  {
+    "id": "FR-003",
+    "nrRachunku": "20000089180903978540630428",
+    "kwotaGrosze": 2000,
+    "waluta": "PLN",
+    "typ": "OBCIAZENIE",
+    "bookedAt": "2026-08-20T10:02:00",
+    "dataWaluty": "2026-08-20",
+    "tytul": "Syntetyczna operacja 3"
+  }
+]

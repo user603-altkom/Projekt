@@ -1,0 +1,11 @@
+{
+  "opis": "Dane syntetyczne; scenariusz jednej partii PLN. Limit 100,00 PLN.",
+  "limity": [
+    {
+      "nrRachunku": "20000089180903978540630428",
+      "limitGrosze": 10000,
+      "waluta": "PLN",
+      "obowiazujeOd": "2026-01-01"
+    }
+  ]
+}

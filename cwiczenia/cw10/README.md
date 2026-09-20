@@ -1,6 +1,12 @@
 # Ćw. 10 — Code review w dwie strony
 
-**Czas:** 55 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D3 · 10:45–11:30 · 45 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Limity napisałem. Czy spełniają wymagania? Dobre pytanie”.
+
+**Zakres:** Recenzuj zamrożony zmiana.diff oraz src/limits/creditLimit.ts obecny w starterze. Nie przełączaj gałęzi i nie aplikuj diffu ponownie. Podstawa: trzy sprawdzone uwagi lub potwierdzenia; rozszerzenie: test dla jednej luki.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 ## Cel
 
@@ -18,11 +24,11 @@ Pełny opis od autora — co zmienił, co założył i o co prosi recenzenta —
 
 ## Kroki
 
-1. **Wyciągnij własne kryteria akceptacji z Ćw. 4.** To jest ta sama sprawa: zgłoszenie, które wtedy rozbijałeś na zadania i kryteria, ktoś tymczasem zaimplementował. Otwórz swoją listę (`git switch imie/cw04`, przeczytaj, `git switch main`) i miej ją przed sobą, zanim cokolwiek zapytasz modelu.
+1. **Wyciągnij własne kryteria akceptacji z Ćw. 4.** To jest ta sama sprawa: zgłoszenie, które wtedy rozbijałeś na zadania i kryteria, ktoś tymczasem zaimplementował. Otwórz swoją listę (`portfolio/kryteria-limitow.md`) i miej ją przed sobą, zanim cokolwiek zapytasz modelu.
 2. **Zleć recenzję diffu.** Wskaż `cwiczenia/cw10/zmiana.diff` — narzędzie w IDE nie przeczyta samo `git diff main...recenzja/cw10-limity-kredytowe`. Zapisz listę uwag w takiej kolejności, w jakiej je dostałeś.
 3. **Przejdź swoje kryteria po kolei i przy każdym postaw jedno z trzech:** spełnione / niespełnione / nie da się stwierdzić z samego diffu. Pytanie brzmi „czy ta implementacja robi to, czego sam wymagałeś", a nie „gdzie jest błąd". Trzeci stan jest pełnoprawną odpowiedzią i zwykle najciekawszą.
 4. **Odsiej uwagi modelu.** Które były trafione, które puste, a które dotyczyły rzeczy, o których model nie ma jak wiedzieć — decyzji produktowej, ustalenia z biznesem, kosztu operacyjnego. Wypisz trzy rzeczy, których recenzentowi-AI nie oddajesz.
-5. **Stań po stronie autora.** Weź własną zmianę z Ćw. 7 albo Ćw. 8 (`git switch imie/cw07`) i przygotuj ją do recenzji: opis co i dlaczego, uzasadnienie decyzji, które podjąłeś sam, oraz lista rzeczy do sprawdzenia przez człowieka. Model pomaga pisać, ty odpowiadasz za treść.
+5. **Stań po stronie autora.** Weź własną zmianę z Ćw. 7 albo Ćw. 8 (`git log -p`) i przygotuj ją do recenzji: opis co i dlaczego, uzasadnienie decyzji, które podjąłeś sam, oraz lista rzeczy do sprawdzenia przez człowieka. Model pomaga pisać, ty odpowiadasz za treść.
 
 > **Jeśli utknąłeś po 15 minutach**
 > Nie czytaj diffu od góry do dołu — 629 linii przeczytasz i nic z tego nie zapamiętasz.
@@ -44,13 +50,18 @@ Pełny opis od autora — co zmienił, co założył i o co prosi recenzenta —
 ## Gotowe, gdy
 
 - [ ] masz swoje kryteria z Ćw. 4, każde oznaczone: spełnione / niespełnione / nie da się stwierdzić z diffu
-- [ ] wskazujesz drugiej osobie co najmniej jedną uwagę modelu, która była nietrafiona, i mówisz, po czym to poznałeś
+- [ ] weryfikujesz co najmniej trzy uwagi lub potwierdzenia modelu i pokazujesz dowód; brak fałszywej uwagi nie obniża wyniku
 - [ ] twoja zmiana z dnia 2 ma opis, po którym recenzent wie, co sprawdzić ręcznie, bez zadawania ci pytań
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw10 && git add -A && git commit -m "cw10" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```
 
 ---
@@ -63,10 +74,7 @@ Zmiana czeka na recenzję. Cały jej kod jest w `zmiana.diff` w tym katalogu —
 zestaw commitów, co na gałęzi `recenzja/cw10-limity-kredytowe`, zapisany jako plik, żeby
 dało się go wskazać narzędziu bez przełączania gałęzi.
 
-```
-git diff main...recenzja/cw10-limity-kredytowe   # to samo, co w zmiana.diff
-git log --oneline main..recenzja/cw10-limity-kredytowe
-```
+Historyczna gałąź służy archiwizacji. Źródłem tego ćwiczenia jest dostarczony `zmiana.diff`; moduł jest już obecny w starterze.
 
 ### Opis zmiany (od autora)
 

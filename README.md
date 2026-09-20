@@ -4,6 +4,10 @@ Repozytorium ćwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. Ud
 
 **Wszystko w `dane/` jest zmyślone.** Numery rachunków mają nieistniejący kod banku i niepoprawne cyfry kontrolne, nazwiska i firmy nie istnieją, zgłoszenia klientów zostały napisane na potrzeby ćwiczeń. Żaden plik w tym repozytorium nie pochodzi z systemu produkcyjnego ani z żadnej instytucji finansowej. To materiał dydaktyczny, nie aplikacja.
 
+## Nowa ścieżka: historia Franka
+
+**Zacznij od [START.md](START.md).** Tam są kolejność zadań, wspólna gałąź i ekran operatora. Scenariusz zamyka się działającym fragmentem ekranu w trzecim dniu.
+
 ## Start
 
 **Krok 0, przed czymkolwiek innym** - sprawdź środowisko (nie wymaga instalacji niczego):
@@ -65,5 +69,5 @@ Katalog `legacy-java/` jest **wyłącznie do czytania**. Nikt tego nie kompiluje
 
 ## Wymagania
 
-- Node.js 20 lub nowszy
+- Node.js 24 lub nowszy
 - Git

@@ -1,6 +1,12 @@
 # Ćw. 3 — Anonimizacja
 
-**Czas:** 35 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D1 · 13:25–13:50 · 25 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Zgłoszenie klienta jest najbardziej konkretne. I właśnie dlatego nie wklejajmy go w całości”.
+
+**Zakres:** Podstawa: minimalny fragment zgłoszenia. Rozszerzenie: ryzyko ponownej identyfikacji przez łączenie danych.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 ## Cel
 
@@ -81,6 +87,11 @@ zostać, żeby odpowiedź była cokolwiek warta — także wtedy, gdy procedura 
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw03 && git add -A && git commit -m "cw03" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

@@ -1,6 +1,12 @@
 # Ćw. 8 — Bezpieczna refaktoryzacja
 
-**Czas:** 50 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D2 · 14:45–15:30 · 45 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Następne stawki mają wejść bez kolejnego nocnego dyżuru”.
+
+**Zakres:** Wybierz jeden mały fragment refaktoryzacji. Alternatywa: cw08_sql. Nie rób obu. Zakończ dowodem zachowania, nie liczbą zmienionych linii.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
@@ -70,6 +76,11 @@ Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim za
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw08 && git add -A && git commit -m "cw08" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

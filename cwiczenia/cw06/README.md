@@ -1,6 +1,12 @@
 # Ćw. 6 — Testy dla modułu bez testów
 
-**Czas:** 45 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D2 · 10:55–11:35 · 40 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Testy były zielone. Tylko nie pytały o to, o co pytał operator”.
+
+**Zakres:** Podstawa: trzy różne scenariusze i niezależnie ustalony wynik. Rozszerzenie: pokaż czerwony test przed poprawką i zielony po. Nie naprawiaj produkcyjnego kodu tylko po to, żeby dopasować go do wygenerowanego oczekiwania.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
@@ -65,12 +71,17 @@ Umieć powiedzieć, czego wygenerowany zestaw testów nie pokrywa, i sprawdzić 
 
 ## Gotowe, gdy
 
-- [ ] `npm test` przechodzi, a w `tests/import/` są testy, których rano nie było
-- [ ] umiesz wskazać w `dane/wyciag_probka.csv` wiersz, którego nie dotyka żaden test, i powiedzieć, czym ten wiersz różni się od pozostałych
+- [ ] w `tests/import/` są nowe testy; ewentualny czerwony test ma niezależnie potwierdzone oczekiwanie i opis znalezionej usterki
+- [ ] masz mapę próbka → testy; wskazujesz lukę albo dowodzisz pokrycia wszystkich wierszy
 - [ ] partner potrafi z samych nazw twoich testów odtworzyć, co moduł ma robić z plikiem
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw06 && git add -A && git commit -m "cw06" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

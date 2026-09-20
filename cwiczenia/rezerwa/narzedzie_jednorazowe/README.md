@@ -54,6 +54,11 @@ Umieć kazać modelowi zbudować jednorazowe narzędzie do obejrzenia własnych 
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/rezerwa-narzedzie && git add -A && git commit -m "rezerwa narzedzie" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

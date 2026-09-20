@@ -1,6 +1,12 @@
 # Ćw. 5 — Wejście w nieznany kod
 
-**Czas:** 40 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D2 · 9:10–9:40 · 30 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Odsetki? Zostawiłem komentarze. Nie wszystkie aktualne”.
+
+**Zakres:** Podstawa: mapa wejście–funkcja–wynik i trzy dowody. Rozszerzenie: rozbieżność kodu i komentarza. To osobny moduł tego samego produktu, nie zależność ekranu limitów.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
@@ -92,6 +98,11 @@ Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z kom
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw05 && git add -A && git commit -m "cw05" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

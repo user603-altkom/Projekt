@@ -1,6 +1,12 @@
 # Ćw. 12 — Zapytaj Copilota, czym to się różni
 
-**Czas:** 15 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** REZERWA · 15 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Ktoś wysłał mi siedem linków. Zrozumiałem dwa”.
+
+**Zakres:** Materiał dodatkowy po wspólnym ćw. 13; nie poprzedza już instrukcji dnia 1.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 ## Cel
 
@@ -75,6 +81,11 @@ Nie piszesz tu kodu i nie ma tu nic do uruchomienia. Ćwiczysz **technikę uczen
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw12 && git add -A && git commit -m "cw12" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

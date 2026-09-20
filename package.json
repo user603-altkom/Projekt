@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Repozytorium cwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. Dane syntetyczne.",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "test": "vitest run",
@@ -16,7 +16,11 @@
     "doctor": "node scripts/doctor.mjs",
     "sql:setup": "node --no-warnings scripts/sql-setup.mjs",
     "sql:raport": "node --no-warnings scripts/sql-raport.mjs",
-    "pg:dump": "node --no-warnings scripts/pg-dump.mjs"
+    "pg:dump": "node --no-warnings scripts/pg-dump.mjs",
+    "operator": "node --import tsx scripts/operator-server.ts",
+    "operator:eksport": "node --import tsx scripts/operator-export.ts",
+    "odbior": "node --import tsx scripts/odbior-final.ts",
+    "operator:sql": "node --import tsx scripts/operator-sql.ts"
   },
   "devDependencies": {
     "@types/node": "^24.9.2",

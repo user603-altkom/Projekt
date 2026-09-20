@@ -1,6 +1,12 @@
 # Ćw. 7 — Debugging
 
-**Czas:** 55 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D2 · 13:05–13:55 · 50 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Brakuje 23 groszy. To nie napiwek dla systemu”.
+
+**Zakres:** Podstawa: przyczyna, lista ID, suma przed/po i regresja. Rozszerzenie: druga niezależna diagnoza; porównanie narzędzi jest obowiązkowe dopiero dnia 3.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
@@ -54,8 +60,8 @@ To nie jest koniec ćwiczenia, tylko jego pierwszy krok. Ciężar leży w krokac
 1. **Zreprodukuj.** `npm run raport`
 2. **Postaw hipotezę, zanim zapytasz model.** Zapisz ją — wrócisz do niej na końcu.
 3. **Zawęź kontekst do plików, które podejrzewasz, i zleć modelowi znalezienie przyczyny oraz listy operacji, których dotyczy.** Nie wklejaj wyciągu — to czterysta wierszy. Zwróć uwagę, czy model listę policzył, czy oszacował: słowo „najpewniej" przy liczbie znaczy, że zgadł.
-4. **W połowie czasu przenieś to samo zadanie do drugiego narzędzia.** Pracowałeś w Copilocie — daj to Claude'owi. Pracowałeś w Claude — daj to Copilotowi. Drugie narzędzie zaczyna od tego samego zgłoszenia, bez twojej hipotezy i bez tego, co powiedziało pierwsze. Jeżeli pierwsze zdążyło już zapisać poprawkę w plikach, cofnij ją przed przekazaniem — `git stash` wystarczy. Na poprawionym kodzie nie porównujesz już dwóch diagnoz, tylko dwa opisy tej samej naprawy. Potem zestaw obie odpowiedzi: co znalazł jeden, czego nie znalazł drugi, o czym nie powiedział żaden. Masz pod ręką tylko jedno narzędzie? Zadaj to samo pytanie drugi raz, w nowej sesji, bez kontekstu i bez swojej hipotezy.
-5. **Zweryfikuj poprawkę liczbą, nie wzrokiem.** `npm run raport` po zmianie, `npm test` po nim. Potem odpowiedz na drugie pytanie: ten zestaw testów był zielony przez cały czas, kiedy raport się nie zgadzał. Który test powinien był to złapać i dlaczego nie złapał? `git log -p` na pliku z tym testem powie ci więcej niż sam plik.
+4. **Sprawdź diagnozę na niezależnym dowodzie.** Zleć skryptowi policzenie ID i sum, a potem sprawdź ręcznie dwie wskazane operacje. Drugi model jest rozszerzeniem; użyj osobnej kopii sprzed poprawki, bez cofania pracy w bieżącym repo.
+5. **Zweryfikuj poprawkę liczbą, nie wzrokiem.** `npm run raport` po zmianie, `npm test` po nim. Potem odpowiedz na drugie pytanie: ten zestaw testów był zielony przez cały czas, kiedy raport się nie zgadzał. Który test powinien był to złapać i dlaczego nie złapał? Jeśli pracujesz na klonie z historią, sprawdź też `git log -p` na pliku z tym testem. W paczce ZIP nie ma historii: porównaj asercje testu z wymaganiem i niezależnym wynikiem.
 
 > **Jeśli utknąłeś po 15 minutach**
 > Porównaj sumę zadeklarowaną w nagłówku pliku z sumą policzoną po imporcie —
@@ -64,13 +70,12 @@ To nie jest koniec ćwiczenia, tylko jego pierwszy krok. Ciężar leży w krokac
 
 > **Pracujesz z bazą, nie z TypeScriptem**
 > `sql/raport_dzienny.sql` liczy to samo po stronie bazy i pokazuje ten sam objaw.
-> Instancji tutaj nie ma, więc zapytanie czytasz i tłumaczysz, nie uruchamiasz.
+> Ten skrypt PostgreSQL czytasz jako materiał; lokalny wariant SQLite ma osobne polecenia w `sql/lokalnie/README.md`.
 > Każ modelowi wyjaśnić je linia po linii, ustal dokładnie, co dzieje się z kwotą,
 > zanim trafi do sumy, i zaproponuj poprawkę razem z zapytaniem kontrolnym, które
 > pokazałoby różnicę przed nią i po niej. Sprawdź przy tym, jakiego typu jest
 > kolumna `kwota` w `sql/001_init_transakcje.sql` - i czy odpowiedź modelu
-> nadal się broni, kiedy już to wiesz. Krok 4 obowiązuje tak samo — drugie
-> narzędzie dostaje ten sam plik i to samo zgłoszenie.
+> nadal się broni, kiedy już to wiesz. Sprawdź diagnozę niezależnym zapytaniem kontrolnym.
 
 > **Skończyłeś wcześniej**
 > Napisz test, który złapałby to przed wdrożeniem, i uruchom go na kodzie sprzed
@@ -89,10 +94,15 @@ To nie jest koniec ćwiczenia, tylko jego pierwszy krok. Ciężar leży w krokac
 
 - [ ] umiesz wskazać linię i wyjaśnić mechanizm własnymi słowami, nie cytatem z modelu
 - [ ] masz policzoną listę identyfikatorów dla audytu oraz przebieg `npm run raport` sprzed poprawki i po niej - i umiesz wytłumaczyć obie liczby co do grosza
-- [ ] umiesz powiedzieć, o czym nie powiedziało żadne z dwóch narzędzi — i czy dowiedziałbyś się tego, pytając tylko jednego
+- [ ] umiesz powiedzieć, czego nie potwierdziła sama diagnoza modelu i jak uzupełniłeś brakujące dowody
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw07 && git add -A && git commit -m "cw07" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

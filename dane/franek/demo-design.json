@@ -1,0 +1,45 @@
+{
+  "wersja": 1,
+  "tryb": "demo",
+  "zrodlo": "Przykład wzorcowy do projektowania; nie jest wynikiem modułu limitów.",
+  "liczbaOperacji": 3,
+  "stan": "gotowe",
+  "wiersze": [
+    {
+      "id": "FR-001",
+      "nrRachunku": "20000089180903978540630428",
+      "dataWaluty": "2026-08-20",
+      "waluta": "PLN",
+      "kwotaGrosze": 6000,
+      "limitGrosze": 10000,
+      "wykorzystanieGrosze": 6000,
+      "przekroczenieGrosze": 0,
+      "status": "w_limicie",
+      "powod": "Suma obciążeń w jednej partii PLN mieści się w limicie."
+    },
+    {
+      "id": "FR-002",
+      "nrRachunku": "20000089180903978540630428",
+      "dataWaluty": "2026-08-20",
+      "waluta": "PLN",
+      "kwotaGrosze": 5000,
+      "limitGrosze": 10000,
+      "wykorzystanieGrosze": 11000,
+      "przekroczenieGrosze": 1000,
+      "status": "przekroczenie",
+      "powod": "Suma obciążeń w jednej partii PLN przekracza limit."
+    },
+    {
+      "id": "FR-003",
+      "nrRachunku": "20000089180903978540630428",
+      "dataWaluty": "2026-08-20",
+      "waluta": "PLN",
+      "kwotaGrosze": 2000,
+      "limitGrosze": 10000,
+      "wykorzystanieGrosze": 13000,
+      "przekroczenieGrosze": 3000,
+      "status": "przekroczenie",
+      "powod": "Suma obciążeń w jednej partii PLN przekracza limit."
+    }
+  ]
+}

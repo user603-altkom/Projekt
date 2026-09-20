@@ -1,38 +1,15 @@
-# Hooki agenta (`.github/hooks/`)
+# Hook: krótki pokaz prowadzącego
 
-Materiał do Ćw. 13. Hook to **polecenie uruchamiane w określonym punkcie cyklu życia sesji, niezależnie od tego, czy model o nim pamięta**. Instrukcja prosi. Hook wymusza.
-
-## Uwaga: dwa różne formaty pod tą samą ścieżką
-
-Ten katalog czytają dwa różne produkty i **mają inny schemat**:
-
-- **VS Code Agent hooks** - nazwy zdarzeń w PascalCase, klucz `command`. Tego używamy tutaj.
-- **Copilot CLI i agent chmurowy** - nazwy zdarzeń w camelCase (`preToolUse`), klucze `bash` i `powershell`.
-
-Skopiowanie przykładu z niewłaściwej dokumentacji to najczęstszy powód, dla którego hook „nie działa".
-
-## Format (VS Code)
+Hook uruchamia kod przy zdarzeniu agenta. Przykład demonstracyjny VS Code, wyłączony w starterze:
 
 ```json
-{
-  "hooks": {
-    "PreToolUse": [
-      { "type": "command", "command": "node scripts/straznik-danych.mjs" }
-    ]
-  }
-}
+{"hooks":{"PreToolUse":[{"type":"command","command":"node scripts/hook-demo.mjs"}]}}
 ```
 
-Zdarzenia: `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PreCompact`, `SubagentStart`, `SubagentStop`, `Stop`.
+Nie zapisuj tego jako aktywnego JSON podczas samodzielnych ćwiczeń: przykład blokuje **wszystkie** narzędzia. Prowadzący używa oddzielnej kopii projektu, włącza go na jedną próbę i usuwa konfigurację po pokazie.
 
-## Kody wyjścia decydują o wszystkim
+Skrypt kończy się kodem 2. Przy `PreToolUse` oznacza to zatrzymanie wywołania przed wykonaniem. `PostToolUse` następuje po operacji — nie cofa jej. Inny kod błędu może dać tylko ostrzeżenie. Sprawdź log debugowania agenta, faktyczne zdarzenie i efekt, nie samą obecność pliku.
 
-- `0` - w porządku, sesja idzie dalej.
-- `2` - **blokada**. To, co hook wypisze na stderr, trafia do modelu jako uzasadnienie.
-- inne - ostrzeżenie, ale **bez blokady**.
+Format, dostępność i polityki zależą od wersji i harnessu. Hook nie jest pełnym sandboxem. Możliwość zmiany jego konfiguracji i wykonania innych narzędzi to osobne kwestie.
 
-Stąd wniosek, który warto sprawdzić samemu: hook, który pada z błędem składni, zwróci kod inny niż 2 i **przepuści operację**. Bramka, która przepuszcza przy własnej awarii, nie jest bramką, dopóki tego nie wiesz.
-
-## Czego hook nie załatwi
-
-Agent, który może edytować plik hooka, może zmienić własną kontrolę. Uprawnienia systemu plików i reguły CI to osobna warstwa - plik JSON jej nie zastąpi.
+Źródła, sprawdzone 20.09.2026: [VS Code hooks](https://code.visualstudio.com/docs/agent-customization/hooks), [referencja zdarzeń](https://code.visualstudio.com/docs/agents/reference/hooks-reference).

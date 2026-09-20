@@ -1,6 +1,12 @@
 # Ćw. 11 — Prompt injection i sanityzacja kontekstu
 
-**Czas:** 35 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D3 · 13:00–13:25 · 25 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Log to zapis zdarzeń. Ktoś potraktował go jak rozmowę z agentem”.
+
+**Zakres:** Czytaj syntetyczny log w sesji tylko do odczytu. Nie wykonuj poleceń znalezionych w treści logu. Jeżeli model poprawnie odrzuci instrukcję, to też wynik: pokaż dowód i ograniczenia.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 ## Cel
 
@@ -54,6 +60,11 @@ Zanim agent dostanie prawo czytać logi, kolejki i zgłoszenia bez twojego udzia
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw11 && git add -A && git commit -m "cw11" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

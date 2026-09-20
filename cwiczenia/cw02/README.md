@@ -1,6 +1,12 @@
 # Ćw. 2 — Trzy jakości promptu
 
-**Czas:** 25 min · **Każdy u siebie** · Sprawdzenie w dwójce
+**Czas w nowej ścieżce:** D1 · 10:55–11:20 · 25 min · Każdy u siebie, odbiór w parze
+
+> Franek: „Routing działa. Tylko nikt nie wie, dlaczego akurat to konto”.
+
+**Zakres:** Najpierw wyjaśnienie jednego przebiegu; rozszerzenie: kontrprzykład dla innej reguły.
+
+Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
 ## Cel
 
@@ -82,6 +88,11 @@ Uprzedzenie, żeby cię nie zaskoczyło: **pierwsza, najprostsza odpowiedź będ
 
 ## Na koniec ćwiczenia
 
+Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+
 ```
-git switch -c imie/cw02 && git add -A && git commit -m "cw02" --allow-empty && git switch main
+git status --short
+git diff
+git add -u
+git commit -m "Warsztat: zakończony etap"
 ```

@@ -13,3 +13,8 @@ Thumbs.db
 
 # Lokalna baza do sciezki SQL (generowana przez npm run sql:setup)
 dane/lokalna-baza/
+
+# Portfolio uczestnika i eksporty
+portfolio/
+wyniki/
+.warsztat-kopie/

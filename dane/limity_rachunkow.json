@@ -1,0 +1,48 @@
+{
+  "opis": "Limity kredytowe rachunków. Dane syntetyczne — numery rachunków są fikcyjne (zmyślony kod banku, niepoprawne cyfry kontrolne) i nie należą do żadnego klienta.",
+  "zrodlo": "katalog produktów, eksport z 2026-08-28",
+  "limity": [
+    {
+      "nrRachunku": "20000089180903978540630428",
+      "limitGrosze": 5000000,
+      "waluta": "PLN",
+      "obowiazujeOd": "2026-01-01"
+    },
+    {
+      "nrRachunku": "20000089180903978540630428",
+      "limitGrosze": 7500000,
+      "waluta": "PLN",
+      "obowiazujeOd": "2026-07-01"
+    },
+    {
+      "nrRachunku": "16000043230730175891481509",
+      "limitGrosze": 2000000,
+      "waluta": "EUR",
+      "obowiazujeOd": "2026-03-15"
+    },
+    {
+      "nrRachunku": "27000091286200793830739251",
+      "limitGrosze": 1500000,
+      "waluta": "PLN",
+      "obowiazujeOd": "2026-01-01"
+    },
+    {
+      "nrRachunku": "28000012357658272743178349",
+      "limitGrosze": 30000000,
+      "waluta": "PLN",
+      "obowiazujeOd": "2026-05-04"
+    },
+    {
+      "nrRachunku": "35000080542818573625816461",
+      "limitGrosze": 0,
+      "waluta": "PLN",
+      "obowiazujeOd": "2026-06-01"
+    },
+    {
+      "nrRachunku": "89000048016279458747470461",
+      "limitGrosze": 12000000,
+      "waluta": "PLN",
+      "obowiazujeOd": "2026-02-01"
+    }
+  ]
+}
