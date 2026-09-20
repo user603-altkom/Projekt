@@ -1,6 +1,6 @@
 # Ćw. 4 — Od wymagania do planu
 
-**Czas:** 35 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 35 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 ## Cel
 
@@ -50,9 +50,13 @@ Ryzyka Operacyjnego. Zaczyna się tak:
 
 - [ ] masz `cwiczenia/cw04/plan.md`, a każde zdanie, którego nie ma w zgłoszeniu, jest w nim
       oznaczone
-- [ ] druga osoba w parze bierze dowolne twoje kryterium akceptacji i potrafi powiedzieć,
+- [ ] partner bierze dowolne twoje kryterium akceptacji i potrafi powiedzieć,
       po czym pozna, że jest spełnione — bez pytania cię o cokolwiek
 - [ ] przy każdym oznaczonym założeniu stoi twoja decyzja i jedno zdanie uzasadnienia
+
+Ten plik jeszcze wróci. `cwiczenia/cw04/plan.md` jest materiałem wejściowym do Ćw. 10 i do
+zadania końcowego: raz posłuży do oceny cudzej implementacji tego samego zgłoszenia, raz do
+zbudowania własnej. Zapisz kryteria tak, żeby były zrozumiałe dla ciebie za dwa dni.
 
 ## Na koniec ćwiczenia
 

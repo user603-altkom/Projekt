@@ -1,55 +1,81 @@
-# Zadanie końcowe — od zgłoszenia do zmiany gotowej do recenzji
+# Zadanie końcowe — limity kredytowe wchodzą do rozliczenia
 
-**Czas:** 55 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 55 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 ## Cel
 
-Przejść jedną zmianę przez pełny cykl — analiza, implementacja, testy, opis, przygotowanie do recenzji — i wiedzieć, w którym miejscu tego cyklu stawiasz bramkę, jeśli prowadzisz go agentem.
-
-To jest sprawdzian całej trzydniowej listy warunków wstępnych naraz: kontekst, kryteria, weryfikacja, opis dla drugiego człowieka.
+Umieć doprowadzić agenta przez zmianę większą niż jeden plik tak, żeby na końcu wiedzieć
+o niej tyle, ile wiedziałbyś, gdybyś napisał ją sam — a w szczególności umieć wskazać
+miejsca, w których agent rozstrzygnął coś, czego nikt nie rozstrzygnął.
 
 ## Zgłoszenie
 
-Trzy zgłoszenia z backlogu, w tym katalogu. Weź **jedno**. Są niezależne, dotykają różnych części systemu, kolejność nie ma znaczenia.
+> Od: Departament Produktów dla Firm
+> Do: Zespół Rozliczeń
+> Temat: re: BR-2026-0142 — i co dalej
+>
+> Dzień dobry,
+>
+> dostaliśmy informację, że moduł liczący limity jest gotowy i ma testy. Sprawdziliśmy
+> u siebie: w rozliczeniu dziennym nadal nie widać ani jednego przekroczenia. Opiekunowie
+> klientów dalej dowiadują się o wszystkim z reklamacji, a Ryzyko dalej składa swoją listę
+> ręcznie z dwóch eksportów.
+>
+> Z naszej strony zgłoszenie jest zamknięte dopiero wtedy, gdy działają te trzy rzeczy
+> z pierwotnego pisma: rozliczenie zna limit rachunku, przekroczenie jest zgłaszane
+> z konkretem, a Ryzyko dostaje listę bez składania jej ręcznie.
+>
+> Komitet produktowy zbiera się za dwa tygodnie. Do tego czasu nie rozstrzygniemy tego,
+> czego nie rozstrzygnęliśmy w sierpniu. Jeżeli coś Wam po drodze będzie potrzebne do
+> decyzji, wypiszcie to, a my to wniesiemy — tylko wypiszcie wprost, bo ostatnim razem
+> okazało się po fakcie, że ktoś przyjął coś za nas.
 
-> `01_ujemna_kwota_w_walidacji.md` — „Operacja z ujemną kwotą przechodzi walidację"
-> `02_raport_dzienny_sumy_per_waluta.md` — „Raport dzienny sumuje operacje w różnych walutach do jednej kwoty"
-> `03_import_odrzuca_niezgodna_sume_kontrolna.md` — „Import przyjmuje plik, którego suma kontrolna nie zgadza się z zawartością"
-
-**Uwaga do trzeciego zgłoszenia.** Wdrożone wprost zatrzyma `npm run raport` na głównym pliku wyciągu — `dane/wyciag_2026_08.csv` jest właśnie plikiem, którego suma kontrolna nie zgadza się z zawartością. To nie jest twój błąd ani błąd repozytorium, tylko zderzenie dwóch prawdziwych wymagań, i zgłoszenie to przewiduje. Przeczytaj jego kryteria akceptacji do końca, zanim uznasz, że coś zepsułeś.
+Pełne zgłoszenie: `dane/zgloszenie_limity.md`. Moduł, o którym pisze Departament, jest na
+gałęzi `recenzja/cw10-limity-kredytowe` — ten sam, który recenzowałeś rano.
 
 ## Kroki
 
-1. **Wybierz zgłoszenie i ścieżkę.** Obie prowadzą do tego samego wyniku:
-   - **Ścieżka A — ask/edit krok po kroku.** Ty rozbijasz zadanie, ty decydujesz o każdej zmianie w każdym pliku, model pisze fragmenty na twoje polecenie. **Krótsza z założenia** — mniejszy zakres, krótsza pętla, mniej do zatwierdzania. To nie jest wersja dla słabszych.
-   - **Ścieżka B — tryb agentowy z bramkami.** Agent planuje i wykonuje, ty zatwierdzasz w trzech punktach: po planie i przed napisaniem pierwszej linii, przed zapisem zmian w plikach, przed uruchomieniem czegokolwiek. Bramki ustalasz z drugą osobą w parze, zanim wystartujesz — nie w trakcie.
-2. **Rozłóż zgłoszenie na kryteria akceptacji, zanim dotkniesz kodu.** Tak samo jak w Ćw. 4. Zapisz je. Do nich będziesz wracał przy odbiorze.
-3. **Zaimplementuj i sprawdź, czego nie zepsułeś.** `npm test`, `npm run typecheck`, `npm run raport`. Zielone testy nie są dowodem, że kryteria są spełnione — porównaj z listą z kroku 2, punkt po punkcie.
-4. **Napisz opis zmiany.** Co zmieniłeś, dlaczego tak, czego świadomie nie zrobiłeś, co recenzent musi sprawdzić ręcznie, bo z kodu tego nie widać.
-5. **Zatrzymaj się, kiedy zmiana jest opisana.** Kryterium ukończenia to **zmiana opisana, nie zmiana idealna**. Niedokończona implementacja z uczciwym „tego nie zdążyłem, tu jest ryzyko" jest lepszym wynikiem niż kod, o którym nikt nie wie, w jakim jest stanie.
+1. **Zbierz to, co już masz, zanim otworzysz narzędzie.** Kryteria akceptacji napisane
+   w Ćw. 4 (`git switch imie/cw04`, przeczytaj, `git switch main`), uwagi z recenzji
+   z Ćw. 10 i plik instrukcji z Ćw. 9. To jest twój materiał wejściowy — nie zaczynasz
+   od zera i agent też nie powinien.
+2. **Napisz jedno wejście dla agenta i dopiero potem je wyślij.** Ma zawierać cel, pliki
+   od których zacząć, to czego nie wolno ruszyć, i sposób, w jaki sprawdzisz, że jest
+   zrobione. Zapisz je sobie — będzie ci potrzebne w kroku 5.
+3. **Zatrzymaj go na planie.** Zanim powstanie pierwsza linia kodu, zestaw plan z twoimi
+   kryteriami z Ćw. 4. Szukasz dwóch rzeczy: czego w planie brakuje wobec zgłoszenia
+   i co w nim jest, choć nikt o to nie prosił.
+4. **Puść wykonanie i sprawdź je liczbą.** `npm test`, `npm run typecheck`,
+   `npm run raport`. Raport przed zmianą i po zmianie ma się różnić w dający się wskazać
+   sposób — jeżeli się nie różni, moduł nadal nie ma odbiorcy.
+5. **Wypisz rozstrzygnięcia, których komitet nie podjął.** Zgłoszenie zostawia otwarte
+   pytania: limit zmieniający się w czasie, rachunek bez limitu, limit zero, zwroty i storna
+   tego samego dnia, obciążenie w innej walucie niż limit. Przy każdym zapisz, co się
+   z nim stało w kodzie i skąd to wiesz. Osobno zaznacz te, o których agent ci nie powiedział.
 
-> **Jeśli utknąłeś po 15 minutach**
-> Zejdź o poziom niżej: napisz najpierw test, który pada z powodu opisanego w zgłoszeniu.
-> Nie umiesz go napisać? To znaczy, że kryteria akceptacji są jeszcze za ogólne — wróć
-> do kroku 2 i doprecyzuj je, zamiast poprawiać kod.
+> **Jeśli utknąłeś po 20 minutach**
+> Zejdź do jednej rzeczy z trzech: niech `npm run raport` pokaże choć jedno przekroczenie
+> na `dane/wyciag_2026_08.csv`. Reszta zgłoszenia poczeka. Jedna działająca ścieżka
+> od danych do wyniku jest warta więcej niż trzy zaczęte.
 
 > **Pracujesz z bazą, nie z TypeScriptem**
-> Drugie zgłoszenie ma swój odpowiednik w `sql/raport_dzienny.sql`. Przejdź ten sam cykl na
-> zapytaniu: kryteria, zmiana, sprawdzenie na `dane/wyciag_probka.csv` przeniesionym do tabeli
-> albo na danych z `sql/001_init_transakcje.sql`, opis zmiany dla recenzenta. Reszta karty
-> obowiązuje bez zmian.
+> To samo zgłoszenie od strony `sql/raport_dzienny.sql`: limit przypisany do rachunku,
+> przekroczenia widoczne w wyniku zapytania, lista dla Ryzyka jako osobne zapytanie.
+> Kroki 2–5 obowiązują bez zmian, a liczbą sprawdzającą jest wynik na danych
+> z `sql/001_init_transakcje.sql`.
 
 > **Skończyłeś wcześniej**
-> Przejdź to samo zgłoszenie drugą ścieżką — A, jeśli robiłeś B, i odwrotnie. Porównaj:
-> w którym miejscu bramka faktycznie coś zatrzymała, a w którym tylko kosztowała czas?
-> Tę odpowiedź weź ze sobą do poniedziałku, to ona decyduje, gdzie agent w waszym zespole
-> mógłby kiedyś działać, a gdzie nie.
+> Weź pytanie o zwroty i storna tego samego dnia — to jedyne, przy którym zgłaszający
+> wprost piszą, że mają różne zdania. Przygotuj dwie wersje zachowania i po jednym teście
+> do każdej. Nie wybieraj za komitet; pokaż mu, między czym wybiera.
 
 ## Gotowe, gdy
 
-- [ ] masz kryteria akceptacji zapisane przed implementacją i przy każdym stoi, czy zmiana je spełnia
-- [ ] `npm test` i `npm run typecheck` przechodzą, a jeśli `npm run raport` zachowuje się inaczej niż przed zmianą, umiesz powiedzieć dlaczego
-- [ ] opis zmiany wystarcza drugiej osobie w parze, żeby wiedziała, co sprawdzić ręcznie — bez pytania cię o cokolwiek
+- [ ] `npm run raport` pokazuje coś, czego nie pokazywał przed twoją zmianą, i umiesz
+      wskazać, która operacja i o ile przekroczyła limit
+- [ ] masz spisane rozstrzygnięcia z kroku 5 i przy każdym stoi, czy podjąłeś je ty,
+      czy agent — a przy tych agenta, czy powiedział ci o tym sam
+- [ ] partner czyta twój opis zmiany i wie, co ma sprawdzić ręcznie, bez pytania cię o nic
 
 ## Na koniec ćwiczenia
 
@@ -59,8 +85,17 @@ git switch -c imie/zadanie-koncowe && git add -A && git commit -m "zadanie-konco
 
 ---
 
-## Materiał: zgłoszenia do obsłużenia
+## Materiał: trzy mniejsze zgłoszenia z backlogu
 
-Trzy zgłoszenia z backlogu zespołu, w formacie gotowym do wklejenia jako issue
-(tytuł, opis, kryteria akceptacji). Każde jest niezależne od pozostałych — dotykają
-różnych części systemu i można je wziąć w dowolnej kolejności, pojedynczo.
+Te trzy karty zostają w katalogu jako materiał zapasowy — bierzesz jedną zamiast zadania
+powyżej, jeżeli wolisz przejść pełny cykl na mniejszym zakresie.
+
+> `01_ujemna_kwota_w_walidacji.md` — „Operacja z ujemną kwotą przechodzi walidację"
+> `02_raport_dzienny_sumy_per_waluta.md` — „Raport dzienny sumuje operacje w różnych walutach do jednej kwoty"
+> `03_import_odrzuca_niezgodna_sume_kontrolna.md` — „Import przyjmuje plik, którego suma kontrolna nie zgadza się z zawartością"
+
+**Uwaga do trzeciego zgłoszenia.** Wdrożone wprost zatrzyma `npm run raport` na głównym
+pliku wyciągu — `dane/wyciag_2026_08.csv` jest właśnie plikiem, którego suma kontrolna nie
+zgadza się z zawartością. To nie jest twój błąd ani błąd repozytorium, tylko zderzenie
+dwóch prawdziwych wymagań, i zgłoszenie to przewiduje. Przeczytaj jego kryteria akceptacji
+do końca, zanim uznasz, że coś zepsułeś.

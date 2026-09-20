@@ -1,6 +1,6 @@
 # Ćw. 7 — Debugging
 
-**Czas:** 55 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 55 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
@@ -51,7 +51,7 @@ Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast 
 1. **Zreprodukuj.** `npm run raport`
 2. **Postaw hipotezę, zanim zapytasz model.** Zapisz ją — wrócisz do niej na końcu.
 3. **Zawęź kontekst do plików, które podejrzewasz, i zleć modelowi znalezienie przyczyny oraz listy operacji, których dotyczy.** Nie wklejaj wyciągu — to czterysta wierszy. Zwróć uwagę, czy model listę policzył, czy oszacował: słowo „najpewniej" przy liczbie znaczy, że zgadł.
-4. **W połowie czasu przenieś to samo zadanie do drugiego narzędzia.** Pracowałeś w Copilocie — daj to Claude'owi. Pracowałeś w Claude — daj to Copilotowi. Drugie narzędzie zaczyna od tego samego zgłoszenia, bez twojej hipotezy i bez tego, co powiedziało pierwsze. Potem zestaw obie odpowiedzi: co znalazł jeden, czego nie znalazł drugi, o czym nie powiedział żaden. Masz pod ręką tylko jedno narzędzie? Zadaj to samo pytanie drugi raz, w nowej sesji, bez kontekstu i bez swojej hipotezy.
+4. **W połowie czasu przenieś to samo zadanie do drugiego narzędzia.** Pracowałeś w Copilocie — daj to Claude'owi. Pracowałeś w Claude — daj to Copilotowi. Drugie narzędzie zaczyna od tego samego zgłoszenia, bez twojej hipotezy i bez tego, co powiedziało pierwsze. Jeżeli pierwsze zdążyło już zapisać poprawkę w plikach, cofnij ją przed przekazaniem — `git stash` wystarczy. Na poprawionym kodzie nie porównujesz już dwóch diagnoz, tylko dwa opisy tej samej naprawy. Potem zestaw obie odpowiedzi: co znalazł jeden, czego nie znalazł drugi, o czym nie powiedział żaden. Masz pod ręką tylko jedno narzędzie? Zadaj to samo pytanie drugi raz, w nowej sesji, bez kontekstu i bez swojej hipotezy.
 5. **Zweryfikuj poprawkę liczbą, nie wzrokiem.** `npm run raport` po zmianie, `npm test` po nim. Potem odpowiedz na drugie pytanie: ten zestaw testów był zielony przez cały czas, kiedy raport się nie zgadzał. Który test powinien był to złapać i dlaczego nie złapał? `git log -p` na pliku z tym testem powie ci więcej niż sam plik.
 
 > **Jeśli utknąłeś po 15 minutach**
