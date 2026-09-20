@@ -1,6 +1,6 @@
 # szkolenie-ai-rejestr-rozliczen
 
-Repozytorium ćwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. Udaje zastany system rozliczeniowy: rejestr transakcji, naliczanie odsetek, raport dzienny.
+Repozytorium ćwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. Udaje zastany system rozliczeniowy: rejestr transakcji, naliczanie odsetek, raport dzienny i schemat księgowania operacji.
 
 **Wszystko w `dane/` jest zmyślone.** Numery rachunków mają nieistniejący kod banku i niepoprawne cyfry kontrolne, nazwiska i firmy nie istnieją, zgłoszenia klientów zostały napisane na potrzeby ćwiczeń. Żaden plik w tym repozytorium nie pochodzi z systemu produkcyjnego ani z żadnej instytucji finansowej. To materiał dydaktyczny, nie aplikacja.
 
@@ -24,6 +24,7 @@ Codzienna praca:
 - `npm run test:watch` - testy w trybie obserwacji
 - `npm run typecheck` - sprawdzenie typów bez kompilacji
 - `npm run raport` - generuje raport dzienny z `dane/wyciag_2026_08.csv`
+- `npm run ksiegowanie` - pokazuje, którą regułą schematu księgowania poszła każda operacja
 
 Ścieżka SQL (potrzebna tylko do jednego ćwiczenia, opis w `sql/lokalnie/README.md`):
 

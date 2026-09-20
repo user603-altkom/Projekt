@@ -12,6 +12,7 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "raport": "tsx src/reports/dailyReport.ts dane/wyciag_2026_08.csv",
+    "ksiegowanie": "tsx src/routing/silnik.ts dane/wyciag_2026_08.csv",
     "doctor": "node scripts/doctor.mjs",
     "sql:setup": "node --no-warnings scripts/sql-setup.mjs",
     "sql:raport": "node --no-warnings scripts/sql-raport.mjs",
