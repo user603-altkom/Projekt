@@ -1,6 +1,6 @@
 # Rezerwa - Bramka, której model nie przejdzie po swojemu
 
-**Czas:** 45 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 45 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Nic nie instalujesz, nic nie wychodzi do sieci. Wszystko lokalnie.
 

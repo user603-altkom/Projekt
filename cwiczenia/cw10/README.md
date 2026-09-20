@@ -1,6 +1,6 @@
 # Ćw. 10 — Code review w dwie strony
 
-**Czas:** 55 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 55 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 ## Cel
 

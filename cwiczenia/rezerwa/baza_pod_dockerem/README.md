@@ -1,6 +1,6 @@
 # Rezerwa - Plan wykonania kontra rada modelu (PostgreSQL)
 
-**Czas:** 50 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 50 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Wymaga Dockera. Te same dane co w ćwiczeniu z raportem obrotów, ale na prawdziwym silniku, z prawdziwym planem wykonania.
 

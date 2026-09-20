@@ -1,6 +1,6 @@
 # Ćw. 11 — Prompt injection i sanityzacja kontekstu
 
-**Czas:** 35 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 35 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 ## Cel
 

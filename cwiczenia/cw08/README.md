@@ -1,6 +1,6 @@
 # Ćw. 8 — Bezpieczna refaktoryzacja
 
-**Czas:** 50 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 50 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 

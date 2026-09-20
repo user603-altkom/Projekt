@@ -24,7 +24,7 @@ po użyciu, i to jest jej teza.
 **`bramka_jakosci/`** - zamiana „sprawdziłem, wygląda dobrze" na komendę
 kończącą się kodem zero albo jeden. Krok 4 każe modelowi złamać bramkę, którą
 sam przed chwilą napisał. Najbliższa temu, co uczestnicy wdrożą u siebie
-w poniedziałek.
+po powrocie.
 
 **`baza_pod_dockerem/`** - te same dane, co w ćwiczeniu z raportem obrotów, ale
 na PostgreSQL, z prawdziwym `EXPLAIN ANALYZE`. Rozstrzyganie rad modelu planem

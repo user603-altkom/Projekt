@@ -1,6 +1,6 @@
 # Ćw. 6 — Testy dla modułu bez testów
 
-**Czas:** 45 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 45 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
@@ -67,7 +67,7 @@ Umieć powiedzieć, czego wygenerowany zestaw testów nie pokrywa, i sprawdzić 
 
 - [ ] `npm test` przechodzi, a w `tests/import/` są testy, których rano nie było
 - [ ] umiesz wskazać w `dane/wyciag_probka.csv` wiersz, którego nie dotyka żaden test, i powiedzieć, czym ten wiersz różni się od pozostałych
-- [ ] druga osoba w parze potrafi z samych nazw twoich testów odtworzyć, co moduł ma robić z plikiem
+- [ ] partner potrafi z samych nazw twoich testów odtworzyć, co moduł ma robić z plikiem
 
 ## Na koniec ćwiczenia
 

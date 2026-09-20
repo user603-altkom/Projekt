@@ -1,6 +1,6 @@
 # Ćw. 5 — Wejście w nieznany kod
 
-**Czas:** 40 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 40 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 

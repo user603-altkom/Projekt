@@ -1,6 +1,6 @@
 # Ćw. 1 — Zobacz halucynację
 
-**Czas:** 20 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 20 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Bez repozytorium, bez instalacji, bez logowania do czegokolwiek firmowego — wystarczy
 dowolny model w przeglądarce.
@@ -48,9 +48,9 @@ Warunek: masz umieć pokazać, że to nieprawda — z pamięci albo z czegoś, c
 ## Gotowe, gdy
 
 - [ ] masz w rozmowie konkretne zdanie, o którym wiesz, że jest nieprawdziwe, i potrafisz
-      drugiej osobie w parze powiedzieć, skąd to wiesz
+      partnerowi powiedzieć, skąd to wiesz
 - [ ] masz spisane co najmniej trzy sygnały, każdy dotyczący formy odpowiedzi, nie jej treści
-- [ ] druga osoba w parze czyta twoją listę sygnałów i wie, czego szukać we własnej rozmowie,
+- [ ] partner czyta twoją listę sygnałów i wie, czego szukać we własnej rozmowie,
       bez dopytywania cię o nic
 
 ## Na koniec ćwiczenia

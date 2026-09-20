@@ -1,6 +1,6 @@
 # Ćw. 8 (ścieżka SQL) — Bezpieczna optymalizacja
 
-**Czas:** 50 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 50 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Bierzesz tę kartę zamiast Ćw. 8, jeśli na co dzień pracujesz z bazą, a nie z TypeScriptem. Materiał jest ten sam: zmieniasz cudzy kod i musisz udowodnić, że wynik się nie zmienił.
 

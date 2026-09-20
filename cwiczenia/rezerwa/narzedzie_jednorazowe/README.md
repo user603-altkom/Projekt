@@ -1,6 +1,6 @@
 # Rezerwa - Narzędzie, które zaraz wyrzucisz
 
-**Czas:** 40 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 40 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 Nic nie instalujesz, niczego nie uruchamiasz poza przeglądarką. Bierz tę kartę dopiero po Ćw. 7.
 
@@ -42,7 +42,7 @@ Umieć kazać modelowi zbudować jednorazowe narzędzie do obejrzenia własnych 
 
 > **Skończyłeś wcześniej**
 > Zepsuj swoje narzędzie tak, żeby dalej wyglądało dobrze: wpisz różnicę na
-> sztywno i sprawdź, ile czasu zajmie drugiej osobie w parze zauważenie tego
+> sztywno i sprawdź, ile czasu zajmie partnerowi zauważenie tego
 > bez zaglądania w kod. Potem odpowiedz na pytanie, które z tego wynika: po czym
 > poznajesz, że cudze narzędzie liczy, a nie powtarza?
 

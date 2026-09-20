@@ -1,6 +1,6 @@
 # Ćw. 3 — Anonimizacja
 
-**Czas:** 35 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 35 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 ## Cel
 
@@ -24,7 +24,7 @@ zostać, żeby odpowiedź była cokolwiek warta — także wtedy, gdy procedura 
    nazwa oddziału, kwota 84 210,55 PLN razem z tym, skąd pochodzi, oraz zdanie o wieku
    klientki.
 3. **Napisz wersję, którą naprawdę wyślesz.** Zapisz ją jako `cwiczenia/cw03/zgloszenie_anon.md`.
-4. **Oddaj ją drugiej osobie w parze.** Niech spróbuje powiedzieć, kto jest klientem
+4. **Oddaj ją partnerowi.** Niech spróbuje powiedzieć, kto jest klientem
    i z której placówki przyszło zgłoszenie. Co jej wystarczyło?
 5. **Wróć do kupki „nie wiem" i rozstrzygnij ją na piśmie.** Jedno zdanie uzasadnienia przy
    każdej pozycji. „Na wszelki wypadek" też jest uzasadnieniem — dopisz tylko, czego ten
@@ -72,11 +72,11 @@ zostać, żeby odpowiedź była cokolwiek warta — także wtedy, gdy procedura 
 
 ## Gotowe, gdy
 
-- [ ] masz `cwiczenia/cw03/zgloszenie_anon.md`, z którego druga osoba w parze nie potrafi
+- [ ] masz `cwiczenia/cw03/zgloszenie_anon.md`, z którego partner nie potrafi
       odtworzyć, kto jest klientem ani z której placówki przyszło zgłoszenie
 - [ ] przy nazwie oddziału, kwocie 84 210,55 PLN i zdaniu o wieku klientki masz po jednym
       zdaniu uzasadnienia — niezależnie od tego, jak zdecydowałeś
-- [ ] druga osoba w parze czyta twoją wersję i potwierdza, że da się z niej odpowiedzieć na
+- [ ] partner czyta twoją wersję i potwierdza, że da się z niej odpowiedzieć na
       oba pytania z ostatniego akapitu zgłoszenia
 
 ## Na koniec ćwiczenia

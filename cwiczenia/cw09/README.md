@@ -1,10 +1,10 @@
 # Ćw. 9 — Instrukcje projektowe
 
-**Czas:** 40 min · **Praca w parach** · Klawiaturę ma osoba, która czuje się mniej pewnie
+**Czas:** 40 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
 ## Cel
 
-Umieć napisać plik instrukcji, który zmienia zachowanie modelu w tym repozytorium, i pokazać tę zmianę pomiarem, nie wrażeniem. Wiedzieć, który plik czyta które narzędzie — bo od tego zależy, czy to, co dziś napiszesz, zadziała u ciebie w poniedziałek.
+Umieć napisać plik instrukcji, który zmienia zachowanie modelu w tym repozytorium, i pokazać tę zmianę pomiarem, nie wrażeniem. Wiedzieć, który plik czyta które narzędzie — bo od tego zależy, czy to, co dziś napiszesz, zadziała u ciebie po powrocie do pracy.
 
 To jest pierwszy warunek wstępny: zanim agent dostanie prawo pisać w repozytorium, repozytorium musi mieć zapisane zasady. Ten sam plik działa już dziś, w trybie ask i edit, bez żadnego agenta.
 
