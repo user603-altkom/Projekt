@@ -8,6 +8,9 @@ Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
 Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast wzrokiem, i rozpoznać, o czym model milczy — również wtedy, gdy odpowiedź brzmi przekonująco.
 
+Uprzedzenie, żeby cię nie zmyliło: **przyczynę znajdziesz szybko, prawdopodobnie w kilka minut.**
+To nie jest koniec ćwiczenia, tylko jego pierwszy krok. Ciężar leży w krokach 4 i 5.
+
 ## Zgłoszenie
 
 > Od: Zespół Uzgodnień Dziennych

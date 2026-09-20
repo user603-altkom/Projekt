@@ -48,10 +48,15 @@ gałęzi `recenzja/cw10-limity-kredytowe` — ten sam, który recenzowałeś ran
 4. **Puść wykonanie i sprawdź je liczbą.** `npm test`, `npm run typecheck`,
    `npm run raport`. Raport przed zmianą i po zmianie ma się różnić w dający się wskazać
    sposób — jeżeli się nie różni, moduł nadal nie ma odbiorcy.
-5. **Wypisz rozstrzygnięcia, których komitet nie podjął.** Zgłoszenie zostawia otwarte
-   pytania: limit zmieniający się w czasie, rachunek bez limitu, limit zero, zwroty i storna
-   tego samego dnia, obciążenie w innej walucie niż limit. Przy każdym zapisz, co się
-   z nim stało w kodzie i skąd to wiesz. Osobno zaznacz te, o których agent ci nie powiedział.
+5. **Wypisz rozstrzygnięcia, których komitet nie podjął.** Najpierw wyjmij swoją listę
+   z kroku 1 i zaznacz, które z nich miałeś już wtedy, a których nie. Dopiero potem
+   porównaj ją z tą: limit zmieniający się w czasie, rachunek bez limitu, limit zero,
+   zwroty i storna tego samego dnia, obciążenie w innej walucie niż limit. Przy każdym
+   zapisz, co się z nim stało w kodzie i skąd to wiesz. Osobno zaznacz te, o których
+   agent ci nie powiedział.
+
+   Ta różnica między twoją listą a tą jest wynikiem ćwiczenia, nie porażką. Pokazuje,
+   czego nie widać przy pierwszym czytaniu zgłoszenia, a kosztuje przy wdrożeniu.
 
 > **Jeśli utknąłeś po 20 minutach**
 > Zejdź do jednej rzeczy z trzech: niech `npm run raport` pokaże choć jedno przekroczenie
