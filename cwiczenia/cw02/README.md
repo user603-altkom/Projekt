@@ -19,6 +19,9 @@ To jest moduł, który decyduje, na które konto księgowe trafia każda operacj
 trzy pliki, dwanaście reguł, kilka tablic odwzorowań. Nie zdążysz go przeczytać w ćwiczeniu
 i nie o to chodzi. Chodzi o to, żeby dowiedzieć się o nim czegoś prawdziwego, nie czytając go.
 
+Uprzedzenie, żeby cię nie zaskoczyło: **pierwsza, najprostsza odpowiedź będzie dobra.**
+Ładna, uporządkowana, z diagramem. To nie jest powód, żeby uznać ćwiczenie za zrobione.
+
 ## Kroki
 
 1. **Dołącz do rozmowy cały katalog `src/routing`.** Trzy pliki: `schemat.ts`, `silnik.ts`,
@@ -37,6 +40,13 @@ i nie o to chodzi. Chodzi o to, żeby dowiedzieć się o nim czegoś prawdziwego
 6. **Postaw trzy odpowiedzi obok siebie i nazwij różnice.** Przy każdej różnicy wskaż
    fragment polecenia, który ją wywołał. Zapisz to razem z trzema poleceniami
    w `cwiczenia/cw02/notatki.md`.
+
+> **Pierwsza odpowiedź już wygląda świetnie i nie wiesz, co dalej**
+> Tak ma być i to jest sedno tego ćwiczenia. Dostaniesz podział na pliki, diagram
+> przepływu i numery linii, w kilkadziesiąt sekund. Pytanie nie brzmi, czy odpowiedź
+> jest ładna, tylko czy da się ją sprawdzić. Weź z niej jedno zdanie i spróbuj
+> zestawić je z wydrukiem `npm run ksiegowanie`. Ile zdań z tej odpowiedzi przechodzi
+> ten test?
 
 > **Jeśli utknąłeś po 10 minutach**
 > Trzecia odpowiedź wyszła prawie taka sama jak druga? Sprawdź, czy dołożyłeś cokolwiek,
