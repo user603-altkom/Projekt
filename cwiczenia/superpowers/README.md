@@ -15,3 +15,7 @@ Własny proces już masz: pytania → plan → mały krok → kontrola. Teraz zo
 **Dla szybszych:** zrealizuj pierwszy zatwierdzony krok i wykonaj kontrolę. Nie uruchamiaj kilku agentów do tej samej małej zmiany tylko dlatego, że pakiet to umożliwia.
 
 [Repo i instrukcje instalacji](https://github.com/obra/superpowers). Sposób instalacji zależy od harnessu; konfiguracja Copilot CLI nie oznacza automatycznie konfiguracji VS Code.
+
+## Przygotowanie przed blokiem — tylko jeśli wskazuje prowadzący
+
+W przygotowanej sesji Claude Code użyj `/plugin`, by sprawdzić, czy Superpowers jest już zainstalowany. Jeśli nie, oficjalna instrukcja podaje `/plugin install superpowers@claude-plugins-official`. Po instalacji zacznij nową sesję i sprawdź faktyczne użycie skilla. Nie instaluj drugiej kopii ani wariantu dla innego harnessu. Przy braku dostępu użyj ścieżki z sekcji Pomoc.

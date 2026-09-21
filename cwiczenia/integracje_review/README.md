@@ -28,7 +28,7 @@ glab mr view 123
 glab mr diff 123 --raw
 ```
 
-`123` jest przykładem. Prowadzący podaje adres demonstracyjnego MR. Do testów potrzebny jest kod tej wersji, nie sam diff; `glab mr checkout 123` wykonuj wyłącznie w czystej kopii. Ustal gałąź bazową i SHA. Agent z dostępem do terminala może używać tych poleceń w Copilocie i Claude Code. Samo `glab` nie uruchamia review automatycznie.
+`123` jest przykładem. Przygotowany [MR demonstracyjny ma numer 1](https://gitlab.com/agentGreg/szkolenie-ai-rejestr-rozliczen/-/merge_requests/1): dla niego użyj `glab mr view 1` oraz `glab mr diff 1 --raw`. Pokaz GitHuba: [PR #1](https://github.com/agentGreg/franek-copilot-review-demo/pull/1). Do testów potrzebny jest kod tej wersji, nie sam diff; `glab mr checkout 123` wykonuj wyłącznie w czystej kopii. Ustal gałąź bazową i SHA. Agent z dostępem do terminala może używać tych poleceń w Copilocie i Claude Code. Samo `glab` nie uruchamia review automatycznie.
 
 Bez dostępu pracuj na własnej zmianie lub zamrożonym materiale. Nie przedstawiaj tego jako połączenia z serwerem. Publikację komentarza poprzedza przeczytanie gotowego tekstu; wykonuj ją wyłącznie na demonstracyjnym MR wskazanym przez prowadzącego.
 
