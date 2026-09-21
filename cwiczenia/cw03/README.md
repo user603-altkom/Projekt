@@ -69,3 +69,5 @@ To, że partner nie odgadł tożsamości, **nie dowodzi pełnej anonimizacji**. 
 **Gotowe:** masz krótsze zgłoszenie, uzasadnienia trzech wskazanych decyzji, zachowane fakty potrzebne do analizy i jawnie wypisane braki. Oba pliki zapisujesz w `portfolio/`; nie robisz commita ani nie wysyłasz odpowiedzi do klienta.
 
 **Rozszerzenie — dodatkowe 15–20 minut lub praca po bloku:** otwórz pełne [dane/zgloszenie_klienta.md](../../dane/zgloszenie_klienta.md), nadal bez dołączania źródła do czatu. Sprawdź dane osobowe, rachunek zapisany ze spacjami i bez nich oraz identyfikatory w logu. Uzupełnij przygotowaną wersję o potrzebny kontekst techniczny. Oddziel **0,24 PLN z pliku zapasowego** od **0,23 PLN z miesięcznego wyciągu** — to inne zbiory danych; podobny objaw nie dowodzi wspólnej przyczyny. Zapisz, co trzeba sprawdzić w logach, ale nie zaczynaj naprawy. Na końcu zaproponuj regułę skracania zgłoszeń i wskaż przypadek, w którym usunęłaby ważny kontekst.
+
+**Dalszy eksperyment (osobny blok 45 min):** [Ćw. 03b — Presidio: demo, uruchomienie lokalne i porównanie z własnymi decyzjami](../cw03b/README.md). Pracujesz z Copilotem w trybie Agent.

@@ -54,6 +54,8 @@ Dodawanie plików opisuje [oficjalna dokumentacja kontekstu VS Code](https://cod
 | 2 | Czy możemy ufać liczbom? | 05 → 06 → 07 → 08 **albo** 08_sql | Mapa kodu, testy, dowód rozbieżności, mała bezpieczna zmiana |
 | 3 | Jak zostawić system następcy? | porownanie → 13 → 10 → mcp → 11 → zadanie_koncowe | Procedura, review, wynik limitów na ekranie, handoff |
 
+**Dodatkowy blok dnia 1 po ćw. 03:** [Ćw. 03b — Presidio: demo i lokalna anonimizacja z Agentem](cwiczenia/cw03b/README.md), 45 min. Prowadzący wskazuje jego miejsce względem ćw. 04; nie jest warunkiem kolejnych zadań.
+
 Ćw. 12 i `rezerwa/` są dodatkami. Nie musisz ukończyć rozszerzeń, żeby dojść do finału. Ćw. 09 wraca krótkimi fragmentami zamiast jednego wykładu o konfiguracji.
 
 ## Jak pracujemy
