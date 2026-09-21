@@ -1,98 +1,83 @@
-# Ćw. 2 — Trzy jakości promptu
+# Ćw. 02 — Trzy jakości promptu
 
-**Czas w nowej ścieżce:** D1 · 10:55–11:20 · 25 min · Każdy u siebie, odbiór w parze
+**Dzień 1 · 25 min · Copilot Chat w VS Code · bez zmian w kodzie**
 
 > Franek: „Routing działa. Tylko nikt nie wie, dlaczego akurat to konto”.
 
-**Zakres:** Najpierw wyjaśnienie jednego przebiegu; rozszerzenie: kontrprzykład dla innej reguły.
+**Routing** to tutaj wybór reguły, według której operacja trafia na konto księgowe. To inna część tej samej aplikacji niż ekran limitów. Nie musisz znać jej wcześniej. Nauczysz się prosić o wyjaśnienie, które da się sprawdzić w kodzie i wyniku polecenia.
 
-Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
+## Przygotuj — 3 min
 
-## Cel
+Pracuj w otwartym repo z [START.md](../../START.md). Do czatu dołącz trzy pliki z `src/routing`: `schemat.ts`, `silnik.ts`, `kontoKsiegowe.ts`. Użyj **Add Context / Dodaj kontekst** lub wyboru pliku po `#`.
 
-Umieć wskazać, który element polecenia zmienił odpowiedź. Nie „precyzyjniej znaczy lepiej",
-tylko: ten fragment, ta zmiana, ten skutek.
+**Każdy z trzech promptów wyślij w nowym czacie**, z tymi samymi plikami i tym samym wybranym modelem. W przeciwnym razie kolejne odpowiedzi korzystałyby też z poprzedniej rozmowy. Nie zmieniaj ustawień między próbami. Jeśli Twoja wersja nie pozwala wybrać modelu, zachowaj ustawienie domyślne.
 
-## Zadanie
+## 1. Porównaj trzy polecenia — 10 min
 
+Możesz skopiować poniższe przykłady. W drugim i trzecim dopasuj opis swojej roli. Nie zlecaj edycji kodu.
+
+**A — samo ogólne pytanie:**
+
+```text
+Wyjaśnij src/routing. Nie zmieniaj plików.
 ```
-wyjaśnij src/routing
+
+**B — cel i odbiorca:**
+
+```text
+Przejmuję utrzymanie aplikacji po Franku i nie znam jej reguł księgowania.
+Wyjaśnij src/routing tak, żebym potrafił opowiedzieć koledze, jak operacja
+z wyciągu trafia na konto księgowe. Wyjaśnij używane pojęcia i rolę trzech
+plików. Nie zmieniaj plików.
 ```
 
-Trzy razy, w narzędziu, za każdym razem precyzyjniej.
+**C — konkretne pytanie, źródło i sposób sprawdzenia:**
 
-To jest moduł, który decyduje, na które konto księgowe trafia każda operacja z wyciągu:
-trzy pliki, dwanaście reguł, kilka tablic odwzorowań. Nie zdążysz go przeczytać w ćwiczeniu
-i nie o to chodzi. Chodzi o to, żeby dowiedzieć się o nim czegoś prawdziwego, nie czytając go.
-
-Uprzedzenie, żeby cię nie zaskoczyło: **pierwsza, najprostsza odpowiedź będzie dobra.**
-Ładna, uporządkowana, z diagramem. To nie jest powód, żeby uznać ćwiczenie za zrobione.
-
-## Kroki
-
-1. **Dołącz do rozmowy cały katalog `src/routing`.** Trzy pliki: `schemat.ts`, `silnik.ts`,
-   `kontoKsiegowe.ts`. Jeśli narzędzie nie widzi plików albo repozytorium nie działa —
-   powiedz o tym teraz, na głos. Do samego ćwiczenia wystarczy ekran drugiej osoby.
-2. **Zapytaj dokładnie tak, jak w zadaniu.** Nic nie dokładaj. Zachowaj odpowiedź.
-3. **Zapytaj drugi raz, dokładając siebie i sytuację.** Kim jesteś, po co ci to wyjaśnienie,
-   co z nim zrobisz, co już wiesz.
-4. **Zapytaj trzeci raz o coś, czego nie da się zgadnąć z nazw plików.** Ma to być pytanie
-   z odpowiedzią sprawdzalną: o konkretną operację i regułę, która ją przejmie, albo o to,
-   czy któraś z dwunastu reguł nie może zadziałać nigdy — i dlaczego. Dołóż kształt
-   odpowiedzi: ile, w jakiej formie, czego nie wolno pominąć.
-5. **Sprawdź liczbą, nie wzrokiem.** `npm run ksiegowanie` wypisuje, ile operacji przejęła
-   każda reguła i którym kanałem poszły. Zestaw to z tym, co napisał model. Zgadza się
-   co do liczby czy tylko co do wrażenia?
-6. **Postaw trzy odpowiedzi obok siebie i nazwij różnice.** Przy każdej różnicy wskaż
-   fragment polecenia, który ją wywołał. Zapisz to razem z trzema poleceniami
-   w `cwiczenia/cw02/notatki.md`.
-
-> **Pierwsza odpowiedź już wygląda świetnie i nie wiesz, co dalej**
-> Tak ma być i to jest sedno tego ćwiczenia. Dostaniesz podział na pliki, diagram
-> przepływu i numery linii, w kilkadziesiąt sekund. Pytanie nie brzmi, czy odpowiedź
-> jest ładna, tylko czy da się ją sprawdzić. Weź z niej jedno zdanie i spróbuj
-> zestawić je z wydrukiem `npm run ksiegowanie`. Ile zdań z tej odpowiedzi przechodzi
-> ten test?
-
-> **Jeśli utknąłeś po 10 minutach**
-> Trzecia odpowiedź wyszła prawie taka sama jak druga? Sprawdź, czy dołożyłeś cokolwiek,
-> czego model nie mógł wyczytać z samych nazw plików. Czego o twojej sytuacji nie wie nikt
-> poza tobą? I czy zadałeś pytanie, na które istnieje jedna sprawdzalna odpowiedź,
-> czy takie, na które da się odpowiedzieć akapitem o wszystkim?
-
-> **Nie czytasz TypeScriptu na co dzień**
-> Zrób to samo na `sql/001_init_transakcje.sql`. Ta sama tabela, ten sam kontrakt danych,
-> inny dialekt. Trzy poziomy precyzji i ta sama notatka na końcu. Krok 5 zastąp pytaniem
-> o to, której kolumny dotyczy każdy z warunków — i sprawdź to w pliku.
-
-> **Skończyłeś wcześniej**
-> Weź najlepsze z trzech poleceń i usuń z niego dokładnie jedno zdanie. Zapytaj jeszcze raz,
-> w nowej rozmowie. Które zdanie naprawdę niosło odpowiedź, a które tylko dobrze wyglądało?
->
-> Potem zrób to samo od drugiej strony: weź najgorsze z trzech poleceń i dokładaj do niego
-> po jednym zdaniu z najlepszego, za każdym razem w nowej rozmowie, aż odpowiedź stanie się
-> użyteczna. Przy którym zdaniu to się stało?
->
-> Na koniec połóż trzy odpowiedzi obok siebie i znajdź twierdzenie, które pada w jednej,
-> a w pozostałych go nie ma. Sprawdź w kodzie, czy jest prawdziwe. Jedno z dwojga jest
-> ciekawe: albo lepsze polecenie wydobyło coś, czego gorsze nie ruszyło, albo model dopisał
-> szczegół, którego nie ma nigdzie.
-
-## Gotowe, gdy
-
-- [ ] masz `cwiczenia/cw02/notatki.md` z trzema poleceniami i listą różnic między odpowiedziami
-- [ ] przy każdej różnicy potrafisz pokazać partnerowi fragment polecenia,
-      który ją wywołał
-- [ ] co najmniej jedno twierdzenie z najlepszej odpowiedzi zestawiłeś z wydrukiem
-      `npm run ksiegowanie` i wiesz, czy zgadza się co do liczby
-
-## Na koniec ćwiczenia
-
-Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
-
+```text
+Przejmuję utrzymanie aplikacji po Franku i nie znam jej reguł księgowania.
+Na podstawie trzech dołączonych plików wyjaśnij, jak wybierana jest reguła,
+gdy do jednej operacji pasuje kilka warunków. Czy wygrywa pierwsze
+pasujące dopasowanie, ostatnie, czy stosowane są wszystkie?
+Pokaż jedną konkretną funkcję i fragment kodu uzasadniający odpowiedź.
+Następnie wyjaśnij, co robi R12 i skąd w raporcie wiemy,
+ile operacji zostało do niej przypisanych.
+Odpowiedz w maksymalnie pięciu punktach. Oddziel fakty z kodu od informacji,
+które wymagają uruchomienia programu. Nie zgaduj liczby operacji
+na podstawie samych reguł. Nie zmieniaj plików.
 ```
-git status --short
-git diff
-git add -u
-git commit -m "Warsztat: zakończony etap"
+
+Zachowaj trzy polecenia i istotne fragmenty odpowiedzi. **Pierwsza odpowiedź też może być dobra.** Porównujesz przydatność i możliwość sprawdzenia, nie długość tekstu ani wygląd diagramu.
+
+## 2. Sprawdź odpowiedź — 7 min
+
+W drugim terminalu, w katalogu z `package.json`, uruchom:
+
+```sh
+npm run ksiegowanie
 ```
+
+W wyniku znajdź zestawienie reguł i pozycję **R12**. Zapisz faktyczną liczbę. Jeśli model podał liczbę, porównaj ją z wynikiem. Jeśli słusznie odmówił zgadywania, dołącz wynik komendy i poproś go o wskazanie właściwego wiersza — odmowa bez danych była poprawna.
+
+Otwórz też `src/routing/silnik.ts` i funkcję `dopasujRegule`. Sprawdź odpowiedź o kolejności dopasowania. **Zestawienie liczby operacji samo nie dowodzi, jak działa algorytm.**
+
+## 3. Zapisz wniosek — 5 min
+
+W `portfolio/cw02-prompty.md` zapisz trzy prompty i krótką tabelę:
+
+| Próba | Co dodałem do polecenia? | Co zaobserwowałem w odpowiedzi? | Jak to sprawdziłem? |
+|---|---|---|---|
+| A / B / C | Cel, odbiorca, konkretne pytanie lub format | Konkretna różnica albo brak różnicy | Fragment kodu / wynik komendy |
+
+Pokaż partnerowi odpowiedź o kolejności reguł i odczytaną liczbę dla R12. Zakończ zdaniem: **„Przy następnym pytaniu o obcy kod dodam…”**.
+
+Jedno porównanie nie dowodzi, że konkretne zdanie zawsze poprawia model. Zapisuj obserwację, a nie gwarancję. Gdy odpowiedzi są podobne, też masz wynik.
+
+**Gotowe:** trzy próby, jedna obserwacja różnicy lub jej braku, sprawdzona reguła wyboru i liczba z uruchomienia. Notatki są w `portfolio/`; nie robisz commita.
+
+## Warianty
+
+**Wolisz SQL:** zamiast trzech plików dołącz `sql/001_init_transakcje.sql`. W A poproś o wyjaśnienie pliku, w B dodaj swoją rolę i cel, a w C zapytaj: „Czy obciążenie zapisujemy jako kwotę ujemną? Pokaż kolumny, komentarze i ograniczenia uzasadniające odpowiedź. Oddziel deklarowaną regułę od tego, co wymusza SQL”. Sprawdź `kwota`, `typ_operacji` i odpowiednie `CHECK`. Ten plik jest materiałem do czytania w dialekcie Oracle — **nie uruchamiaj go w SQLite ani nie instaluj bazy**. Zamiast liczby dla R12 zapisz jeden konkretny przykład wiersza, który narusza wskazane ograniczenie.
+
+**Komenda nie działa:** poproś partnera o wynik i zapisz jego pochodzenie. Nie zgaduj liczby i nie naprawiaj środowiska przez całe ćwiczenie.
+
+**Rozszerzenie:** usuń jedno zdanie z promptu C i powtórz go w nowym czacie z tymi samymi plikami. Sprawdź, czy nadal dostajesz potrzebny dowód. Nie uznawaj zerowej liczby dopasowań reguły w jednym pliku za dowód, że reguła nigdy nie może zadziałać.

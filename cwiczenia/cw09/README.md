@@ -1,19 +1,93 @@
 # Ćw. 09 — Instrukcje, które rosną razem z wiedzą
 
-**Dzień 1: 15 + 15 min; dzień 2: 10 min · Copilot**
+**Część A: dzień 1, po ćw. 02b · 15 min**
 
-Franek: „Za każdym razem tłumaczę to samo. Tylko nigdy nie zapisałem gdzie”.
+**Część B: dzień 1, po ćw. 04 · 15 min**
 
-## Część A — po pierwszej zmianie kodu
+**Część C: dzień 2, po testach · 10 min — jeszcze jej dziś nie wykonuj**
 
-Otwórz `.github/copilot-instructions.md`. Dopisz 3–5 konkretnych zasad wynikających z doświadczenia: kwoty w całkowitych groszach; dane wejściowe są niezmienne; mały diff; uruchom właściwe sprawdzenia i podaj ich faktyczny wynik. Nie wpisuj całego poradnika promptowania.
+> Franek: „Za każdym razem tłumaczę to samo. Tylko nigdy nie zapisałem gdzie”.
 
-## Część B — po wymaganiach
+Polecenie w czacie opisuje bieżące zadanie. **Instrukcje repo** zapisują powtarzalne zasady pracy, które Copilot może dołączać do kolejnych rozmów. Nie zastępują testów ani uprawnień. Dziś pracujemy tylko z `.github/copilot-instructions.md`; nie musisz od razu konfigurować wszystkich mechanizmów.
 
-Uzupełnij instrukcje o regułę oddzielania decyzji biznesowych od założeń modelu. Wskaż prawdziwe polecenia z `package.json`. Przetestuj ten sam mały prompt w nowym czacie z instrukcją i porównaj wynik ze starym. Sprawdź, czy plik faktycznie trafił do kontekstu w używanej wersji VS Code.
+## Część A — zapisz zasady po pierwszej zmianie
 
-## Część C — po testach
+### 1. Zachowaj punkt porównania — 3 min
 
-Dodaj jedną poznaną konwencję testów. Usuń regułę, która okazała się zbędna albo sprzeczna. `AGENTS.md` może przechowywać wspólne zasady; `CLAUDE.md` wskazuje je przez import. Nie zakładaj, że każdy harness czyta wszystkie pliki identycznie. Dla Copilota sprawdź ustawienia obsługi `AGENTS.md`.
+W nowym czacie dołącz `operator/app.js` i `operator/index.html`. Wklej:
 
-**Gotowe:** krótki plik, konkretny przykład wpływu, brak sprzecznych duplikatów. Instrukcja jest częścią kontekstu, nie blokadą bezpieczeństwa. **Rozszerzenie:** instrukcja o ograniczonym zakresie dla testów, z potwierdzeniem kiedy się ładuje.
+```text
+Zaproponuj małą poprawę komunikatu wyświetlanego, gdy filtr operatora
+nie znajduje żadnych wierszy. Chcę tylko plan: co zmienić i jak sprawdzić.
+Nie edytuj plików ani nie uruchamiaj poleceń.
+```
+
+Zapisz prompt i odpowiedź w `portfolio/cw09-instrukcje.md`. Ten sam prompt wróci po zapisaniu instrukcji. Nie realizujemy teraz tego planu.
+
+### 2. Dopisz 3–5 zasad — 5 min
+
+Otwórz `.github/copilot-instructions.md` w głównym katalogu repo. W starterze zawiera tylko komentarz. Zapisz pod nim **krótką listę Markdown**, bez specjalnego nagłówka YAML. Wybierz zasady, które potrafisz uzasadnić doświadczeniem z ćwiczeń. Przykład do dopasowania:
+
+```markdown
+# Zasady pracy w repo
+- Zmieniaj tylko uzgodniony zakres; najpierw przedstaw mały plan.
+- Nie modyfikuj danych wejściowych, żeby dopasować je do oczekiwanego wyniku.
+- Pola z końcówką Grosze przechowują całkowite grosze; PLN służy prezentacji.
+- W planie używaj sekcji: Cel, Zakres, Sprawdzenie.
+- Po zmianie podaj faktycznie wykonane sprawdzenia i wyniki. Niewykonane oznacz wprost.
+```
+
+Nie kopiuj całej dokumentacji projektu. Każda zasada ma dać się powiązać z obserwowalnym zachowaniem. Zapisz plik **Ctrl+S**.
+
+### 3. Sprawdź użycie w nowej rozmowie — 5 min
+
+Otwórz nowy czat, dołącz te same dwa pliki i wyślij **dokładnie ten sam prompt**. Zachowaj model i ustawienia. Nie doklejaj treści instrukcji ręcznie do promptu — sprawdzasz jej użycie z repo.
+
+Sprawdź osobno:
+
+1. **Czy plik jest dostępny dla Copilota?** Zajrzyj do informacji o kontekście/referencjach odpowiedzi. W wersjach z diagnostyką dostosowań otwórz menu kontekstowe widoku Chat → **Diagnostics** i znajdź plik instrukcji. Wykrycie pliku to informacja o konfiguracji, nie dowód posłuszeństwa modelu.
+2. **Co widać w odpowiedzi?** Czy występują Twoje sekcje planu? Czy zachowano zakres? Zapisz przykład zastosowanej albo pominiętej reguły. Brak różnicy też jest wynikiem — pierwsza odpowiedź mogła już spełniać zasadę.
+
+Samo „tak, przeczytałem instrukcje” napisane przez model nie potwierdza załadowania pliku. Jeśli nie umiesz sprawdzić kontekstu w swojej wersji, zapisz **„niepotwierdzone”** i pokaż prowadzącemu. Możesz awaryjnie dołączyć plik ręcznie, ale wtedy oznacz próbę jako ręczne przekazanie kontekstu, nie automatyczne ładowanie.
+
+### 4. Zapisz instrukcje w Git — 2 min
+
+```sh
+git diff -- .github/copilot-instructions.md
+git add .github/copilot-instructions.md
+git diff --cached
+git commit -m "Instrukcje: zasady malych zmian i weryfikacji"
+```
+
+**Gotowe A:** krótki zapisany plik, dwie próby i uczciwy opis tego, co potwierdziłeś. Notatki pozostają w `portfolio/`, commit obejmuje instrukcje.
+
+## Część B — wymagania i przekazanie do nowej sesji
+
+**Wróć tutaj dopiero po ćw. 04.** Potrzebujesz `portfolio/kryteria-limitow.md` i instrukcji z części A.
+
+1. **Uzupełnij instrukcje — 4 min.** Dodaj regułę rozdzielania wymagań, propozycji i pytań do zamawiających. Otwórz `package.json` i sprawdź polecenia: `npm test` oraz `npm run typecheck`. Dopisz, że ich przejście nie dowodzi ukończenia ekranu; `npm run odbior` sprawdza finał i na starterze celowo nie przechodzi. Zachowaj krótki plik.
+2. **Przygotuj przekazanie — 4 min.** W `portfolio/cw09-handoff.md` zapisz: cel finału, aktualny stan filtra i adaptera, pliki z kryteriami, podjęte decyzje, otwarte pytania oraz następny mały krok. Jeśli zrobiłeś to już z prowadzącym podczas omówienia nowej sesji, wykorzystaj istniejącą notatkę — nie pisz jej drugi raz. Nie wklejaj całej historii rozmowy.
+3. **Sprawdź odtworzenie — 5 min.** Otwórz nowy czat i dołącz handoff, `portfolio/kryteria-limitow.md` oraz `historia/brief_operatora.md`. Samo zapisanie notatek na dysku nie oznacza, że Copilot je przeczytał. Poproś:
+
+```text
+Na podstawie dołączonego przekazania, kryteriów i briefu odtwórz:
+cel demonstratora, aktualny stan, jedną nierozstrzygniętą kwestię
+oraz następny mały krok. Oddziel fakty z materiałów od własnych propozycji.
+Nie implementuj niczego i nie rozszerzaj zakresu do całego produktu.
+```
+
+Porównaj odpowiedź ze swoimi kryteriami. Czy nowa sesja rozróżnia demo od obliczeń i nie wymyśla podjętych decyzji? Jeśli czegoś brakuje, uzupełnij handoff.
+
+4. **Zapisz zmianę instrukcji — 2 min.** Użyj komend z części A, z opisem commita `Instrukcje: wymagania i polecenia kontroli`. Nie dodawaj ignorowanego `portfolio/` do Git. Jeśli plik instrukcji się nie zmienił, nie twórz pustego commita.
+
+**Gotowe B:** nowa rozmowa potrafi odtworzyć zakres z krótkiego przekazania, a instrukcje odwołują się do istniejących poleceń. To Ty sprawdzasz zgodność; streszczenie może zgubić ważną informację.
+
+## Część C — dopiero dzień 2, po testach
+
+Dodaj jedną poznaną konwencję testów, opartą na konkretnym pliku repo. Przetestuj jej użycie w nowej rozmowie i usuń lub popraw regułę, która okazała się zbędna albo sprzeczna. Jeśli żadna nie wymaga usunięcia, zapisz ten wniosek. Zapisz zmianę instrukcji w Git tak jak wcześniej.
+
+`AGENTS.md` może później służyć do wspólnych zasad, a istniejący `CLAUDE.md` zawiera jego import. Nie kopiuj teraz tych samych instrukcji do kilku plików. Obsługę każdego formatu sprawdzaj w danym narzędziu.
+
+**Rozszerzenie:** przygotuj instrukcję stosowaną tylko do plików testowych i potwierdź jej ładowanie. To dodatek po ukończeniu bieżącej części, nie warunek przejścia dalej.
+
+Opis lokalizacji pliku i diagnostyki: [oficjalna dokumentacja instrukcji VS Code](https://code.visualstudio.com/docs/agent-customization/custom-instructions). Dostępność widoków zależy od wersji na VM.

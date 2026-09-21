@@ -1,97 +1,69 @@
-# Ćw. 3 — Anonimizacja
+# Ćw. 03 — Przygotuj zgłoszenie do rozmowy z AI
 
-**Czas w nowej ścieżce:** D1 · 13:25–13:50 · 25 min · Każdy u siebie, odbiór w parze
+**Dzień 1 · 25 min · praca własna, potem Copilot Chat i sprawdzenie w parze**
 
 > Franek: „Zgłoszenie klienta jest najbardziej konkretne. I właśnie dlatego nie wklejajmy go w całości”.
 
-**Zakres:** Podstawa: minimalny fragment zgłoszenia. Rozszerzenie: ryzyko ponownej identyfikacji przez łączenie danych.
+Otwierasz kolejną sprawę z utrzymywanej aplikacji: zgłoszenie dotyczące odsetek i daty waluty. **W tym ćwiczeniu przygotowujesz materiał do analizy, nie naprawiasz błędu i nie piszesz ostatecznej odpowiedzi dla klientki.**
 
-Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
+**Data waluty** oznacza tu datę używaną przy naliczaniu odsetek; nie musi być tym samym co data księgowania. Nie zakładaj z góry, że niedziela oznacza błąd.
 
-## Cel
+## 1. Przeczytaj źródło samodzielnie — 5 min
 
-Umieć rozstrzygnąć, co z dokumentu musi zniknąć, zanim trafi do modelu, i co musi w nim
-zostać, żeby odpowiedź była cokolwiek warta — także wtedy, gdy procedura milczy.
+Otwórz [dane/zgloszenie_klienta.md](../../dane/zgloszenie_klienta.md) w edytorze, **bez dołączania go do czatu**. Dane są syntetyczne, przygotowane do tego ćwiczenia. Traktujemy je tak, jakby wymagały ograniczenia przed dalszą analizą.
 
-## Zgłoszenie
+Znajdź dwa pytania z końca dokumentu: wyjaśnienie różnicy **0,24 PLN** i sprawdzenie daty waluty przypadającej w niedzielę. Zwróć uwagę na opis brakującego pliku zapasowego i na osobny przykład **0,23 PLN** z miesięcznego wyciągu. To różne zbiory danych — nie zamieniaj jednej liczby na drugą, żeby uprościć zgłoszenie.
 
-`dane/zgloszenie_klienta.md` — zgłoszenie serwisowe SD-2026-08-0417, spisane w placówce
-19.08.2026. Kończy się tak:
+## 2. Wybierz potrzebne informacje — 5 min
 
-> Klientka nie żąda korekty konkretnej kwoty — chce pisemnego wyjaśnienia rozbieżności
-> 0,24 PLN oraz potwierdzenia, że data waluty 2026-08-16 jest prawidłowa mimo że wypada
-> w weekend. Proszę o odniesienie się do mechanizmu wyliczania daty waluty w module
-> `interest` i o informację, czy to znany, zgłoszony wcześniej przypadek.
+Utwórz `portfolio/cw03-decyzje.md` i uzupełnij tabelę:
 
-## Kroki
+| Fragment lub rodzaj informacji | Usuń / zachowaj / wymaga decyzji | Dlaczego? Jak ewentualnie zastąpić? |
+|---|---|---|
+| Przykład: numer rachunku powtórzony w kilku miejscach | Twoja decyzja | Uzasadnienie i sposób zachowania spójności |
 
-1. **Przeczytaj całe zgłoszenie do końca, zanim cokolwiek wytniesz.** Sekcje techniczne też.
-2. **Rozdziel treść na trzy kupki: wychodzi, zostaje, nie wiem.** Sprawdź, do której trafia
-   nazwa oddziału, kwota 84 210,55 PLN razem z tym, skąd pochodzi, oraz zdanie o wieku
-   klientki.
-3. **Napisz wersję, którą naprawdę wyślesz.** Zapisz ją jako `cwiczenia/cw03/zgloszenie_anon.md`.
-4. **Oddaj ją partnerowi.** Niech spróbuje powiedzieć, kto jest klientem
-   i z której placówki przyszło zgłoszenie. Co jej wystarczyło?
-5. **Wróć do kupki „nie wiem" i rozstrzygnij ją na piśmie.** Jedno zdanie uzasadnienia przy
-   każdej pozycji. „Na wszelki wypadek" też jest uzasadnieniem — dopisz tylko, czego ten
-   wypadek dotyczy.
+Uwzględnij dane osobowe, placówkę oraz szczegóły techniczne. **Obowiązkowo rozważ trzy rzeczy:** nazwę oddziału, kwotę 84 210,55 PLN wraz z opisem jej pochodzenia oraz zdanie o wieku klientki.
 
-> **Jeśli utknąłeś po 10 minutach**
-> Zacznij od klasyfikacji, nie od cięcia — i niech pierwszą wersję zrobi model, a ty ją
-> sprawdź. Daj mu treść zgłoszenia (wklej albo wskaż plik) i dopisz:
->
-> ```
-> Jesteś analitykiem bezpieczeństwa informacji w banku. Masz do dyspozycji treść
-> zgłoszenia serwisowego od klienta (dane/zgloszenie_klienta.md).
->
-> Chcę wysłać to zgłoszenie do zewnętrznego modelu językowego z prośbą o pomoc
-> w dwóch rzeczach: w wyjaśnieniu rozbieżności 0,24 PLN w naliczonych odsetkach
-> oraz w ocenie, czy data waluty przypadająca na niedzielę jest poprawna.
->
-> Przejdź dokument fragment po fragmencie i przypisz każdy fragment do jednej
-> z trzech grup, w trzech osobnych tabelach:
->
-> 1. IDENTYFIKUJE — pozwala wskazać konkretną osobę, pracownika, rachunek albo
->    placówkę: sam z siebie albo w połączeniu z innym fragmentem tego dokumentu.
->    Przy każdym napisz, z czym się łączy.
-> 2. NIEZBĘDNE — bez tego moje dwa pytania tracą sens: identyfikatory techniczne,
->    daty, kwoty, nazwy modułów, komunikaty błędów, kroki reprodukcji.
-> 3. NIEROZSTRZYGNIĘTE — pasuje do obu grup naraz albo do żadnej. Przy każdym
->    napisz, czego ci brakuje, żeby rozstrzygnąć.
->
-> Nie proponuj zamienników i nie przepisuj zgłoszenia. Sama klasyfikacja.
-> Fragment, który sam wygląda na nieistotny, ale w połączeniu z innym zawęża krąg
-> osób, ma trafić do grupy 1, nie do 3.
-> ```
->
-> To, co wróci, jest wejściem do twojej decyzji, nie decyzją.
+Pytaj: „Czy ten szczegół pomaga odtworzyć problem? Czy w połączeniu z resztą wskazuje osobę lub konkretną sprawę?”. Informacja techniczna nie jest automatycznie potrzebna ani pozbawiona danych identyfikujących.
 
-> **Wolisz regułę niż ten jeden plik**
-> Napisz zamiast tego listę zasad „co wolno wkleić", stosowalną do dowolnego zgłoszenia,
-> bez czytania go w całości. Potem sprawdź ją na tym zgłoszeniu: ile pozycji zasady
-> rozstrzygają same, a ile i tak zostaje na twojej głowie?
+**Gdy utkniesz:** zacznij od jednej danej, np. rachunku. Znajdź wszystkie jej wystąpienia, także w logu. Jeśli stosujesz zamiennik, musi być konsekwentny. Jeśli zmieniasz daty, zachowaj istotne odstępy i dzień tygodnia; jeśli zmieniasz kwoty, nie zniszcz relacji potrzebnej do reprodukcji. Decyzję, której nie umiesz uzasadnić, zapisz jako pytanie do prowadzącego.
 
-> **Skończyłeś wcześniej**
-> Wyślij swoją wersję do modelu i poproś o odpowiedź dla klientki — tę, o którą prosi
-> ostatni akapit zgłoszenia. Czy model ma jeszcze z czego ją zbudować? Czego musiał się
-> domyślić, a czego domyślić się nie dało?
+## 3. Napisz krótki materiał dla AI — 7 min
 
-## Gotowe, gdy
+Zapisz `portfolio/cw03-zgloszenie-do-ai.md`. Wystarczy pięć sekcji:
 
-- [ ] masz `cwiczenia/cw03/zgloszenie_anon.md`, z którego partner nie potrafi
-      odtworzyć, kto jest klientem ani z której placówki przyszło zgłoszenie
-- [ ] przy nazwie oddziału, kwocie 84 210,55 PLN i zdaniu o wieku klientki masz po jednym
-      zdaniu uzasadnienia — niezależnie od tego, jak zdecydowałeś
-- [ ] partner czyta twoją wersję i potwierdza, że da się z niej odpowiedzieć na
-      oba pytania z ostatniego akapitu zgłoszenia
+1. Co obserwujemy i o co pytamy?
+2. Dane oraz relacje liczbowe konieczne do analizy.
+3. Istotne daty, moduły i kroki reprodukcji.
+4. Co jest dostępne, a jakich plików lub reguł brakuje?
+5. Pytania, na które na tym etapie nie da się odpowiedzieć.
 
-## Na koniec ćwiczenia
+Nie przepisuj całej historii osobistej klientki. Przejrzyj też identyfikatory we fragmentach logów. Nie dopisuj przyczyny błędu, zasad produktu ani informacji, że przypadek jest „znany”, jeśli nie masz na to dowodu.
 
-Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
+## 4. Sprawdź użyteczność — 5 min
 
+Zamknij kartę źródłowego zgłoszenia. W nowym czacie Copilota wklej **tylko przygotowaną wersję** i poniższe polecenie. Sprawdź listę dołączonego kontekstu przed wysłaniem. Nie dołączaj źródłowego zgłoszenia jako „pomocy w anonimizacji”. Użyj rozmowy do pytań, bez edycji i uruchamiania narzędzi.
+
+```text
+Poniżej jest przygotowane do analizy zgłoszenie dotyczące rozbieżności
+w odsetkach i daty waluty. Oceniaj tylko wklejony materiał: nie przeszukuj
+repozytorium ani nie sięgaj po pierwotne zgłoszenie.
+Nie ustalaj przyczyny bez dowodów i nie pisz odpowiedzi do klienta.
+Wypisz: (1) znane fakty, (2) co da się sprawdzić na dostępnych danych,
+(3) brakujące informacje, (4) trzy następne kroki analizy.
+Nie uznawaj daty w niedzielę za błąd bez poznania obowiązującej reguły.
+
+TU WKLEJ MOJĄ PRZYGOTOWANĄ WERSJĘ ZGŁOSZENIA:
 ```
-git status --short
-git diff
-git add -u
-git commit -m "Warsztat: zakończony etap"
-```
+
+Usuń ostatnią linię zastępczą i wklej własny tekst. Sprawdź, czy AI nie dopowiedziało brakujących danych. Model w IDE może mieć dostęp do innych plików repo; to ćwiczenie doboru treści, **nie techniczna izolacja danych**.
+
+## 5. Sprawdzenie z partnerem — 3 min
+
+Partner dostaje Twoją przygotowaną wersję. Niech wskaże pozostałe informacje identyfikujące lub ich kombinacje, a następnie nazwie dwa pytania do analizy i przynajmniej jedną niewiadomą. Potem możecie porównać ją ze źródłem.
+
+To, że partner nie odgadł tożsamości, **nie dowodzi pełnej anonimizacji**. Szukacie przeoczonych szczegółów i sprawdzacie, czy nadal można sensownie rozpocząć analizę. Nie trzeba umieć ostatecznie rozstrzygnąć obu pytań klientki.
+
+**Gotowe:** masz krótsze zgłoszenie, uzasadnienia trzech wskazanych decyzji, zachowane fakty potrzebne do analizy i jawnie wypisane braki. Oba pliki zapisujesz w `portfolio/`; nie robisz commita ani nie wysyłasz odpowiedzi do klienta.
+
+**Rozszerzenie:** zaproponuj jedną regułę przygotowywania podobnych zgłoszeń. Znajdź w tym dokumencie przypadek, w którym jej mechaniczne zastosowanie usunęłoby ważny kontekst.
