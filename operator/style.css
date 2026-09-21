@@ -1,17 +1,46 @@
 :root {
+  color-scheme: light dark;
   --color-text: #201e1d;
   --color-neutral-300: #d7d3d3;
   --color-neutral-700: #605d5d;
   --color-neutral-800: #444141;
   --color-bg: #f3f2f2;
   --color-surface: #eae9e9;
+  --color-field-bg: #ffffff;
+  --color-border-soft: rgba(32, 30, 29, 0.16);
   --color-accent: #0088b0;
   --color-accent-700: #006786;
   --color-accent-2: #d6006c;
   --color-accent-2-700: #aa0b56;
   --color-accent-2-900: #790e3d;
+  --color-badge-magenta-bg: #fff1f4;
+  --color-badge-magenta-text: var(--color-accent-2-900);
+  --color-badge-neutral-bg: #f8f4f4;
+  --color-badge-neutral-text: var(--color-neutral-800);
   --font-heading: Georgia, "Times New Roman", serif;
   --font-body: Georgia, "Times New Roman", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #f1eeed;
+    --color-neutral-300: #423d3c;
+    --color-neutral-700: #a89f9e;
+    --color-neutral-800: #cac3c2;
+    --color-bg: #161413;
+    --color-surface: #221f1e;
+    --color-field-bg: #221f1e;
+    --color-border-soft: rgba(241, 238, 237, 0.2);
+    --color-accent: #35b1d6;
+    --color-accent-700: #7fd1ec;
+    --color-accent-2: #ff5c9a;
+    --color-accent-2-700: #ff85b3;
+    --color-accent-2-900: #ffb8d2;
+    --color-badge-magenta-bg: #3a1522;
+    --color-badge-magenta-text: #ffb8d2;
+    --color-badge-neutral-bg: #2a2726;
+    --color-badge-neutral-text: #cac3c2;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -79,8 +108,8 @@ h1 {
   border-radius: 2px;
   padding: 3px 10px;
 }
-.tag-accent-2 { background: #fff1f4; color: var(--color-accent-2-900); }
-.tag-neutral { background: #f8f4f4; color: var(--color-neutral-800); }
+.tag-accent-2 { background: var(--color-badge-magenta-bg); color: var(--color-badge-magenta-text); }
+.tag-neutral { background: var(--color-badge-neutral-bg); color: var(--color-badge-neutral-text); }
 
 /* Buttons */
 button, select, input { font: inherit; color: inherit; }
@@ -96,7 +125,7 @@ button, select, input { font: inherit; color: inherit; }
 .btn-ghost:hover { text-decoration: underline; }
 .btn-secondary {
   color: var(--color-text);
-  border-color: rgba(32, 30, 29, 0.16);
+  border-color: var(--color-border-soft);
   padding: 10px 18px;
 }
 .btn-secondary:hover { background: var(--color-surface); }
@@ -120,7 +149,8 @@ button:focus-visible, select:focus-visible, input:focus-visible {
   padding: 8px 10px;
   border: 1px solid var(--color-neutral-300);
   border-radius: 2px;
-  background: #fff;
+  background: var(--color-field-bg);
+  color: var(--color-text);
 }
 .only-toggle { cursor: pointer; user-select: none; font-weight: 600; }
 .only-toggle input {
