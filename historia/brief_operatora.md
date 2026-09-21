@@ -4,7 +4,15 @@ Operator chce wiedzieć: **która operacja przekracza limit, o ile i dlaczego**.
 
 ## Przykład do projektu
 
-Jeden rachunek, jedna partia, PLN, limit 100,00 zł. Kolejne obciążenia: 60,00 zł, 50,00 zł, 20,00 zł. Wykorzystanie: 60,00 / 110,00 / 130,00 zł. Przekroczenie: 0,00 / 10,00 / 30,00 zł. Kwota operacji i kwota przekroczenia to różne kolumny. Liczby są przykładami, a nie dowodem działania kodu.
+Jeden rachunek, jedna partia, PLN, limit 100,00 zł. Identyfikatory FR-001–FR-003 oznaczają trzy operacje rozpatrywane w poniższej kolejności. Wszystkie są obciążeniami.
+
+| Operacja | Kwota PLN | Wykorzystanie narastająco PLN | Limit PLN | Przekroczenie PLN |
+|---|---:|---:|---:|---:|
+| FR-001 | 60,00 | 60,00 | 100,00 | 0,00 |
+| FR-002 | 50,00 | 110,00 | 100,00 | 10,00 |
+| FR-003 | 20,00 | 130,00 | 100,00 | 30,00 |
+
+Kwota operacji i kwota przekroczenia to różne kolumny. Filtr „Tylko przekroczenia” pokazuje FR-002 i FR-003; wyłączenie filtra przywraca wszystkie trzy wiersze bez zmiany kwot. Liczby są przykładami do projektu i kryteriów, a nie dowodem działania kodu.
 
 ## Umowa na finał — podstawa
 

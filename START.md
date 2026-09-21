@@ -15,7 +15,7 @@ cd szkolenie-ai-pko
 
 W VS Code wybierz **File → Open Folder / Plik → Otwórz folder** i wskaż folder zawierający `package.json`, `src` oraz `operator`. Nie otwieraj tylko folderu pojedynczego ćwiczenia. Terminal otwieraj w tym samym katalogu głównym; wszystkie komendy poniżej wykonujesz właśnie tam.
 
-Sprawdź Node **24 lub nowszy**, Git i logowanie Copilota w VS Code. SQLite używa wbudowanego modułu Node; nie potrzeba Dockera. GitHub Enterprise i plan Copilota to osobne rzeczy — sprawdź faktyczne uprawnienia konta. Dostęp do Claude Design sprawdzamy osobno w przeglądarce, sama aplikacja Claude nie jest potwierdzeniem dostępu.
+Sprawdź Node **24 lub nowszy**, Git i logowanie Copilota w VS Code. SQLite używa wbudowanego modułu Node; nie potrzeba Dockera. GitHub Enterprise i plan Copilota to osobne rzeczy — sprawdź faktyczne uprawnienia konta. Dostęp do [Claude Design](https://claude.ai/design) sprawdzamy osobno w przeglądarce, sama aplikacja Claude nie jest potwierdzeniem dostępu.
 
 W terminalu Git Bash, w katalogu repozytorium (w PowerShell używaj `npm.cmd`, jeśli polityka blokuje `npm.ps1`):
 

@@ -8,7 +8,7 @@
 
 ## Przygotuj — 3 min
 
-Pracuj w otwartym repo z [START.md](../../START.md). Do czatu dołącz trzy pliki z `src/routing`: `schemat.ts`, `silnik.ts`, `kontoKsiegowe.ts`. Użyj **Add Context / Dodaj kontekst** lub wyboru pliku po `#`.
+Pracuj w otwartym repo z [START.md](../../START.md). W panelu Copilot Chat wybierz **Ask** — w tym ćwiczeniu pytasz o kod, a nie zlecasz jego zmiany. Nie pozostawaj w trybie **Agent** po innym ćwiczeniu. Jeśli Ask jest niedostępny, poproś prowadzącego o wskazanie dostępnego trybu rozmowy bez edycji; nie zatwierdzaj zapisów do plików. Do czatu dołącz trzy pliki z `src/routing`: `schemat.ts`, `silnik.ts`, `kontoKsiegowe.ts`. Użyj **Add Context / Dodaj kontekst** lub wyboru pliku po `#`.
 
 **Każdy z trzech promptów wyślij w nowym czacie**, z tymi samymi plikami i tym samym wybranym modelem. W przeciwnym razie kolejne odpowiedzi korzystałyby też z poprzedniej rozmowy. Nie zmieniaj ustawień między próbami. Jeśli Twoja wersja nie pozwala wybrać modelu, zachowaj ustawienie domyślne.
 

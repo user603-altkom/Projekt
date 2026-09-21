@@ -17,7 +17,7 @@ Nie traktuj uproszczeń demonstratora jako ogólnych zasad produktu. **Kryterium
 
 ## 2. Poproś o propozycję — 8 min
 
-W nowym czacie dołącz oba pliki przez **Add Context / Dodaj kontekst**. Nie musisz dołączać kodu modułu limitów — najpierw ustalasz, czego wymagasz. Wklej:
+W nowym czacie w trybie **Ask** dołącz oba pliki przez **Add Context / Dodaj kontekst**. Nie musisz dołączać kodu modułu limitów — najpierw ustalasz, czego wymagasz. Wklej:
 
 ```text
 Przejmuję aplikację po Franku. Przeczytaj dwa dołączone dokumenty:
@@ -29,7 +29,7 @@ Przygotuj:
 A. Do pięciu najważniejszych wymagań szerszego produktu. Przy każdym wskaż
    dokument i fragment źródłowy oraz pytania, które wymagają decyzji.
 B. Pięć sprawdzalnych kryteriów odbioru demonstratora: dane wejściowe,
-   czynność i oczekiwany wynik. Wykorzystaj przykład FR-001–FR-003.
+   czynność i oczekiwany wynik. Wykorzystaj tabelę FR-001–FR-003 z historia/brief_operatora.md.
 C. Krótki plan demonstratora, maksymalnie pięć zadań.
 
 Oddziel wymagania zapisane w dokumentach, własne propozycje i niewiadome.
@@ -68,7 +68,7 @@ Pozostałe kryteria powinny obejmować także zachowanie ekranu i pochodzenie wy
 
 Partner wybiera jedno kryterium i mówi, jak je sprawdzi. Następnie wybiera jedno założenie i pyta o jego źródło. Jeśli musisz dopowiadać istotny warunek ustnie, dopisz go do pliku.
 
-**Gotowe:** masz kryteria obu zakresów, wskazane źródła, jawne propozycje i pytania oraz mały plan. Plik wróci w ćw. 09B, review w ćw. 10 i finale. Zapisujesz tylko `portfolio/`, więc nie robisz commita.
+**Gotowe:** masz kryteria obu zakresów, wskazane źródła, jawne propozycje i pytania oraz mały plan. Plik wróci w ćw. 09 część B, review w ćw. 10 i finale. Zapisujesz tylko `portfolio/`, więc nie robisz commita.
 
 **Gdy utkniesz:** weź z planu jedną liczbę, warunek lub decyzję i znajdź odpowiadający fragment dokumentu. Zacznij od jednego kryterium dla FR-002. Nie trzeba projektować architektury całego systemu.
 

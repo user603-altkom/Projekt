@@ -30,7 +30,14 @@ Na tym etapie nie edytuj plików.
 
 Przeczytaj plan. Jeśli dodaje inne zmiany, poproś o ograniczenie zakresu. Następnie napisz: **„Wprowadź uzgodnioną zmianę tylko w visibleRows. Pokaż diff i opisz, co faktycznie sprawdziłeś”**.
 
-Jeśli Agent jest niedostępny, poproś w zwykłym czacie o proponowaną wersję funkcji i wprowadź ją ręcznie po przeczytaniu. Nie zmieniaj polityk VM, żeby odblokować tryb.
+**Jeśli Agent jest niedostępny:** użyj Ask lub dostępnego trybu rozmowy bez edycji. Dołącz `operator/app.js`, wklej powyższy prompt, a po sprawdzeniu planu poproś o treść funkcji `visibleRows(rows, onlyExceeded)` do ręcznego wstawienia.
+
+1. W VS Code naciśnij **Ctrl+P**, wpisz `operator/app.js` i otwórz plik.
+2. Znajdź funkcję `visibleRows(rows, onlyExceeded)` blisko początku pliku. W starterze jej ciało zawiera tylko `return rows;`.
+3. Zastąp **tylko tę instrukcję wewnątrz funkcji** kodem proponowanego filtrowania. Zachowaj deklarację funkcji i jej klamry; nie wklejaj drugiej funkcji o tej samej nazwie ani znaczników bloku Markdown.
+4. Zapisz **Ctrl+S** i przejdź do tej samej kontroli diffu i ekranu z kroku 3 poniżej.
+
+Nie zmieniaj polityk VM, żeby odblokować tryb. Ręczna edycja ma ten sam zakres i kryteria odbioru.
 
 ## 3. Sprawdź kod i ekran — 8 min
 
@@ -69,4 +76,4 @@ Przed commitem upewnij się, że lista zawiera tylko uzgodnioną zmianę. Jeśli
 
 **Gotowe:** filtr działa, potrafisz wyjaśnić diff, dane wejściowe są nietknięte, masz zapisany commit i wynik kontroli.
 
-**Rozszerzenie:** sprawdź funkcję na pustej tablicy i na przykładzie bez przekroczeń, bez edycji wspólnych danych demo. Ekran ma już miejsce na komunikat „Brak wyników”; oceń jego czytelność. Nie podłączaj jeszcze adaptera finałowego.
+**Rozszerzenie:** sprawdź funkcję na pustej tablicy i na przykładzie bez przekroczeń, bez edycji wspólnych danych demo. Ekran ma już miejsce na komunikat „Brak wierszy spełniających warunki.”; oceń jego czytelność. Nie podłączaj jeszcze adaptera finałowego.

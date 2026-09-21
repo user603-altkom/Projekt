@@ -12,7 +12,7 @@ Twoim wynikiem ma być **jeden widoczny prototyp z przykładowymi danymi**, któ
 
 ## 1. Otwórz Claude Design i wklej cały prompt
 
-Otwórz Claude Design w przeglądarce na koncie szkoleniowym i rozpocznij nowy projekt. **Nie potrzebujesz jeszcze VS Code, terminala ani sklonowanego repo.** Claude Design nie ma dostępu do naszych plików — poniższy prompt zawiera cały potrzebny opis. Nie musisz czytać ani załączać dodatkowego briefu.
+Po krótkim pokazie prowadzącego otwórz [Claude Design — claude.ai/design](https://claude.ai/design) w przeglądarce na koncie szkoleniowym i rozpocznij nowy projekt. **Nie potrzebujesz jeszcze VS Code, terminala ani sklonowanego repo.** Claude Design nie ma dostępu do naszych plików — poniższy prompt zawiera cały potrzebny opis. Nie musisz czytać ani załączać dodatkowego briefu.
 
 Skopiuj **cały blok**, razem z tabelą:
 
