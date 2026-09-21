@@ -6,7 +6,7 @@ Repozytorium ćwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. Ud
 
 ## Nowa ścieżka: historia Franka
 
-**Zacznij od [START.md](START.md).** Tam są kolejność zadań, wspólna gałąź i ekran operatora. Scenariusz zamyka się działającym fragmentem ekranu w trzecim dniu.
+**Zacznij od [START.md](START.md).** Tam są kolejność zadań, wspólna gałąź i ekran operatora. We wtorek podłączasz własny ekran do obliczeń, w środę rozwijasz go o nową funkcję. Aktualna kolejność: [dzień 2](DZIEN-2.md), [dzień 3](DZIEN-3.md). Przed pobraniem zmian: [bezpieczna aktualizacja](PRACA-WARSZTATOWA.md).
 
 ## Start
 

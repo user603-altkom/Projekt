@@ -2,9 +2,9 @@
 
 **Część A: dzień 1, po ćw. 02b · 15 min**
 
-**Część B: dzień 1, po ćw. 04 · 15 min**
+**Część B: D2-07, po integracji ekranu · 25 min**
 
-**Część C: dzień 2, po testach · 10 min — jeszcze jej dziś nie wykonuj**
+**Część C: jedna reguła w ramach D2-05B — bez osobnego bloku**
 
 > Franek: „Za każdym razem tłumaczę to samo. Tylko nigdy nie zapisałem gdzie”.
 
@@ -61,33 +61,28 @@ git commit -m "Instrukcje: zasady malych zmian i weryfikacji"
 
 **Gotowe A:** krótki zapisany plik, dwie próby i uczciwy opis tego, co potwierdziłeś. Notatki pozostają w `portfolio/`, commit obejmuje instrukcje.
 
-## Część B — wymagania i przekazanie do nowej sesji
+## Czesc B — nowa sesja przejmuje stan (D2-07)
 
-**Wróć tutaj dopiero po ćw. 04.** Potrzebujesz `portfolio/kryteria-limitow.md` i instrukcji z części A.
+**25 min · nowy czat Copilota · bez implementacji.** Wczoraj poznaliśmy reguły, dziś przekażemy konkretny stan projektu. Notatka nie jest pamięcią modelu, dopóki jej nie otrzyma.
 
-1. **Uzupełnij instrukcje — 4 min.** Dodaj regułę rozdzielania wymagań, propozycji i pytań do zamawiających. Otwórz `package.json` i sprawdź polecenia: `npm test` oraz `npm run typecheck`. Dopisz, że ich przejście nie dowodzi ukończenia ekranu; `npm run odbior` sprawdza finał i na starterze celowo nie przechodzi. Zachowaj krótki plik.
-2. **Przygotuj przekazanie — 4 min.** W `portfolio/cw09-handoff.md` zapisz: cel finału, aktualny stan filtra i adaptera, pliki z kryteriami, podjęte decyzje, otwarte pytania oraz następny mały krok. Jeśli zrobiłeś to już z prowadzącym podczas omówienia nowej sesji, wykorzystaj istniejącą notatkę — nie pisz jej drugi raz. Nie wklejaj całej historii rozmowy.
-3. **Sprawdź odtworzenie — 5 min.** Otwórz nowy czat i dołącz handoff, `portfolio/kryteria-limitow.md` oraz `historia/brief_operatora.md`. Samo zapisanie notatek na dysku nie oznacza, że Copilot je przeczytał. Poproś:
+1. W `portfolio/cw09-handoff.md` zapisz siedem pozycji: cel, stan, pliki, decyzje, wykonane sprawdzenia i wyniki, otwarte pytanie, następny krok. Dodaj komendę uruchomienia własnego UI. Odwołuj się do swoich rzeczywistych plików.
+2. Otwórz **nowy czat**. Dołącz notatkę, brief i najważniejszy plik zmiany. Poproś o odtworzenie stanu oraz plan następnego kroku, bez zmian kodu. Nie wklejaj całej poprzedniej rozmowy.
+3. Partner porównuje odpowiedź z kodem i wynikami komend. Popraw jedno pominięcie, jeśli istnieje, i ponów pytanie. Jeżeli wszystko się zgadza, nazwij sprawdzony zakres.
+
+Przykład zdania: „Adapter przechodzi odbiór, UI czyta eksport JSON; po zmianie wejścia trzeba ponowić eksport. Nie sprawdziliśmy jeszcze pustego limitu”. Zapisz tylko to, co jest prawdą w Twojej kopii.
 
 ```text
-Na podstawie dołączonego przekazania, kryteriów i briefu odtwórz:
-cel demonstratora, aktualny stan, jedną nierozstrzygniętą kwestię
-oraz następny mały krok. Oddziel fakty z materiałów od własnych propozycji.
-Nie implementuj niczego i nie rozszerzaj zakresu do całego produktu.
+Odtwórz cel, aktualny stan i następny krok z dołączonego przekazania.
+Sprawdź ważne twierdzenia w dołączonym kodzie. Oddziel fakty od propozycji.
+Jeśli brakuje danych, wskaż brak. Tylko analiza i plan, bez edycji.
 ```
 
-Porównaj odpowiedź ze swoimi kryteriami. Czy nowa sesja rozróżnia demo od obliczeń i nie wymyśla podjętych decyzji? Jeśli czegoś brakuje, uzupełnij handoff.
+**Gotowe:** nowa sesja odtwarza stan, a Ty potrafisz wskazać, jak to sprawdziłeś. Notatka zostaje lokalnie; nie wymaga commita. Nie kopiuj jej całej do instrukcji projektu.
 
-4. **Zapisz zmianę instrukcji — 2 min.** Użyj komend z części A, z opisem commita `Instrukcje: wymagania i polecenia kontroli`. Nie dodawaj ignorowanego `portfolio/` do Git. Jeśli plik instrukcji się nie zmienił, nie twórz pustego commita.
+**Dla szybszych:** ta sama notatka w Claude Code; porównaj odczytane pliki i założenia, bez dwóch agentów implementujących równocześnie.
 
-**Gotowe B:** nowa rozmowa potrafi odtworzyć zakres z krótkiego przekazania, a instrukcje odwołują się do istniejących poleceń. To Ty sprawdzasz zgodność; streszczenie może zgubić ważną informację.
+## Część C — jedna konwencja po testach
 
-## Część C — dopiero dzień 2, po testach
+Po D2-05B dopisz do instrukcji jedną poznaną zasadę testowania, np. niezależne oczekiwanie w groszach. Wskaż plik będący wzorem. Sprawdź użycie w małym zadaniu, usuń sprzeczności. Nie twórz nowego obszernego dokumentu.
 
-Dodaj jedną poznaną konwencję testów, opartą na konkretnym pliku repo. Przetestuj jej użycie w nowej rozmowie i usuń lub popraw regułę, która okazała się zbędna albo sprzeczna. Jeśli żadna nie wymaga usunięcia, zapisz ten wniosek. Zapisz zmianę instrukcji w Git tak jak wcześniej.
-
-`AGENTS.md` może później służyć do wspólnych zasad, a istniejący `CLAUDE.md` zawiera jego import. Nie kopiuj teraz tych samych instrukcji do kilku plików. Obsługę każdego formatu sprawdzaj w danym narzędziu.
-
-**Rozszerzenie:** przygotuj instrukcję stosowaną tylko do plików testowych i potwierdź jej ładowanie. To dodatek po ukończeniu bieżącej części, nie warunek przejścia dalej.
-
-Opis lokalizacji pliku i diagnostyki: [oficjalna dokumentacja instrukcji VS Code](https://code.visualstudio.com/docs/agent-customization/custom-instructions). Dostępność widoków zależy od wersji na VM.
+Źródło konfiguracji: [VS Code](https://code.visualstudio.com/docs/agent-customization/custom-instructions). Import `@AGENTS.md` w `CLAUDE.md` pozostaje ścieżką do wspólnych reguł. Faktyczne wsparcie formatów sprawdzamy na VM.

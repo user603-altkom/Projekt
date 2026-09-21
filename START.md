@@ -48,19 +48,15 @@ Dodawanie plików opisuje [oficjalna dokumentacja kontekstu VS Code](https://cod
 
 ## Mapa trzech dni
 
-| Dzień | Sprawa Franka | Ćwiczenia | Rezultat |
-|---|---|---|---|
-| 1 | Co operator miał dostać? | 00 → 01 → 02 → 02b; 09 część A; 03 → 04; 09 część B | Prototyp, działający filtr w Copilocie, kryteria i instrukcje |
-| 2 | Czy możemy ufać liczbom? | 05 → 06 → 07 → 08 **albo** 08_sql | Mapa kodu, testy, dowód rozbieżności, mała bezpieczna zmiana |
-| 3 | Jak zostawić system następcy? | porownanie → 13 → 10 → mcp → 11 → zadanie_koncowe | Procedura, review, wynik limitów na ekranie, handoff |
+- **Dzień 1:** prototyp, poznanie repo, pierwsze reguły, kryteria oraz Presidio. Pracę nad własnym ekranem zachowujesz na kolejne dni.
+- **[Dzień 2 — kontrola agenta i poprawne liczby](DZIEN-2.md):** nowe karty D2, test importu, integracja własnego ekranu i przekazanie do nowej sesji.
+- **[Dzień 3 — nowa funkcja przez SDLC](DZIEN-3.md):** symulacja limitu, review i integracje, Superpowers, własny skill, MCP i hook.
 
-**Dodatkowy blok dnia 1 po ćw. 03:** [Ćw. 03b — Presidio: demo i lokalna anonimizacja z Agentem](cwiczenia/cw03b/README.md), 45 min. Prowadzący wskazuje jego miejsce względem ćw. 04; nie jest warunkiem kolejnych zadań.
-
-Ćw. 12 i `rezerwa/` są dodatkami. Nie musisz ukończyć rozszerzeń, żeby dojść do finału. Ćw. 09 wraca krótkimi fragmentami zamiast jednego wykładu o konfiguracji.
+Przed aktualizacją repo przeczytaj [PRACA-WARSZTATOWA.md](PRACA-WARSZTATOWA.md). Nie nadpisuj wczorajszego projektu. Stare katalogi `cwXX` zostają, ale kolejność wyznaczają indeksy dni.
 
 ## Jak pracujemy
 
-Copilot jest głównym narzędziem; Claude Design służy do pierwszego prototypu, a Claude Code do kontrolowanego porównania dnia 3. W banku wracasz do zatwierdzonych narzędzi i polityk, nie do dowolnego ustawienia z laboratorium. Korzystamy wyłącznie z syntetycznego repo.
+Copilot jest głównym narzędziem; Claude Design służy do pierwszego prototypu, a Claude Code do wybranych pokazów i ćwiczeń po sprawdzeniu instrukcji. W banku wracasz do zatwierdzonych narzędzi i polityk, nie do dowolnego ustawienia z laboratorium. Korzystamy wyłącznie z syntetycznego repo.
 
 Każde ćwiczenie ma podstawę i rozszerzenie. Najpierw mały wynik, potem dowód: plik, polecenie, test lub kontrprzykład. Poprawna odpowiedź AI też jest wynikiem — nie trzeba na siłę znaleźć halucynacji lub błędu.
 
