@@ -56,7 +56,7 @@ Wklej cały prompt:
 Pomóż mi uruchomić ten projekt lokalnie na szkoleniowej VM z Windows.
 Mam Git, Python, Node i Docker; nie zakładaj ich wersji ani dostępności usług.
 Cel: działający panel WWW, w którym przeanalizuję syntetyczny tekst po polsku.
-W podstawie nie potrzebuję rozszerzenia przeglądarkowego ani autostartu.
+Uruchamiamy tylko backend i lokalny panel WWW, bez autostartu.
 
 1. Przeczytaj README.md, WINDOWS.md, Uruchom-Windows.bat,
    backend/requirements.txt i kod startu backendu. Sprawdź wersję Pythona,
@@ -105,7 +105,7 @@ Obejrzyj `anonymized_text` i `entities_found`. E-mail powinien być zastąpiony,
 
 ## 4. Porównaj i podejmij decyzję — 7 min
 
-W lokalnym panelu przeanalizuj **ten sam polski tekst** co w demo, bez instalowania rozszerzenia przeglądarkowego. Porównaj wyniki, uwzględniając różnice języka, modeli i konfiguracji. Nie wyciągaj wniosku „lokalnie wykrywa lepiej” bez wskazania tych różnic.
+W lokalnym panelu przeanalizuj **ten sam polski tekst** co w demo. Porównaj wyniki, uwzględniając różnice języka, modeli i konfiguracji. Nie wyciągaj wniosku „lokalnie wykrywa lepiej” bez wskazania tych różnic.
 
 Wróć do repo Franka i zapisz `portfolio/cw03b-presidio.md`:
 
@@ -130,10 +130,7 @@ Dołącz adres lokalnego panelu, komendę jego uruchomienia i wynik próby API. 
 
 Nie potrzebujesz commita w repo Franka. Notatka zostaje w `portfolio/`. Po ćwiczeniu zatrzymaj własny serwer przez **Ctrl+C**.
 
-**Rozszerzenie — wybierz jedno:**
-
-- Poproś Agenta o lokalny recognizer dla fikcyjnych numerów spraw `FR-` + cztery cyfry. Sprawdź `FR-2048` oraz kontrprzykład `FR-ABC`; pokaż wynik przed i po zmianie. Najpierw niech odszuka mechanizm konfiguracji projektu, zamiast zgadywać nazwę pliku.
-- Jeśli polityka VM pozwala, wypróbuj `chrome-extension/` według instrukcji projektu na syntetycznym tekście w lokalnym formularzu. Sprawdź zakres działania i uprawnienia; nie zakładaj, że rozszerzenie przeglądarki chroni również czat Copilota w VS Code.
+**Rozszerzenie dla chętnych:** Poproś Agenta o lokalny recognizer dla fikcyjnych numerów spraw `FR-` + cztery cyfry. Sprawdź `FR-2048` oraz kontrprzykład `FR-ABC`; pokaż wynik przed i po zmianie. Najpierw niech odszuka mechanizm konfiguracji projektu, zamiast zgadywać nazwę pliku.
 
 ## Źródła do pracy z agentem
 
