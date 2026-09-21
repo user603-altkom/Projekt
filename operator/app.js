@@ -5,7 +5,7 @@ const money = (value, currency) => value === null ? 'Brak' : new Intl.NumberForm
 
 // Ćwiczenie MOST: checkbox istnieje. Dopisz filtrowanie bez zmiany raportu i obliczeń.
 function visibleRows(rows, onlyExceeded) {
-  return rows;
+  return onlyExceeded ? rows.filter(row => row.status === 'przekroczenie') : rows;
 }
 
 function render() {
