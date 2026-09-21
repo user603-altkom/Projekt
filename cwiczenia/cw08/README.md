@@ -10,6 +10,8 @@ Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
+**Start:** Copilot Chat → Agent, nowa rozmowa. Najpierw plan jednego wydzielenia i test ochronny, potem edycja. Komendy uruchamiaj z głównego katalogu repo.
+
 ## Cel
 
 Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim zaczniesz pod jego osłoną zmieniać kod — i co ten zestaw utrwala razem z zachowaniem.
@@ -33,10 +35,10 @@ Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim za
 
 ## Kroki
 
-1. **Uruchom `npm test`.** Zobacz, co jest zielone, zanim uznasz, że coś cię chroni.
+1. **Uruchom `npm test -- tests/interest/accrue.test.ts`, potem `npm test`.** Zapisz punkt startowy w `portfolio/cw08-refaktoryzacja.md`. Oddziel znane czerwone testy importu z poprzednich ćwiczeń od testów modułu odsetek.
 2. **Ustal, czego te testy nie dotykają.** Zestaw `tests/interest/accrue.test.ts` z listą wejść w `dane/odsetki_przypadki.json` i z rozgałęzieniami w `src/interest/accrue.ts`. Wypisz gałęzie, przez które nie przechodzi ani jeden test.
-3. **Domknij siatkę, zanim ruszysz kod.** Dopisz przypadki tak, żeby utrwalały dzisiejsze wyniki gałęzi, które zostały bez pokrycia.
-4. **Wyodrębnij dobór stawki i naliczenie dzienne do `src/interest/stawki.ts`.** Do środka idzie to, co wylicza odsetki za jeden dzień przy danym saldzie, produkcie i parametrach. W `accrueInterest` zostaje pętla dnia, kapitalizacja, podatek i saldo. Tnij po teście, nie po pliku: kawałek nadaje się do wyjęcia wtedy, gdy umiesz wskazać test, który spadnie, jeśli go zepsujesz.
+3. **Zabezpiecz wybrany fragment, zanim ruszysz kod.** Dopisz przypadek dla gałęzi, którą będziesz wydzielać. Nową migawkę wolno utworzyć teraz, na kodzie sprzed refaktoryzacji; później jej nie aktualizuj. Nie musisz pokryć całego modułu w 45 minut.
+4. **Wyodrębnij jeden mały fragment, np. dobór stawki dla jednego produktu, do `src/interest/stawki.ts`.** To wystarcza w podstawie; pełny podział ze zgłoszenia jest rozszerzeniem. Do nowej funkcji przekaż jawnie dane potrzebne wybranemu fragmentowi. W `accrueInterest` zostaje pętla dnia, kapitalizacja, podatek i saldo. Tnij po teście, nie po pliku: kawałek nadaje się do wyjęcia wtedy, gdy umiesz wskazać test, który spadnie, jeśli go zepsujesz.
 5. **Uruchamiaj testy po każdym cięciu, nie na końcu.** Migawka, która się zmieniła, jest sygnałem, że zmieniłeś zachowanie — nie powodem, żeby ją zaktualizować.
 
 > **Jeśli utknąłeś po 15 minutach**
@@ -54,15 +56,13 @@ Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim za
 > to jest lista, z którą idziesz na omówienie.
 
 > **Skończyłeś wcześniej**
-> Skasuj `tests/interest/accrue.test.ts` razem z katalogiem `__snapshots__` i napisz
-> testy charakteryzujące od zera, tak żeby każda gałąź `accrueInterest` była dotknięta
-> co najmniej raz. Ile przypadków było na to potrzeba? Czego z nich nadal nie widać?
+> Zaprojektuj alternatywny zestaw testów charakteryzujących: jaki przypadek
+> dotknie każdej gałęzi? Zachowaj istniejące testy i migawki. Dopisz brakujące
+> przykłady, uruchom je i wskaż ograniczenia takiej ochrony.
 >
-> Potem zrób coś odwrotnego i nieprzyjemnego: wróć do oryginalnego zestawu wejść
-> i usuń z niego trzy przypadki tak, żeby `npm test` nadal był zielony, a pokrycie
-> gałęzi spadło jak najmocniej. Które trzy wybrałeś i skąd wiedziałeś, że akurat te?
-> To jest dokładnie ta operacja, którą ktoś robi nieświadomie, kasując „zbędny"
-> przypadek, bo wygląda na powtórzenie innego.
+> Eksperyment z usuwaniem przypadków wykonuj tylko na osobnej, tymczasowej
+> kopii. Sprawdź, czy „zielono” może pozostać mimo mniejszego pokrycia.
+> Do właściwej gałęzi nie przenoś usuniętych testów ani uszkodzeń.
 >
 > Na koniec jedno pytanie do zapisania na omówienie: gdyby w module siedział dziś
 > błąd, twoje migawki utrwaliłyby go jako poprawny wynik. Po czym poznasz różnicę
@@ -70,17 +70,11 @@ Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim za
 
 ## Gotowe, gdy
 
-- [ ] `npm test` przechodzi, `src/interest/stawki.ts` istnieje i jest wołany z `accrueInterest`, a żadna migawka nie została zaktualizowana po drodze
-- [ ] umiesz wymienić gałęzie, których nie dotyka żaden test, i pokazać je drugiej osobie w kodzie
+- [ ] testy odsetek przechodzą; `stawki.ts` jest wywoływany z `accrueInterest`, a podczas refaktoryzacji nie zmieniłeś oczekiwań ani migawek utrwalonych przed nią
+- [ ] pełny zestaw testów nie ma nowych błędów względem zapisanego punktu startowego
+- [ ] pokazujesz test chroniący wydzielony fragment oraz pozostałe luki albo zakres potwierdzonego pokrycia
 - [ ] umiesz odpowiedzieć drugiej osobie, co twoje migawki gwarantują, a czego nie gwarantują — i co się z nimi stanie, jeśli w module siedzi dziś błąd
 
 ## Na koniec ćwiczenia
 
-Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
-
-```
-git status --short
-git diff
-git add -u
-git commit -m "Warsztat: zakończony etap"
-```
+Zapisz dowody w `portfolio/cw08-refaktoryzacja.md`. W wariancie bez kodu wystarczy kontrakt i wskazane luki. W wariancie implementacyjnym przejrzyj `git diff` i `git status --short`; dodaj jawnie zmienione pliki oraz nowy `src/interest/stawki.ts` i ewentualne nowe testy/migawki. Po `git diff --cached` wykonaj `git commit -m "Wydzielenie fragmentu naliczania bez zmiany wynikow"`.

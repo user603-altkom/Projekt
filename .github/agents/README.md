@@ -1,29 +1,25 @@
 # Właśni agenci (`.github/agents/`)
 
-Materiał do Ćw. 13. Własny agent to **rola plus zamknięta lista narzędzi**. W odróżnieniu od skilla, który dodaje treść, agent **ogranicza to, co wolno zrobić**.
+Rozszerzenie ćw. 13. Własny agent definiuje rolę i zestaw dostępnych narzędzi. Dla recenzenta dobierz narzędzia do odczytu. Sama treść „nie zmieniaj plików” nie jest techniczną blokadą zapisu.
 
-Plik: `NAZWA.agent.md`, frontmatter YAML plus treść w Markdown.
+Plik `.github/agents/recenzent.agent.md` zawiera YAML i instrukcję:
 
 ```markdown
 ---
 name: recenzent
-description: Przegląda diff i wypisuje zastrzeżenia. Nie zmienia plików.
+description: Przegląda kod i wypisuje zastrzeżenia z dowodami.
 tools: ['search/codebase', 'search/usages']
 ---
 
-Jesteś recenzentem. Dla każdego zastrzeżenia podaj plik i linię oraz sposób
-sprawdzenia. Oddziel potwierdzone błędy od hipotez. Jeśli nie znajdujesz
-błędu, powiedz to wprost.
+Dla każdego zastrzeżenia podaj plik i linię oraz sposób sprawdzenia.
+Oddziel potwierdzone błędy od hipotez. Jeśli nie znajdujesz błędu,
+powiedz to wprost. Nie edytuj plików.
 ```
 
-## Pole `tools` jest tym, co czyni agenta bramką
+Zapisz plik i wybierz **recenzent** z listy agentów w panelu czatu. Sprawdź, jakie narzędzia faktycznie są dostępne w Twojej wersji VS Code. Jeśli nazwa narzędzia nie jest rozpoznana, użyj edytora konfiguracji i wybierz dostępne narzędzia odczytu/wyszukiwania.
 
-**Pominięcie pola `tools` daje agentowi wszystkie narzędzia**, łącznie z zapisem plików i terminalem. Ograniczenie to biała lista: wpisujesz wyłącznie to, co wolno.
+Nie pomijaj świadomie pola `tools`, licząc, że sam opis ograniczy możliwości. Nie dodawaj terminala do roli „tylko odczyt”: komenda powłoki może zmieniać pliki. Sprawdź również narzędzia MCP i możliwość delegowania, jeśli włączasz je do roli.
 
-Dokumentacja mówi o tym wprost: przy przepływach wrażliwych na bezpieczeństwo twórz agentów z narzędziami tylko do odczytu, żeby zapobiec niezamierzonym modyfikacjom.
+**Próba w osobnej kopii:** poproś o review, a następnie o zapis pliku. Obejrzyj dostępne narzędzia i wynik w `git status --short`. Odmowa modelu to obserwacja; brak narzędzi zapisu to osobna właściwość konfiguracji. Taki agent nie jest izolacją całego systemu operacyjnego.
 
-To jest ta sama bramka, o której mówimy przy code review, tyle że wymuszona konfiguracją zamiast dobrą wolą recenzenta.
-
-## Jak go wywołać
-
-Z listy agentów w panelu czatu albo przez `@nazwa`. Uwaga: wywołanie przez `@` działa w trybie agentowym - w zwykłym czacie nie zadziała i łatwo uznać, że agent jest zepsuty.
+Źródło: [Custom agents w VS Code](https://code.visualstudio.com/docs/agent-customization/custom-agents).

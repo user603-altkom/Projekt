@@ -1,8 +1,8 @@
-# Rezerwa - Bramka, której model nie przejdzie po swojemu
+# Rezerwa — Bramka jakości i jej granice
 
 **Czas:** 45 min · **Każdy u siebie** · Sprawdzenie w dwójce
 
-Nic nie instalujesz, nic nie wychodzi do sieci. Wszystko lokalnie.
+Skrypt i próby Git działają lokalnie, bez instalowania zależności. Copilot potrzebuje sieci. Zacznij po ćw. 07: naprawiony raport i testy mają stanowić zielony punkt odniesienia. Sam czysty klon startera nadal zawiera błąd uzgodnienia.
 
 ## Cel
 
@@ -25,9 +25,25 @@ Umieć zamienić „sprawdziłem, wygląda dobrze" w komendę, która kończy si
 
 1. **Wypisz, zanim cokolwiek napiszesz, co ta bramka ma sprawdzać.** Trzy do pięciu rzeczy. Przy każdej dopisz, jak wygląda jej porażka: co dokładnie musi się wypisać na ekranie, żeby człowiek wiedział, co naprawić.
 2. **Zleć modelowi napisanie skryptu `scripts/bramka.mjs` i podepnij go jako `npm run bramka`.** Czysty Node, bez nowych zależności - tak jak `scripts/doctor.mjs`. Kod wyjścia jeden przy dowolnej porażce.
-3. **Sprawdź, że bramka naprawdę pada.** Zepsuj po kolei każdą z rzeczy, które miała łapać, i po każdej uruchom `npm run bramka`. Bramka, której nie widziałeś czerwonej, nie jest bramką.
-4. **Daj modelowi zadanie, które twoją bramkę złamie.** Poproś o zmianę w `src/`, która przejdzie przez `npm run bramka`, a mimo to zepsuje raport dzienny. Jeśli znajdzie - dopisz brakujące sprawdzenie i powtórz.
-5. **Podepnij bramkę pod `git push`.** Plik `.git/hooks/pre-push`, jedna linijka wywołująca `npm run bramka`. Sprawdź, że blokuje wypchnięcie zepsutego stanu.
+3. **Sprawdź, że bramka naprawdę pada.** Zapisz działający etap. Eksperymenty z uszkadzaniem prowadź w osobnej kopii warsztatowej, z `.git/` i dostępnymi zależnościami; nie na jedynym egzemplarzu swojej pracy. Zepsuj jedną rzecz, uruchom `npm run bramka`, potem przywróć ją przed kolejną próbą. Bramka, której nie widziałeś czerwonej, nie jest bramką.
+4. **Daj modelowi zadanie, które twoją bramkę złamie.** W tej samej kopii eksperymentalnej poproś o zmianę w `src/`, która przejdzie przez `npm run bramka`, a mimo to zepsuje raport dzienny. Jeśli znajdzie - dopisz brakujące sprawdzenie i powtórz.
+5. **Podepnij bramkę pod lokalny test push.** W kopii eksperymentalnej sprawdź, czy `.git/hooks/pre-push` już istnieje; nie nadpisuj istniejącego hooka. Dla standardowego klona utwórz plik z zawartością:
+
+   ```sh
+   #!/bin/sh
+   npm run bramka
+   ```
+
+   W Git Bash nadaj mu prawo wykonania: `chmod +x .git/hooks/pre-push`. Utwórz lokalne repo docelowe i wyślij do niego pierwszy poprawny commit:
+
+   ```bash
+   git init --bare .warsztat-kopie/push-test.git
+   git push ./.warsztat-kopie/push-test.git HEAD:refs/heads/proba
+   ```
+
+   Potem, nadal w kopii eksperymentalnej, utwórz lokalny commit z kontrolowanym uszkodzeniem i powtórz push. Hook ma go zatrzymać. **Nie używaj `origin` ani wspólnego `main` do tej próby.** Obejrzyj komunikat i sprawdź `git ls-remote ./.warsztat-kopie/push-test.git refs/heads/proba`: docelowy identyfikator powinien pozostać sprzed uszkodzenia.
+
+Hook jest lokalny, nie trafia automatycznie do klonów innych osób i można go pominąć. Nie zastępuje obowiązkowych kontroli po stronie serwera. Do właściwej gałęzi przenosisz wyłącznie działający skrypt i wpis w `package.json`, nie celowe uszkodzenia.
 
 > **Jeśli utknąłeś po 15 minutach**
 > Zacznij od jednej rzeczy, nie od pięciu. Najprostsza bramka, która ma sens
@@ -50,17 +66,10 @@ Umieć zamienić „sprawdziłem, wygląda dobrze" w komendę, która kończy si
 
 ## Gotowe, gdy
 
-- [ ] `npm run bramka` kończy się kodem zero na czystym repozytorium i kodem jeden po każdej z zepsutych rzeczy, które miała łapać - pokazałeś obie sytuacje drugiej osobie
+- [ ] `npm run bramka` kończy się kodem zero na zapisanym, naprawionym stanie odniesienia i kodem jeden po każdej z zepsutych rzeczy, które miała łapać - pokazałeś obie sytuacje drugiej osobie
 - [ ] wiesz, czy model znalazł zmianę przechodzącą przez bramkę i psującą raport - i jeśli znalazł, bramka ją teraz łapie
 - [ ] umiesz wymienić przynajmniej jedną rzecz, której twoja bramka nie sprawdza, i powiedzieć, dlaczego zdecydowałeś jej nie sprawdzać
 
 ## Na koniec ćwiczenia
 
-Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
-
-```
-git status --short
-git diff
-git add -u
-git commit -m "Warsztat: zakończony etap"
-```
+W `portfolio/bramka.md` zapisz zakres kontroli, wyniki zielonej i czerwonej próby oraz ograniczenia hooka. W głównym repo przejrzyj `git diff`, dodaj `scripts/bramka.mjs` i `package.json`, sprawdź `git diff --cached` i wykonaj `git commit -m "Bramka lokalnej kontroli jakosci"`. W wariancie CI zachowaj projekt zadania i zaznacz, że nie został wykonany; nie zgłaszaj go jako sprawdzonej bramki.

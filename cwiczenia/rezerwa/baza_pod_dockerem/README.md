@@ -32,8 +32,18 @@ Baza stawia się z tych samych danych, na których liczy się `npm run sql:rapor
 ```
 npm run sql:setup
 npm run pg:dump
-docker run --name rejestr-pg -e POSTGRES_PASSWORD=szkolenie -e POSTGRES_DB=rejestr -p 55432:5432 -d postgres:17-alpine
+docker run --name rejestr-pg -e POSTGRES_PASSWORD=szkolenie -e POSTGRES_DB=rejestr -p 127.0.0.1:55432:5432 -d postgres:17-alpine
 ```
+
+Jeżeli kontener `rejestr-pg` już istnieje z Twojej wcześniejszej próby, użyj `docker start rejestr-pg` zamiast ponownego `docker run`. Nie usuwaj cudzego kontenera o tej nazwie. Poczekaj na gotowość:
+
+```bash
+docker exec rejestr-pg pg_isready -U postgres -d rejestr
+```
+
+Przejdź dalej dopiero po komunikacie `accepting connections`. W razie błędu sprawdź `docker logs rejestr-pg`. `sql:setup` odtwarza lokalną bazę SQLite, więc zachowaj wcześniej własne dane, jeśli ją rozbudowywałeś.
+
+Import odtwarza tabele `transakcje` i `oddzialy` w bazie ćwiczeniowej. Wykonaj go raz na początku, nie między pomiarami.
 
 Wgranie danych, w Git Bashu:
 
@@ -44,7 +54,7 @@ docker exec -i rejestr-pg psql -q -U postgres -d rejestr < dane/lokalna-baza/roz
 w PowerShellu:
 
 ```
-Get-Content dane/lokalna-baza/rozliczenia_pg.sql | docker exec -i rejestr-pg psql -q -U postgres -d rejestr
+Get-Content -Encoding utf8 dane/lokalna-baza/rozliczenia_pg.sql | docker exec -i rejestr-pg psql -q -U postgres -d rejestr
 ```
 
 Sprawdzenie, że weszło - ma wypisać `24` i `28000`:
@@ -57,7 +67,7 @@ Konsola do zapytań: `docker exec -it rejestr-pg psql -U postgres -d rejestr`, w
 
 ## Kroki
 
-1. **Uruchom zapytanie z `sql/lokalnie/raport_obrotow.sql` na Postgresie i zapisz czas.** Porównaj z tym, co pokazuje `npm run sql:raport` na SQLite. Ten sam zbiór, ten sam wynik, inny czas - zanotuj, o ile.
+1. **Uruchom zapytanie z `sql/lokalnie/raport_obrotow.sql` na Postgresie i zapisz czas.** Jeśli zoptymalizowałeś je w ćw. 08 SQL, zacznij od zachowanej kopii `portfolio/cw08-raport-przed.sql`. Wykonaj trzy pomiary i zapisz medianę. Porównaj z SQLite na tych samych danych i tej samej wersji zapytania; porównuj też wyniki, nie tylko czas. Różnice środowiska i pamięci podręcznej ograniczają wniosek o szybkości silnika.
 2. **Zdejmij plan: `EXPLAIN (ANALYZE, BUFFERS)` przed tym samym zapytaniem.** Szukaj w nim węzła, który wykonuje się wiele razy. Ile razy i dlaczego akurat tyle?
 3. **Zapytaj model o przyczyny i o poprawkę, a potem każdą jego radę osobno rozstrzygnij planem.** Nie czasem. Przy każdej radzie odpowiedz: czy optymalizator w ogóle robi to, o czym mówi model?
 4. **Sprawdź propozycję z indeksem, o którą pyta zgłoszenie.** Załóż go, przeanalizuj plan, zmierz, usuń. Potem odpowiedz administracji: zakładać czy nie, i dlaczego.
@@ -75,18 +85,20 @@ Konsola do zapytań: `docker exec -it rejestr-pg psql -U postgres -d rejestr`, w
 > na wiersz. Potem zapytaj model o to samo i porównaj z tym, co napisałeś.
 
 > **Skończyłeś wcześniej**
-> Uruchom to samo zapytanie na tabeli powiększonej dziesięciokrotnie
+> W osobnej bazie eksperymentalnej uruchom to samo zapytanie na tabeli powiększonej dziesięciokrotnie
 > (`INSERT INTO transakcje SELECT ... ` z podmienionym `id_operacji`) i sprawdź,
 > czy koszt rośnie liniowo, czy szybciej. Potem odpowiedz: która z twoich poprawek
 > zyskuje na znaczeniu przy większych danych, a która przestaje mieć znaczenie?
 
 ## Gotowe, gdy
 
-- [ ] masz dwa plany wykonania, przed i po, i umiesz wskazać w nich węzeł, który zniknął
+- [ ] masz dwa plany wykonania, przed i po, i umiesz wskazać zaobserwowaną zmianę kosztu, liczby wykonań lub struktury planu — węzeł nie musi zniknąć
 - [ ] umiesz odpowiedzieć administracji na pytanie o indeks jedną liczbą z planu, nie opinią
-- [ ] umiesz wymienić przynajmniej jedną radę modelu, która była prawdziwa ogólnie, a nieprzydatna przy tych danych - i powiedzieć, skąd o tym wiesz
+- [ ] masz co najmniej jedną radę modelu zweryfikowaną planem i pomiarem; potrafisz uzasadnić jej przyjęcie albo odrzucenie
 
 ## Sprzątanie
+
+Poniższa komenda usuwa kontener wraz z jego danymi. Użyj jej tylko dla własnego kontenera ćwiczeniowego, po zapisaniu planów w `portfolio/`.
 
 ```
 docker rm -f rejestr-pg
@@ -94,11 +106,4 @@ docker rm -f rejestr-pg
 
 ## Na koniec ćwiczenia
 
-Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
-
-```
-git status --short
-git diff
-git add -u
-git commit -m "Warsztat: zakończony etap"
-```
+Zapisz plany, wersje zapytań, pomiary i wniosek o indeksie w `portfolio/postgres.md`. Jeśli powstała tylko analiza, nie robisz commita. Zmienione zapytanie commituj dopiero po porównaniu wyników, kontroli `git diff` i `git diff --cached`; dodaj tylko jego rzeczywistą ścieżkę. W wariancie Oracle opisz brak uruchomienia i plan weryfikacji zamiast deklarować wynik pomiaru.

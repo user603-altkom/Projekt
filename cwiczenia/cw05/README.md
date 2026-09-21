@@ -10,6 +10,8 @@ Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
+**Start:** Copilot Chat → Ask, nowa rozmowa. Dołącz wskazane pliki przez Add Context / Dodaj kontekst. W podstawie czytasz kod i zapisujesz notatkę.
+
 ## Cel
 
 Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z komentarza, z nazwy funkcji albo z własnej wiedzy o bankowości — i sprawdzić to, zanim oprzesz na tym decyzję.
@@ -36,9 +38,11 @@ Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z kom
 
 1. **Przeczytaj `src/interest/accrue.ts` sam, zanim otworzysz czat.** Nie całość — wejście funkcji, kształt wyniku i miejsca, w których kod się rozgałęzia.
 2. **Zleć modelowi streszczenie modułu:** co liczy, od czego zależy, co zwraca. Powiedz mu wprost, żeby nie generował przy tym kodu. Kod w odpowiedzi na tym etapie przeszkadza: zaczynasz go czytać, zamiast rozumieć moduł.
-3. **Podłóż pod każde zdanie streszczenia linię z kodu.** Które zdania da się podpisać numerem linii, a pod które linii nie ma?
-4. **Zestaw z wersją w Javie.** `legacy-java/OdsetkiCalculator.java` liczy to samo, rok wcześniej. Wypisz różnice i przy każdej rozstrzygnij: inny algorytm czy funkcja dorobiona później?
-5. **Przejdź `src/transactions/validate.ts` pod kątem tego, co przez niego przechodzi.** Kontrakt pól stoi w `src/model.ts`. Szukasz danych, które kod przepuszcza, mimo że kontrakt ich zabrania.
+3. **Poproś o źródła twierdzeń.** Model ma wskazać plik i linię oraz oddzielić kod, komentarze i domysły. Sprawdzisz trzy wybrane twierdzenia, nie każde zdanie rozbudowanej odpowiedzi.
+4. **Wybierz trzy twierdzenia i sprawdź je sam w plikach.** Zapisz w `portfolio/cw05-mapa.md`: wejście → funkcja → wynik, zależności oraz tabelę „twierdzenie / plik i linia / potwierdzenie albo niewiadoma”. Wystarczy jeden moduł, nie dokumentacja całego systemu.
+5. **Wymieńcie się notatkami.** Partner ma znaleźć wskazane miejsca bez pytania autora. Dopisz jedną rzecz, której nadal nie da się ustalić z kodu.
+
+**Rozszerzenie — wybierz jedno:** porównaj `accrue.ts` z `legacy-java/OdsetkiCalculator.java` albo zestaw `src/transactions/validate.ts` z kontraktem w `src/model.ts`. Przy różnicach Java/TypeScript oddziel obserwację od historii zmiany: sam kod nie dowodzi, kiedy i dlaczego dodano funkcję.
 
 > **Jeśli utknąłeś po 10 minutach**
 > Dołącz `src/interest/accrue.ts` do kontekstu (w VS Code: `#` i nazwa pliku)
@@ -67,7 +71,7 @@ Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z kom
 > Odpowiedź z punktu 4 jest ważniejsza niż trzy pierwsze. Sprawdź ją w pliku.
 
 > **Wolisz opisać system, niż czytać jego kod**
-> Zbuduj dokumentację as-is prosto z kodu `src/` — po jednej sekcji na moduł:
+> Wybierz jeden moduł z `src/` i zbuduj jego dokumentację as-is:
 > co wystawia na zewnątrz, co przyjmuje, co zwraca, czego wymaga od danych
 > wejściowych. Potem otwórz `docs/api.md`, który leży w repozytorium, i zestaw
 > obie wersje punkt po punkcie. Przy każdej różnicy zapisz, na czym opierasz
@@ -82,8 +86,10 @@ Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z kom
 >
 > Potem wróć do listy różnic między wersją w TypeScripcie a tą w Javie i wybierz jedną,
 > przy której nie umiałeś rozstrzygnąć, czy to inny algorytm, czy funkcja dorobiona
-> później. Rozstrzygnij ją liczbą. `dane/odsetki_przypadki.json` ma wejścia z opisami,
-> a `npm test` pokaże, co dzisiejszy kod z nimi robi. Która wersja liczy zgodnie
+> później. Porównaj zachowanie na konkretnych liczbach; nie zgaduj historii zmiany. `dane/odsetki_przypadki.json` ma wejścia z opisami,
+> a `tests/interest/accrue.test.ts` pokazuje, które z nich są uruchamiane. Samo
+> `npm test` nie sprawdza wszystkich wejść z JSON-a: dla wybranego przypadku
+> wskaż istniejący test albo dopisz własne wywołanie. Która wersja liczy zgodnie
 > z opisem, a która tylko wygląda na zgodną?
 >
 > Jeśli i to masz za sobą: znajdź w module miejsce, w którym nazwa obiecuje co innego
@@ -92,17 +98,10 @@ Umieć oddzielić to, co model wyczytał z kodu, od tego, co dopowiedział z kom
 
 ## Gotowe, gdy
 
-- [ ] przy każdym zdaniu swojego opisu modułu umiesz wskazać linię w `src/interest/accrue.ts` — albo powiedzieć wprost, że takiej linii nie ma
+- [ ] przy trzech wybranych twierdzeniach umiesz wskazać linię w analizowanym kodzie — albo powiedzieć wprost, że takiej linii nie ma
 - [ ] masz wypisane zależności modułu: co importuje i czego wymaga od danych wejściowych
-- [ ] pokazujesz drugiej osobie konkretną linię w `src/transactions/validate.ts` i mówisz, jakie dane przez nią przejdą, mimo że przejść nie powinny
+- [ ] partner potwierdził trzy twierdzenia na podstawie kodu; wskazujesz też jedną niewiadomą
 
 ## Na koniec ćwiczenia
 
-Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
-
-```
-git status --short
-git diff
-git add -u
-git commit -m "Warsztat: zakończony etap"
-```
+Zachowaj `portfolio/cw05-mapa.md` na omówienie. `portfolio/` jest lokalne i ignorowane przez Git. W podstawie nie zmieniasz kodu, więc nie potrzebujesz commita.

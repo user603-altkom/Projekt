@@ -10,12 +10,13 @@ Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i
 
 Pracujesz w IDE, na otwartym repozytorium — asystent w panelu obok plików.
 
+**Start:** Copilot Chat → Agent, nowa rozmowa. Najpierw zleć diagnozę bez edycji; po sprawdzeniu dowodów przejdź do poprawki. Komendy uruchamiaj z głównego katalogu repo.
+
 ## Cel
 
 Umieć doprowadzić zgłoszenie do przyczyny, zweryfikować ją liczbą zamiast wzrokiem, i rozpoznać, o czym model milczy — również wtedy, gdy odpowiedź brzmi przekonująco.
 
-Uprzedzenie, żeby cię nie zmyliło: **przyczynę znajdziesz szybko, prawdopodobnie w kilka minut.**
-To nie jest koniec ćwiczenia, tylko jego pierwszy krok. Ciężar leży w krokach 4 i 5.
+Znalezienie podejrzanej linii to początek. Najważniejsze są niezależne wyliczenie skutków i test, który powstrzyma powrót błędu.
 
 ## Zgłoszenie
 
@@ -57,29 +58,30 @@ To nie jest koniec ćwiczenia, tylko jego pierwszy krok. Ciężar leży w krokac
 
 ## Kroki
 
-1. **Zreprodukuj.** `npm run raport`
+1. **Zreprodukuj:** `npm run raport`. Zachowaj wynik w `portfolio/cw07-diagnoza.md`, obok czerwonych testów z ćw. 06. Jeśli poprawiłeś parser wcześniej, użyj własnego zapisu sprzed zmiany; nie cofaj bieżącej pracy. Bez takiego zapisu poproś prowadzącego o kopię startera do reprodukcji.
 2. **Postaw hipotezę, zanim zapytasz model.** Zapisz ją — wrócisz do niej na końcu.
-3. **Zawęź kontekst do plików, które podejrzewasz, i zleć modelowi znalezienie przyczyny oraz listy operacji, których dotyczy.** Nie wklejaj wyciągu — to czterysta wierszy. Zwróć uwagę, czy model listę policzył, czy oszacował: słowo „najpewniej" przy liczbie znaczy, że zgadł.
-4. **Sprawdź diagnozę na niezależnym dowodzie.** Zleć skryptowi policzenie ID i sum, a potem sprawdź ręcznie dwie wskazane operacje. Drugi model jest rozszerzeniem; użyj osobnej kopii sprzed poprawki, bez cofania pracy w bieżącym repo.
-5. **Zweryfikuj poprawkę liczbą, nie wzrokiem.** `npm run raport` po zmianie, `npm test` po nim. Potem odpowiedz na drugie pytanie: ten zestaw testów był zielony przez cały czas, kiedy raport się nie zgadzał. Który test powinien był to złapać i dlaczego nie złapał? Jeśli pracujesz na klonie z historią, sprawdź też `git log -p` na pliku z tym testem. W paczce ZIP nie ma historii: porównaj asercje testu z wymaganiem i niezależnym wynikiem.
+3. **Dołącz `src/import/parseBankFile.ts` i `src/reports/dailyReport.ts`.** Poproś o prześledzenie kwoty i znalezienie dotkniętych ID. Agent może przeczytać `dane/wyciag_2026_08.csv` narzędziem; nie trzeba wklejać 400 wierszy do czatu. Żądaj polecenia lub skryptu i jego wyniku: samo pewne brzmienie odpowiedzi nie dowodzi, że model coś policzył.
+4. **Sprawdź diagnozę niezależnie.** Poproś o skrypt porównujący kwoty z tekstu CSV z wynikiem parsera. Wartość odniesienia ma powstawać z części całkowitej i dwóch cyfr groszy, bez kopiowania podejrzanej konwersji. Zapisz ID, obie wartości i różnicę w groszach. Sprawdź ręcznie dwie wskazane operacje; suma odchyleń ma wyjaśniać całe −23 grosze ze zgłoszenia.
+5. **Dodaj regresję, potem zleć minimalną poprawkę.** Użyj potwierdzonego testu z ćw. 06 albo dopisz mały przykład odtwarzający stratę grosza. Zobacz czerwony wynik przed zmianą i zielony po. Nie zmieniaj wejściowego CSV ani oczekiwania, żeby ukryć różnicę.
+6. **Sprawdź rezultat:** `npm run raport`, `npm test`, `npm run typecheck`. Zapisz sumy przed/po oraz rzeczy, których nie sprawdziłeś. Jeśli masz inne czerwone testy z ćw. 06, opisz je oddzielnie. Dlaczego testy startera nie wykryły tej usterki?
+
+**Uwaga do starego wydruku:** wyciąg zawiera różne waluty. Suma kontrolna całego pliku jest techniczną sumą wartości, nie bilansem w PLN, mimo etykiety „zł” w raporcie. W tym ćwiczeniu naprawiasz utratę precyzji; rozbicie na waluty jest osobnym zadaniem rezerwowym. To też inny przypadek niż różnica z ćw. 03.
 
 > **Jeśli utknąłeś po 15 minutach**
-> Porównaj sumę zadeklarowaną w nagłówku pliku z sumą policzoną po imporcie —
-> najpierw dla całego pliku, potem dla pojedynczych wierszy. Na którym wierszu
-> przestają być równe i co ten wiersz ma w sobie takiego, czego nie mają sąsiednie?
+> Nagłówek ma sumę całego pliku, nie sumy dla pojedynczych wierszy. Dla jednego
+> wiersza porównaj dokładną kwotę odczytaną z tekstu z `kwotaGrosze` po imporcie.
+> Powtórz dla pozostałych wierszy i zsumuj odchylenia.
 
 > **Pracujesz z bazą, nie z TypeScriptem**
-> `sql/raport_dzienny.sql` liczy to samo po stronie bazy i pokazuje ten sam objaw.
-> Ten skrypt PostgreSQL czytasz jako materiał; lokalny wariant SQLite ma osobne polecenia w `sql/lokalnie/README.md`.
-> Każ modelowi wyjaśnić je linia po linii, ustal dokładnie, co dzieje się z kwotą,
-> zanim trafi do sumy, i zaproponuj poprawkę razem z zapytaniem kontrolnym, które
-> pokazałoby różnicę przed nią i po niej. Sprawdź przy tym, jakiego typu jest
-> kolumna `kwota` w `sql/001_init_transakcje.sql` - i czy odpowiedź modelu
-> nadal się broni, kiedy już to wiesz. Sprawdź diagnozę niezależnym zapytaniem kontrolnym.
+> Przeczytaj `sql/raport_dzienny.sql` i typ `kwota` w `sql/001_init_transakcje.sql`.
+> To **Oracle**, materiał do analizy — nie uruchamiaj go w SQLite.
+> Prześledź konwersję kwoty, zaproponuj minimalną poprawkę i zapytanie kontrolne.
+> Sprawdź rachunek na dwóch kwotach z CSV. Zapisz wyraźnie, że to analiza kodu
+> i kontrprzykład liczbowy, a nie wynik uruchomienia na Oracle. Raport obrotów
+> w `sql/lokalnie/` to inne zadanie i nie odtwarza tej usterki.
 
 > **Skończyłeś wcześniej**
-> Napisz test, który złapałby to przed wdrożeniem, i uruchom go na kodzie sprzed
-> poprawki. Potem sprawdź jeszcze jedno miejsce: czy ta sama konwersja nie
+> Sprawdź jeszcze jedno miejsce: czy ta sama konwersja nie
 > powtarza się gdzieś poza `src/`. Jeśli powtarza, to twoja poprawka niczego
 > tam nie naprawiła.
 >
@@ -87,22 +89,19 @@ To nie jest koniec ćwiczenia, tylko jego pierwszy krok. Ciężar leży w krokac
 > plik `.html`, otwierany podwójnym kliknięciem, bez zależności i bez
 > internetu: wiersze, które wnoszą odchylenie, i suma narastająca. Wynik ma
 > policzyć z pliku, nie dostać od ciebie. Inaczej dostaniesz ekran, który
-> ładnie pokazuje to, co sam podyktowałeś. Dowodem jest zgodność z
-> `npm run raport` co do grosza. Plik zostaw poza `src/`.
+> ładnie pokazuje to, co sam podyktowałeś. Użyj wyboru pliku CSV w przeglądarce. Poprawna suma ma zgadzać się
+> z naprawionym `npm run raport`; odchylenia starej konwersji podpisz osobno.
+> Plik zostaw w `portfolio/`, poza `src/`.
+
+W ścieżce Oracle zamiast uruchomienia TS pokaż partnerowi kontrprzykład, propozycję SQL i listę niewykonanych kontroli.
 
 ## Gotowe, gdy
 
 - [ ] umiesz wskazać linię i wyjaśnić mechanizm własnymi słowami, nie cytatem z modelu
 - [ ] masz policzoną listę identyfikatorów dla audytu oraz przebieg `npm run raport` sprzed poprawki i po niej - i umiesz wytłumaczyć obie liczby co do grosza
+- [ ] masz test regresji czerwony przed poprawką i zielony po
 - [ ] umiesz powiedzieć, czego nie potwierdziła sama diagnoza modelu i jak uzupełniłeś brakujące dowody
 
 ## Na koniec ćwiczenia
 
-Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
-
-```
-git status --short
-git diff
-git add -u
-git commit -m "Warsztat: zakończony etap"
-```
+Zachowaj diagnozę i wyniki w `portfolio/cw07-diagnoza.md`. Przejrzyj `git diff` i `git status --short`. Dodaj przez `git add` wyłącznie poprawiony parser oraz utworzone lub zmienione testy (ich rzeczywiste ścieżki), sprawdź `git diff --cached` i wykonaj `git commit -m "Naprawa precyzji importu z regresja"`. W wariancie analitycznym wystarczy notatka.

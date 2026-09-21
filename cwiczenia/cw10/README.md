@@ -8,6 +8,8 @@
 
 Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 
+**Start:** Copilot Chat → Ask, nowa rozmowa. Dołącz pliki z kroku 2; w podstawie analizujesz zmianę bez edycji kodu.
+
 ## Cel
 
 Umieć ocenić cudzą zmianę modelem tak, żeby wynik dało się obronić: wiedzieć, co narzędzie wyłapało, czego nie tknęło i czego nie wolno mu oddać do samodzielnej decyzji. Umieć też stanąć po drugiej stronie — przygotować własną zmianę tak, żeby recenzent nie musiał zgadywać.
@@ -24,11 +26,11 @@ Pełny opis od autora — co zmienił, co założył i o co prosi recenzenta —
 
 ## Kroki
 
-1. **Wyciągnij własne kryteria akceptacji z Ćw. 4.** To jest ta sama sprawa: zgłoszenie, które wtedy rozbijałeś na zadania i kryteria, ktoś tymczasem zaimplementował. Otwórz swoją listę (`portfolio/kryteria-limitow.md`) i miej ją przed sobą, zanim cokolwiek zapytasz modelu.
-2. **Zleć recenzję diffu.** Wskaż `cwiczenia/cw10/zmiana.diff` — narzędzie w IDE nie przeczyta samo `git diff main...recenzja/cw10-limity-kredytowe`. Zapisz listę uwag w takiej kolejności, w jakiej je dostałeś.
+1. **Wyciągnij własne kryteria akceptacji z Ćw. 4.** To jest ta sama sprawa: zgłoszenie, które wtedy rozbijałeś na zadania i kryteria, ktoś tymczasem zaimplementował. Otwórz **sekcję „Szerszy produkt”** w `portfolio/kryteria-limitow.md` i źródło `dane/zgloszenie_limity.md`. Wąskie kryteria demonstratora z finału nie zastępują wymagań produktu. Jeśli nie masz notatki, zapisz trzy kryteria ze zgłoszenia i osobno niewiadome.
+2. **Zleć recenzję diffu.** Dołącz `cwiczenia/cw10/zmiana.diff`, wymagania, własne kryteria i `src/limits/creditLimit.ts`. Powiedz: „Tylko recenzja, bez edycji. Sprawdź wymagania po kolei, podaj dowody w kodzie i oddziel luki modułu od brakującej integracji”. Nie aplikuj diffu — kod już jest w repo. Zapisz listę uwag w kolejności, w jakiej je dostałeś.
 3. **Przejdź swoje kryteria po kolei i przy każdym postaw jedno z trzech:** spełnione / niespełnione / nie da się stwierdzić z samego diffu. Pytanie brzmi „czy ta implementacja robi to, czego sam wymagałeś", a nie „gdzie jest błąd". Trzeci stan jest pełnoprawną odpowiedzią i zwykle najciekawszą.
 4. **Odsiej uwagi modelu.** Które były trafione, które puste, a które dotyczyły rzeczy, o których model nie ma jak wiedzieć — decyzji produktowej, ustalenia z biznesem, kosztu operacyjnego. Wypisz trzy rzeczy, których recenzentowi-AI nie oddajesz.
-5. **Stań po stronie autora.** Weź własną zmianę z Ćw. 7 albo Ćw. 8 (`git log -p`) i przygotuj ją do recenzji: opis co i dlaczego, uzasadnienie decyzji, które podjąłeś sam, oraz lista rzeczy do sprawdzenia przez człowieka. Model pomaga pisać, ty odpowiadasz za treść.
+5. **Stań po stronie autora.** Weź własną zmianę z Ćw. 7 albo Ćw. 8 (wybierz commit przez `git log --oneline -5`, następnie obejrzyj go przez `git show` z jego identyfikatorem) i przygotuj ją do recenzji: opis co i dlaczego, uzasadnienie decyzji, które podjąłeś sam, oraz lista rzeczy do sprawdzenia przez człowieka. Model pomaga pisać, ty odpowiadasz za treść.
 
 > **Jeśli utknąłeś po 15 minutach**
 > Nie czytaj diffu od góry do dołu — 629 linii przeczytasz i nic z tego nie zapamiętasz.
@@ -55,14 +57,7 @@ Pełny opis od autora — co zmienił, co założył i o co prosi recenzenta —
 
 ## Na koniec ćwiczenia
 
-Po kontroli diffu dodaj nowe pliki osobno (`git add ścieżka/do/pliku`). `git add -u` dodaje tylko zmiany już śledzonych plików. Pozostań na wspólnej gałęzi.
-
-```
-git status --short
-git diff
-git add -u
-git commit -m "Warsztat: zakończony etap"
-```
+Zapisz `portfolio/cw10-review.md`: tabela „kryterium / źródło / miejsce w kodzie / werdykt / sposób sprawdzenia”, trzy zweryfikowane uwagi lub potwierdzenia oraz opis własnej zmiany. Notatkę wykorzystasz w finale. Sama recenzja nie wymaga commita. Jeśli w rozszerzeniu zmieniłeś instrukcje lub dopisałeś test, przejrzyj diff i commituj wyłącznie te pliki.
 
 ---
 
