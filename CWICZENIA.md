@@ -11,14 +11,16 @@
 | [cw08b](cwiczenia/cw08b/README.md) | Implementacja z instrukcjami | Moduł, raport i UI |
 | [cw09b](cwiczenia/cw09b/README.md) | Testy i przekazanie | Przypadki graniczne i stan pracy |
 | [cw10b](cwiczenia/cw10b/README.md) | Review i integracje | Uwaga z dowodem i test |
-| [cw11b](cwiczenia/cw11b/README.md) | Wydanie | Wersja, opis i sprawdzenie |
+| [REVIEW-CLI](materialy/sdlc/REVIEW-CLI.md) | Review przez CLI: GitHub i GitLab bez Duo | Review na sucho z własnymi regułami |
+| [cw11b](cwiczenia/cw11b/README.md) | Wydanie, rezerwa (dzień 3 idzie ścieżką cw19b) | Wersja, opis i sprawdzenie |
 | [cw12b](cwiczenia/cw12b/README.md) | Utrzymanie | Reprodukcja i poprawka |
-| [cw13b](cwiczenia/cw13b/README.md) | Własny skill | Procedura odbioru |
-| [cw14b](cwiczenia/cw14b/README.md) | MCP, CLI i hook | Kontrolowany eksperyment |
-| [cw15b](cwiczenia/cw15b/README.md) | Superpowers | Małe rozszerzenie przez proces |
+| [cw13b](cwiczenia/cw13b/README.md) | Własny skill, rezerwa (dzień 3 idzie ścieżką cw19b) | Procedura odbioru |
+| [cw14b](cwiczenia/cw14b/README.md) | MCP, CLI i hook, rezerwa (dzień 3 idzie ścieżką cw19b) | Kontrolowany eksperyment |
+| [cw15b](cwiczenia/cw15b/README.md) | Superpowers, rezerwa (dzień 3 idzie ścieżką cw19b) | Małe rozszerzenie przez proces |
+| [cw19b](cwiczenia/cw19b/README.md) | Projekt końcowy: Harmonogram na POLSTR | Własne repo z MVP v0.1.0, PR-y po review i karta zmiany v0.2.0 |
 
 - **Dzień 2:** cw05a–cw09b. Najpierw instrukcje i skille, potem wymagania, projekt, implementacja i testy.
-- **Dzień 3:** cw10b–cw15b. Review, wydanie, utrzymanie i utrwalenie procesu.
+- **Dzień 3:** cw10b, REVIEW-CLI, cw12b i cw19b. Review, utrzymanie i projekt końcowy na własnym repo. Karty cw11b, cw13b, cw14b i cw15b są rezerwą; ich treść wraca skrótowo w cw19b.
 - [Plan dnia 2](DZIEN-2.md) · [plan dnia 3](DZIEN-3.md).
 
 ## Ćwiczenia dodatkowe — niezależne od głównej ścieżki
@@ -35,7 +37,7 @@ Możesz wykonać je w dniu 2 lub 3. Każda karta zawiera komplet instrukcji i wa
 
 Wszystkie wejścia są w tym repo. Publiczne repozytoria i dokumentacja mają linki internetowe. **Nie potrzebujesz plików prowadzącego ani prezentacji, aby wykonać kartę.**
 
-Do cw05a używasz pustego folderu, do cw05b przeglądarki. Od cw06b wspólnym punktem odniesienia jest [laboratorium limitów](laboratorium/limity/README.md). Własny ekran z dnia 1 zachowujesz; jego stan nie blokuje ćwiczeń. Używamy Node 24, a laboratorium nie wymaga instalacji zależności.
+Do cw05a używasz pustego folderu, do cw05b przeglądarki. Od cw06b wspólnym punktem odniesienia jest [laboratorium limitów](laboratorium/limity/README.md). Własny ekran z dnia 1 zachowujesz; jego stan nie blokuje ćwiczeń. Używamy Node 24, a laboratorium nie wymaga instalacji zależności. Do cw19b potrzebujesz dodatkowo konta GitHub (`userNNN-altkom`), zalogowanego `gh` (jeśli brakuje: `winget install GitHub.cli`) i dostępu do github.com (szablon projektu); kopia szablonu jako zip leży w `cwiczenia/cw19b/`, a `npm install` robisz w sklonowanym szablonie, nie w tym repo.
 
 ## Pobranie nowej ścieżki bez ryzyka dla własnego ekranu
 

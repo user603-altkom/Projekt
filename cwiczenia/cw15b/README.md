@@ -1,3 +1,5 @@
+> **Materiał rezerwowy dnia 3.** Główna ścieżka: [cw19b](../cw19b/README.md), [plan dnia](../../DZIEN-3.md).
+
 # cw15b — Superpowers: porównanie z własnym procesem
 
 **50 min · pokaz i krótka próba · Claude Code lub przygotowany Copilot**

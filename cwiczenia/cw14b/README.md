@@ -1,3 +1,5 @@
+> **Materiał rezerwowy dnia 3.** Główna ścieżka: [cw19b](../cw19b/README.md), [plan dnia](../../DZIEN-3.md).
+
 # cw14b — MCP, CLI i hook: trzy różne potrzeby
 
 **45 min · w parach**
