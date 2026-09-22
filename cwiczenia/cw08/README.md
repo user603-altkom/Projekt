@@ -49,7 +49,7 @@ Umieć powiedzieć, przed czym chroni cię zestaw testów, który masz, zanim za
 > **Nie chcesz ruszać kodu produkcyjnego**
 > Napisz kontrakt modułu, który ma powstać, zanim powstanie: co dostaje na wejściu,
 > co zwraca, co robi przy każdym typie produktu, przy saldzie ujemnym, przy przekroczeniu
-> limitu, przy okresie jednodniowym i przy wejściu, którego nie rozpoznaje. Materiał
+> limitu kredytowego, przy okresie jednodniowym i przy wejściu, którego nie rozpoznaje. Materiał
 > masz w `dane/odsetki_przypadki.json` — dwadzieścia wejść z opisami. Potem weź to,
 > co para napisała w kodzie, i przejdź swój kontrakt punkt po punkcie: dla każdego
 > punktu wskaż test, który go sprawdza. Punkty bez takiego testu wypisz osobno —

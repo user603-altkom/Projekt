@@ -4,7 +4,7 @@
 
 > Franek: „Odsetki? Zostawiłem komentarze. Nie wszystkie aktualne”.
 
-**Zakres:** Podstawa: mapa wejście–funkcja–wynik i trzy dowody. Rozszerzenie: rozbieżność kodu i komentarza. To osobny moduł tego samego produktu, nie zależność ekranu limitów.
+**Zakres:** Podstawa: mapa wejście–funkcja–wynik i trzy dowody. Rozszerzenie: rozbieżność kodu i komentarza. To osobny moduł tego samego produktu, nie zależność ekranu limitów kredytowych.
 
 Pracujesz na jednej gałęzi `warsztat/franek` przez całe szkolenie. Rezultat i dowód zapisz w `portfolio/`.
 

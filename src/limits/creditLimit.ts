@@ -5,41 +5,41 @@ import type { NrRachunku, Transaction, Waluta } from '../model.js';
 /**
  * Limity kredytowe rachunków.
  *
- * Limit wyznacza, ile rachunek może łącznie obciążyć w ramach jednej partii
+ * Limit kredytowy wyznacza, ile rachunek może łącznie obciążyć w ramach jednej partii
  * rozliczeniowej. Konfigurację utrzymuje zespół produktowy w pliku
  * `dane/limity_rachunkow.json` — rejestr transakcji nie ma własnego źródła
- * prawdy o limitach i nie powinien go mieć.
+ * prawdy o limitach kredytowych i nie powinien go mieć.
  *
  * Jeden rachunek może mieć w konfiguracji kilka wpisów. Obowiązuje ten
  * o najpóźniejszej dacie wejścia w życie, która nie jest późniejsza niż dzień,
  * na który sprawdzamy.
  */
 
-/** Limit przypisany do jednego rachunku. */
+/** Limit kredytowy przypisany do jednego rachunku. */
 export interface CreditLimit {
   nrRachunku: NrRachunku;
 
-  /** Kwota limitu w groszach — liczba całkowita, nieujemna. */
+  /** Kwota limitu kredytowego w groszach — liczba całkowita, nieujemna. */
   limitGrosze: number;
 
-  /** Waluta, w której limit został przyznany. */
+  /** Waluta, w której limit kredytowy został przyznany. */
   waluta: Waluta;
 
-  /** Dzień wejścia limitu w życie, `YYYY-MM-DD`. */
+  /** Dzień wejścia limitu kredytowego w życie, `YYYY-MM-DD`. */
   effectiveFrom: string;
 }
 
 /**
- * Wynik sprawdzenia limitu.
+ * Wynik sprawdzenia limitu kredytowego.
  *
  * Kształt jest taki sam jak w `ValidationResult` z `src/model.ts` — operator
  * dostaje wszystkie komunikaty jedną listą, niezależnie od tego, czy transakcję
- * odrzuciła walidacja formalna, czy limit.
+ * odrzuciła walidacja formalna, czy limit kredytowy.
  */
 export interface LimitCheckResult {
   ok: boolean;
 
-  /** O ile groszy operacja wychodzi poza limit. `0`, gdy limit nie został przekroczony. */
+  /** O ile groszy operacja wychodzi poza limit kredytowy. `0`, gdy limit kredytowy nie został przekroczony. */
   przekroczenieGrosze: number;
 
   bledy: string[];
@@ -51,17 +51,17 @@ const FORMAT_NRB = /^\d{26}$/;
 /** Data wejścia w życie: `YYYY-MM-DD`. */
 const FORMAT_DATY = /^\d{4}-\d{2}-\d{2}$/;
 
-/** Wczytuje konfigurację limitów z dysku. */
+/** Wczytuje konfigurację limitów kredytowych z dysku. */
 export function loadCreditLimits(sciezka: string): CreditLimit[] {
   return parseCreditLimits(readFileSync(sciezka, 'utf8'));
 }
 
 /**
- * Parsuje konfigurację limitów.
+ * Parsuje konfigurację limitów kredytowych.
  *
  * Wpisy niekompletne albo z kwotą, która nie jest pełnymi groszami, są pomijane.
  * Plik jest utrzymywany ręcznie i literówka w jednym wierszu nie może wywrócić
- * całego przebiegu rozliczenia — lepiej stracić jeden limit niż całą partię.
+ * całego przebiegu rozliczenia — lepiej stracić jeden limit kredytowy niż całą partię.
  */
 export function parseCreditLimits(zawartosc: string): CreditLimit[] {
   const wiersze = czytajListeWierszy(JSON.parse(zawartosc) as unknown);
@@ -78,9 +78,9 @@ export function parseCreditLimits(zawartosc: string): CreditLimit[] {
 }
 
 /**
- * Limit obowiązujący dla rachunku na wskazany dzień (`YYYY-MM-DD`).
+ * Limit kredytowy obowiązujący dla rachunku na wskazany dzień (`YYYY-MM-DD`).
  *
- * `null` oznacza rachunek bez przyznanego limitu — to nie to samo co limit
+ * `null` oznacza rachunek bez przyznanego limitu kredytowego — to nie to samo co limit kredytowy
  * zerowy i wołający musi te dwa przypadki rozróżnić.
  */
 export function findCreditLimit(
@@ -110,10 +110,10 @@ export function findCreditLimit(
 }
 
 /**
- * Wykorzystanie limitu przez operacje, które weszły już do rozliczenia — w groszach.
+ * Wykorzystanie limitu kredytowego przez operacje, które weszły już do rozliczenia — w groszach.
  *
- * Liczą się wyłącznie obciążenia. Uznanie zwiększa saldo rachunku, więc limitu
- * nie zużywa, a jego kwoty nie odejmujemy od wykorzystania: limit dotyczy sumy
+ * Liczą się wyłącznie obciążenia. Uznanie zwiększa saldo rachunku, więc limitu kredytowego
+ * nie zużywa, a jego kwoty nie odejmujemy od wykorzystania: limit kredytowy dotyczy sumy
  * obciążeń w partii, nie salda rachunku.
  */
 export function creditLimitUsage(transakcje: readonly Transaction[]): number {
@@ -129,12 +129,12 @@ export function creditLimitUsage(transakcje: readonly Transaction[]): number {
 }
 
 /**
- * Sprawdza, czy pojedyncza operacja mieści się w limicie rachunku.
+ * Sprawdza, czy pojedyncza operacja mieści się w limicie kredytowym rachunku.
  *
  * `wczesniejsze` to operacje tego samego rachunku, które trafiły do rozliczenia
- * przed sprawdzaną operacją. Limit dotyczy sumy obciążeń w partii, a nie
+ * przed sprawdzaną operacją. Limit kredytowy dotyczy sumy obciążeń w partii, a nie
  * pojedynczej kwoty — bez historii ta sama operacja przeszłaby nawet wtedy,
- * gdy rachunek wyczerpał limit dziesięcioma wcześniejszymi przelewami.
+ * gdy rachunek wyczerpał limit kredytowy dziesięcioma wcześniejszymi przelewami.
  */
 export function checkCreditLimit(
   limit: CreditLimit,
@@ -157,7 +157,7 @@ export function checkCreditLimit(
     przekroczenieGrosze,
     bledy: [
       `${operacja.id}: obciążenie przekracza limit kredytowy rachunku o ` +
-        `${formatujKwote(przekroczenieGrosze, limit.waluta)} (limit ` +
+        `${formatujKwote(przekroczenieGrosze, limit.waluta)} (limit kredytowy ` +
         `${formatujKwote(limit.limitGrosze, limit.waluta)}, wykorzystanie po operacji ` +
         `${formatujKwote(wykorzystaniePoOperacji, limit.waluta)})`,
     ],
@@ -165,16 +165,16 @@ export function checkCreditLimit(
 }
 
 /**
- * Sprawdza całą partię operacji względem konfiguracji limitów.
+ * Sprawdza całą partię operacji względem konfiguracji limitów kredytowych.
  *
  * Operacje przetwarzamy w kolejności, w jakiej przyszły z importu — wykorzystanie
- * limitu narasta w obrębie jednego rachunku, rachunki liczą się niezależnie od
- * siebie. Operacja, która limit przekroczyła, i tak wchodzi do wykorzystania:
- * jeżeli rachunek wyjdzie poza limit dwoma przelewami, operator ma zobaczyć oba,
+ * limitu kredytowego narasta w obrębie jednego rachunku, rachunki liczą się niezależnie od
+ * siebie. Operacja, która limit kredytowy przekroczyła, i tak wchodzi do wykorzystania:
+ * jeżeli rachunek wyjdzie poza limit kredytowy dwoma przelewami, operator ma zobaczyć oba,
  * a nie tylko pierwszy z nich.
  *
- * Rachunek bez wpisu w konfiguracji przechodzi bez ograniczenia. Brak limitu to
- * rachunek, któremu limitu nie przyznano, a nie limit zerowy — odrzucanie takich
+ * Rachunek bez wpisu w konfiguracji przechodzi bez ograniczenia. Brak limitu kredytowego to
+ * rachunek, któremu limitu kredytowego nie przyznano, a nie limit kredytowy zerowy — odrzucanie takich
  * operacji zatrzymałoby rozliczenie wszystkim klientom bez produktu kredytowego.
  *
  * `przekroczenieGrosze` w wyniku zbiorczym to największe pojedyncze przekroczenie

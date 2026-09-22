@@ -337,7 +337,7 @@
     },
     {
       "id": "p12",
-      "opis": "Kredyt odnawialny wykorzystany w granicach limitu, kapitalizacja miesięczna.",
+      "opis": "Kredyt odnawialny wykorzystany w granicach limitu kredytowego, kapitalizacja miesięczna.",
       "wejscie": {
         "rachunek": {
           "nrRachunku": "48999955440000445566778899",
@@ -371,7 +371,7 @@
     },
     {
       "id": "p13",
-      "opis": "Kredyt odnawialny z przekroczeniem limitu — nadwyżka obciążona stawką karną.",
+      "opis": "Kredyt odnawialny z przekroczeniem limitu kredytowego — nadwyżka obciążona stawką karną.",
       "wejscie": {
         "rachunek": {
           "nrRachunku": "92999966330000556677889900",

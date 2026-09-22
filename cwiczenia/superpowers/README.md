@@ -6,7 +6,7 @@
 
 Własny proces już masz: pytania → plan → mały krok → kontrola. Teraz zobaczysz, jak Superpowers organizuje podobną pracę. To zestaw skilli i sposobu prowadzenia zadań, nie serwer MCP.
 
-1. **Obserwuj pokaz.** Prowadzący w przygotowanym Claude Code zleca małe rozszerzenie: porównanie bazowego i symulowanego limitu. Zapisz, kiedy agent pyta, kiedy proponuje projekt i gdzie zatrzymuje się po decyzję. Nie instaluj pakietu podczas demonstracji.
+1. **Obserwuj pokaz.** Prowadzący w przygotowanym Claude Code zleca małe rozszerzenie: porównanie bazowego i symulowanego limitu kredytowego. Zapisz, kiedy agent pyta, kiedy proponuje projekt i gdzie zatrzymuje się po decyzję. Nie instaluj pakietu podczas demonstracji.
 2. **Krótka próba w parze.** Na przygotowanym stanowisku użyj tej samej metody do jednego małego celu we własnym projekcie. Jeśli funkcja już istnieje, wybierz z prowadzącym obsługę klawiaturą lub etykietę stanu. Zacznij od wyjaśnienia celu i uzgodnij kryterium. W podstawie wystarcza sprawdzony projekt i plan; nie trzeba kończyć pełnego cyklu wszystkich skilli.
 3. **Porównaj z wtorkiem.** Co metoda zrobiła konkretnie: zadała brakujące pytanie, zmniejszyła krok, przypomniała test? Co było zbędne? W `portfolio/superpowers.md` zapisz przykład oraz jedną praktykę do zastosowania w Copilocie bez instalowania frameworka.
 

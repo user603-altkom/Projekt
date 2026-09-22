@@ -2,7 +2,7 @@
 
 **Dzień 1 · 20 min · Copilot Chat w VS Code · bez zmian w kodzie**
 
-Franek mówił, że „limity już są”. Masz już projekt ekranu z ćw. 00. Teraz sprawdzisz, co w odziedziczonej aplikacji rzeczywiście działa. **Ekran ze stałymi liczbami demonstracyjnymi nie dowodzi, że aplikacja potrafi je obliczyć.**
+Franek mówił, że „limity kredytowe już są”. Masz już projekt ekranu z ćw. 00. Teraz sprawdzisz, co w odziedziczonej aplikacji rzeczywiście działa. **Ekran ze stałymi liczbami demonstracyjnymi nie dowodzi, że aplikacja potrafi je obliczyć.**
 
 ## Przygotuj
 
@@ -21,7 +21,7 @@ Wklej:
 
 ```text
 Przejmuję aplikację po Franku. Chcę ustalić, czy lokalny ekran operatora
-pokazuje już obliczone przekroczenia limitów, czy tylko dane przykładowe.
+pokazuje już obliczone przekroczenia limitów kredytowych, czy tylko dane przykładowe.
 Przeczytaj dołączone pliki. Nie zmieniaj kodu ani nie implementuj braków.
 
 Wyjaśnij, co robią buildOperatorReport i buildLimitRows oraz jakie dane
@@ -37,7 +37,7 @@ Jeśli odpowiedź wymaga sprawdzenia połączenia z ekranem, dołącz wskazany p
 
 1. Wybierz **trzy konkretne twierdzenia** modelu. Otwórz wskazane fragmenty kodu. „Funkcja istnieje” i „funkcja wykonuje obliczenia” to różne twierdzenia.
 2. Otwórz `http://127.0.0.1:4173`. W polu **Źródło** wybierz **„Przykład do projektowania”**, a potem **„Wynik z repozytorium”**. Zapisz komunikat i liczbę widocznych wierszy dla każdego źródła.
-3. Porównaj obserwację strony z kodem i odpowiedzią AI. Brak wierszy nie musi oznaczać, że żadna operacja nie przekracza limitu.
+3. Porównaj obserwację strony z kodem i odpowiedzią AI. Brak wierszy nie musi oznaczać, że żadna operacja nie przekracza limitu kredytowego.
 
 W `portfolio/cw01-weryfikacja.md` zapisz:
 
@@ -55,6 +55,6 @@ Partner wybiera jeden wiersz Twojej tabeli. Pokaż mu plik albo działający ekr
 
 **Gdy utkniesz:** zostań przy dwóch pierwszych plikach i porównaniu dwóch źródeł na ekranie. Jeśli środowisko nie działa, wykonaj sprawdzenie kodu i obserwację u partnera; zapisz, czego nie zweryfikowałeś u siebie.
 
-**Rozszerzenie:** dołącz `src/limits/creditLimit.ts`. Sprawdź, czy „brak limitu” i „limit zero” są reprezentowane i obsługiwane tak samo. Pokaż fragment kodu; nie wybieraj za biznes reguły, której nie uzgodniono.
+**Rozszerzenie:** dołącz `src/limits/creditLimit.ts`. Sprawdź, czy „brak limitu kredytowego” i „limit kredytowy zero” są reprezentowane i obsługiwane tak samo. Pokaż fragment kodu; nie wybieraj za biznes reguły, której nie uzgodniono.
 
 Zapisujesz tylko notatki w `portfolio/`, więc **nie robisz commita**. Pozostań na gałęzi `warsztat/franek`.

@@ -4,7 +4,7 @@
 
 > Franek: „Frontend prawie gotowy. To prawie jest teraz wasze”.
 
-W ćw. 01 porównałeś demo z niepodłączonym raportem. Teraz zrobisz pierwszą małą zmianę: **filtr na wspólnym ekranie demonstracyjnym**. Nie zmieniasz projektu wygenerowanego w Claude Design ani nie podłączasz jeszcze obliczeń limitów.
+W ćw. 01 porównałeś demo z niepodłączonym raportem. Teraz zrobisz pierwszą małą zmianę: **filtr na wspólnym ekranie demonstracyjnym**. Nie zmieniasz projektu wygenerowanego w Claude Design ani nie podłączasz jeszcze obliczeń limitów kredytowych.
 
 ## 1. Odtwórz problem — 3 min
 

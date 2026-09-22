@@ -9,7 +9,7 @@ describe('Dane wejściowe do odbioru operatora', () => {
     expect(new Set(operacje.map(t => `${t.nrRachunku}:${t.waluta}:${t.dataWaluty}`)).size).toBe(1);
     expect(limity[0]?.limitGrosze).toBe(10000);
   });
-  it('rozróżnia brak limitu od przyznanego limitu zero w katalogu', () => {
+  it('rozróżnia brak limitu kredytowego od przyznanego limitu kredytowego zero w katalogu', () => {
     expect(parseCreditLimits('[]')).toEqual([]);
     expect(parseCreditLimits(JSON.stringify([{nrRachunku:'20000089180903978540630428',limitGrosze:0,waluta:'PLN',obowiazujeOd:'2026-01-01'}]))[0]?.limitGrosze).toBe(0);
   });

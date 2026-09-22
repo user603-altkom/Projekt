@@ -1,4 +1,4 @@
--- Zadanie końcowe SQL. Tabele: operacje, limity (schemat w docs/kontrakt-operatora.md).
+-- Zadanie końcowe SQL. Tabele: operacje, limity kredytowe (schemat w docs/kontrakt-operatora.md).
 -- Zwróć pola kontraktu; jedna operacja ma odpowiadać jednemu wierszowi.
 -- Szkielet celowo nie zwraca wyników. Nie wpisuj kwot z demo na stałe.
 SELECT id, nrRachunku, dataWaluty, waluta, kwotaGrosze,

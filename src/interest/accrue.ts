@@ -55,7 +55,7 @@ function znak(t: Transaction): number {
  *     nadwyżka ponad próg trzeci oprocentowana jest stawką podstawową.
  *     Dla lokat stawka jest stała i pochodzi z warunków umowy, z obniżeniem
  *     do stawki minimalnej od dnia zerwania. Dla kredytu odnawialnego
- *     podstawą jest wykorzystana część limitu, a nadwyżka ponad limit
+ *     podstawą jest wykorzystana część limitu kredytowego, a nadwyżka ponad limit kredytowy
  *     obciążana jest dodatkowo stawką karną.
  *  4. Kwoty pośrednie utrzymywane są w groszach. Zaokrąglenie do pełnego
  *     grosza następuje raz, na koniec każdego okresu kapitalizacji; reszta
@@ -143,7 +143,7 @@ export function accrueInterest(dane: any): any {
   let podatek = 0;
   const kapitalizacje: any[] = [];
   let x2 = 0; // liczba dni okresu
-  let flagaP = false; // limit przekroczony choć raz
+  let flagaP = false; // limit kredytowy przekroczony choć raz
   let flagaU = false; // saldo ujemne na produkcie depozytowym
   let dzien = od;
 
@@ -194,7 +194,7 @@ export function accrueInterest(dane: any): any {
           const bpKarne = bp + (parametry.karneBp || 400);
           odsetkiDnia = (limit * bp + nadwyzka * bpKarne) / (10000 * baza);
           if (!flagaP) {
-            ostrzezenia.push('przekroczenie przyznanego limitu');
+            ostrzezenia.push('przekroczenie przyznanego limitu kredytowego');
             flagaP = true;
           }
         } else {

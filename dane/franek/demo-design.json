@@ -1,7 +1,7 @@
 {
   "wersja": 1,
   "tryb": "demo",
-  "zrodlo": "Przykład wzorcowy do projektowania; nie jest wynikiem modułu limitów.",
+  "zrodlo": "Przykład wzorcowy do projektowania; nie jest wynikiem modułu limitów kredytowych.",
   "liczbaOperacji": 3,
   "stan": "gotowe",
   "wiersze": [
@@ -15,7 +15,7 @@
       "wykorzystanieGrosze": 6000,
       "przekroczenieGrosze": 0,
       "status": "w_limicie",
-      "powod": "Suma obciążeń w jednej partii PLN mieści się w limicie."
+      "powod": "Suma obciążeń w jednej partii PLN mieści się w limicie kredytowym."
     },
     {
       "id": "FR-002",
@@ -27,7 +27,7 @@
       "wykorzystanieGrosze": 11000,
       "przekroczenieGrosze": 1000,
       "status": "przekroczenie",
-      "powod": "Suma obciążeń w jednej partii PLN przekracza limit."
+      "powod": "Suma obciążeń w jednej partii PLN przekracza limit kredytowy."
     },
     {
       "id": "FR-003",
@@ -39,7 +39,7 @@
       "wykorzystanieGrosze": 13000,
       "przekroczenieGrosze": 3000,
       "status": "przekroczenie",
-      "powod": "Suma obciążeń w jednej partii PLN przekracza limit."
+      "powod": "Suma obciążeń w jednej partii PLN przekracza limit kredytowy."
     }
   ]
 }

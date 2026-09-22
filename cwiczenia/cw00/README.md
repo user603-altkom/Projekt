@@ -1,12 +1,20 @@
 # Ćw. 00 — Ekran, który Franek obiecał
 
+## Co oznacza limit kredytowy w tym zadaniu?
+
+**Limit kredytowy jest przypisany do rachunku klienta.** W aplikacji Franka używamy uproszczonego modelu: porównujemy go z sumą obciążeń w jednej partii rozliczeniowej. Zaczynamy od wykorzystania zero i uwzględniamy każdą kolejną operację, również tę, która przekroczyła limit kredytowy.
+
+Przykład: limit kredytowy 100 zł, pierwsze obciążenie 60 zł, drugie 50 zł. Po drugiej operacji wykorzystanie wynosi 110 zł, a przekroczenie **10 zł**. Sama kwota operacji 50 zł nie jest kwotą przekroczenia.
+
+To umowa demonstratora na warsztat. Nie modelujemy pełnego salda dostępnego, odnawiania kredytu po wpływie środków ani blokowania przelewów. Nie jest to limit pojedynczego przelewu ani limit użycia AI.
+
 **Dzień 1 · 15 min · Claude Design**
 
 ## Co właściwie budujemy?
 
-Franek utrzymywał aplikację do rozliczeń i odszedł z zespołu. Zostawił obietnicę: osoby sprawdzające operacje miały dostać czytelny ekran pokazujący przekroczenia limitu. Teraz przejmujecie jego aplikację. Zaczniemy od zaprojektowania tego ekranu, zanim zajrzymy do kodu.
+Franek utrzymywał aplikację do rozliczeń i odszedł z zespołu. Zostawił obietnicę: osoby sprawdzające operacje miały dostać czytelny ekran pokazujący przekroczenia limitu kredytowego. Teraz przejmujecie jego aplikację. Zaczniemy od zaprojektowania tego ekranu, zanim zajrzymy do kodu.
 
-**Operator** to tutaj osoba, która sprawdza listę operacji i chce szybko odpowiedzieć na trzy pytania: **która operacja przekracza limit, o ile i dlaczego?** Nie musisz znać procesów rozliczeniowych — wszystkie zasady potrzebne do tego zadania są poniżej.
+**Operator** to tutaj osoba, która sprawdza listę operacji i chce szybko odpowiedzieć na trzy pytania: **która operacja przekracza limit kredytowy, o ile i dlaczego?** Nie musisz znać procesów rozliczeniowych — wszystkie zasady potrzebne do tego zadania są poniżej.
 
 Twoim wynikiem ma być **jeden widoczny prototyp z przykładowymi danymi**, który potrafisz ocenić i poprawić. Dziś liczby w prototypie są podane z góry. W finale szkolenia podłączymy rzeczywiste obliczenia na danych z repozytorium.
 
@@ -22,28 +30,28 @@ Zaprojektuj po polsku jeden interaktywny ekran aplikacji webowej:
 
 KONTEKST
 Franek, dotychczasowy opiekun aplikacji do rozliczeń, odszedł z zespołu.
-Obiecał operatorom ekran do sprawdzania operacji przekraczających limit.
+Obiecał operatorom ekran do sprawdzania operacji przekraczających limit kredytowy.
 Przejmujemy ten projekt. Operator to osoba przeglądająca listę operacji:
-potrzebuje zobaczyć, która operacja przekracza limit, o ile i dlaczego.
+potrzebuje zobaczyć, która operacja przekracza limit kredytowy, o ile i dlaczego.
 Wszystkie osoby, rachunek i dane w tym przykładzie są fikcyjne.
 
 ZASADY TEGO PRZYKŁADU
 Mamy jedną partię trzech operacji, dotyczących tego samego rachunku
-„Rachunek A”, w jednej walucie: PLN. Limit dla tej partii wynosi 100,00 PLN.
-Wszystkie operacje są obciążeniami, czyli zwiększają wykorzystanie limitu.
+„Rachunek A”, w jednej walucie: PLN. Limit kredytowy dla tej partii wynosi 100,00 PLN.
+Wszystkie operacje są obciążeniami, czyli zwiększają wykorzystanie limitu kredytowego.
 Rozpatrujemy je w kolejności FR-001, FR-002, FR-003.
 Identyfikatory FR-001 itd. są numerami operacji, nie kodami błędów.
 
 „Kwota operacji” to wartość pojedynczej operacji.
 „Wykorzystanie narastająco” to suma kwot od początku partii do tego wiersza,
 łącznie z bieżącą operacją. Każda operacja zwiększa tę sumę, także po
-przekroczeniu limitu. „Przekroczenie” to wykorzystanie minus limit,
+przekroczeniu limitu kredytowego. „Przekroczenie” to wykorzystanie minus limit kredytowy,
 ale nie mniej niż zero. To łączne przekroczenie po danej operacji,
 a nie sama kwota tej operacji ani przyrost przekroczenia.
 
 DANE DO POKAZANIA — UŻYJ DOKŁADNIE TYCH WYNIKÓW
-| Operacja | Kwota operacji | Wykorzystanie narastająco | Limit | Przekroczenie | Status |
-| FR-001   | 60,00 PLN      | 60,00 PLN                | 100,00 PLN | 0,00 PLN  | W limicie |
+| Operacja | Kwota operacji | Wykorzystanie narastająco | Limit kredytowy | Przekroczenie | Status |
+| FR-001   | 60,00 PLN      | 60,00 PLN                | 100,00 PLN | 0,00 PLN  | W limicie kredytowym |
 | FR-002   | 50,00 PLN      | 110,00 PLN               | 100,00 PLN | 10,00 PLN | Przekroczenie |
 | FR-003   | 20,00 PLN      | 130,00 PLN               | 100,00 PLN | 30,00 PLN | Przekroczenie |
 
@@ -51,7 +59,7 @@ CO MA BYĆ NA EKRANIE
 1. Tytuł „Wyjątki rozliczeniowe”, opis celu i widoczne oznaczenie
    „Dane demonstracyjne”. Rachunek A może być opisany nad tabelą.
 2. Tabela z powyższymi trzema operacjami. Wyraźnie oddziel kwotę operacji,
-   wykorzystanie, limit i przekroczenie. Formatuj kwoty z dwoma miejscami
+   wykorzystanie, limit kredytowy i przekroczenie. Formatuj kwoty z dwoma miejscami
    po przecinku. Status pokazuj tekstem, nie tylko kolorem.
 3. Działający przełącznik „Tylko przekroczenia”: początkowo wyłączony
    i widoczne trzy wiersze. Po włączeniu pokazuje FR-002 i FR-003,
@@ -61,7 +69,7 @@ CO MA BYĆ NA EKRANIE
 4. Przycisk „Szczegóły” przy każdej operacji, otwierający opis w panelu
    lub rozwijanym wierszu. Dla FR-002 pokaż zrozumiałe wyjaśnienie:
    „Wcześniejsze obciążenia: 60,00 PLN. Ta operacja: 50,00 PLN.
-   Razem: 110,00 PLN. Limit: 100,00 PLN. Przekroczenie: 10,00 PLN”.
+   Razem: 110,00 PLN. Limit kredytowy: 100,00 PLN. Przekroczenie: 10,00 PLN”.
    Dla pozostałych operacji podaj analogiczne, zgodne z tabelą wyjaśnienie.
 5. Krótką informację: „Status informacyjny — ekran nie blokuje operacji”.
 
@@ -92,9 +100,9 @@ Wybierz zmianę, która pomoże operatorowi zrozumieć wynik. Przykłady polece�
 
 > Kwota operacji i przekroczenie są zbyt podobne wizualnie. Wyróżnij kolumnę „Przekroczenie” i dodaj pod nagłówkiem krótkie wyjaśnienie jej znaczenia. Zachowaj dane i działanie filtra.
 
-> W szczegółach FR-002 pokaż obliczenie jako cztery czytelne kroki: wcześniejsze obciążenia, bieżąca operacja, suma, porównanie z limitem. Zachowaj wynik 10,00 PLN.
+> W szczegółach FR-002 pokaż obliczenie jako cztery czytelne kroki: wcześniejsze obciążenia, bieżąca operacja, suma, porównanie z limitem kredytowym. Zachowaj wynik 10,00 PLN.
 
-> Status jest widoczny tylko jako kolor. Dodaj etykiety „W limicie” i „Przekroczenie”, aby można było odróżnić stany bez rozpoznawania kolorów.
+> Status jest widoczny tylko jako kolor. Dodaj etykiety „W limicie kredytowym” i „Przekroczenie”, aby można było odróżnić stany bez rozpoznawania kolorów.
 
 Po poprawce sprawdź, czy nadal zgadzają się liczby i działa filtr. Jeśli już pierwsza wersja spełnia kryteria, popraw czytelność jednego elementu i wyjaśnij partnerowi, po co to zrobiłeś.
 
@@ -121,4 +129,4 @@ Orientacyjnie: **2 min** na wprowadzenie i wklejenie promptu, **7 min** na pierw
 
 Nie instaluj nowych narzędzi w czasie ćwiczenia. W finale wszyscy podłączą obliczenia do wspólnego szkieletu ekranu. Dzisiejszy prototyp posłuży jako wzorzec czytelności; nie trzeba będzie przenosić całego wygenerowanego projektu.
 
-**Dla chętnych, po ukończeniu podstawy:** zaprojektuj stan pusty po filtrowaniu albo sposób pokazania braku limitu. Brak limitu nie oznacza limitu zero; oznacz go jako informację wymagającą wyjaśnienia. Nie rozbudowuj całej aplikacji.
+**Dla chętnych, po ukończeniu podstawy:** zaprojektuj stan pusty po filtrowaniu albo sposób pokazania braku limitu kredytowego. Brak limitu kredytowego nie oznacza limitu kredytowego zero; oznacz go jako informację wymagającą wyjaśnienia. Nie rozbudowuj całej aplikacji.

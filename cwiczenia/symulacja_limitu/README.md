@@ -4,15 +4,15 @@
 
 **45 min wymagania + 30 min projekt + 90 min implementacja · Copilot**
 
-> Operator: „Chcę zobaczyć przekroczenia przy innym limicie i wrócić do obecnego widoku. Nie zmieniajcie limitu zapisanego w danych”.
+> Operator: „Chcę zobaczyć przekroczenia przy innym limicie kredytowym i wrócić do obecnego widoku. Nie zmieniajcie limitu kredytowego zapisanego w danych”.
 
 **Po co:** przejdziesz od niepełnego zgłoszenia do sprawdzonej zmiany swojego ekranu. Punktem startowym jest integracja z wtorku. Bez niej użyj z prowadzącym działającego wariantu awaryjnego w osobnym katalogu.
 
 ## A. Wymaganie — zanim zapytasz agenta
 
 1. Zapisz trzy pytania, których odpowiedź zmieni zachowanie: zero, puste pole, separator, zakres symulacji, powrót. Prowadzący gra operatora; zadaj mu pytania. Agent może pomóc znaleźć luki, lecz nie podejmuje decyzji biznesowych.
-2. W `portfolio/symulacja.md` zapisz maksymalnie pięć kryteriów typu wejście → czynność → wynik. Użyj FR-001–003 z briefu. Np. przy limicie 80 zł przekroczenia wynoszą 0/30/50 zł. To oczekiwanie sprawdzisz w teście i UI.
-3. Pokaż partnerowi kryteria. Czy potrafi odróżnić brak limitu od zera i wskazać, co ma zostać po powrocie? Brak odpowiedzi zapisuj jako pytanie, nie domysł.
+2. W `portfolio/symulacja.md` zapisz maksymalnie pięć kryteriów typu wejście → czynność → wynik. Użyj FR-001–003 z briefu. Np. przy limicie kredytowym 80 zł przekroczenia wynoszą 0/30/50 zł. To oczekiwanie sprawdzisz w teście i UI.
+3. Pokaż partnerowi kryteria. Czy potrafi odróżnić brak limitu kredytowego od zera i wskazać, co ma zostać po powrocie? Brak odpowiedzi zapisuj jako pytanie, nie domysł.
 
 ## B. Projekt i plan
 
@@ -30,4 +30,4 @@ Dołącz uzgodnione kryteria, `src/operator/limitRows.ts`, `src/operator/report.
 
 **Pomoc:** jeden formularz, jedna partia, bez nowej stylistyki. Jeśli obliczenia są już dobrze wydzielone, pomiń refaktoryzację i przejdź do formularza.
 
-**Dla szybszych:** porównanie bazowego i symulowanego limitu albo obsługa klawiaturą. Kryterium dodatkowej funkcji ustal przed kodowaniem.
+**Dla szybszych:** porównanie bazowego i symulowanego limitu kredytowego albo obsługa klawiaturą. Kryterium dodatkowej funkcji ustal przed kodowaniem.

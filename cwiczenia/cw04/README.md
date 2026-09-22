@@ -2,9 +2,9 @@
 
 **Dzień 1 · 35 min · Copilot Chat w VS Code · bez implementacji**
 
-> Franek: „Limit miał być prosty, dopóki nie padło pytanie: w jakiej walucie?”.
+> Franek: „Limit kredytowy miał być prosty, dopóki nie padło pytanie: w jakiej walucie?”.
 
-Wracamy do ekranu limitów. W ćw. 00 zobaczyłeś prosty przykład, a w ćw. 02b poprawiłeś filtr. Teraz sprawdzisz, czego żądali zamawiający i które decyzje nadal są otwarte. **Dobry plan powinien ujawniać niewiadome, zamiast uzupełniać je po cichu.**
+Wracamy do ekranu limitów kredytowych. W ćw. 00 zobaczyłeś prosty przykład, a w ćw. 02b poprawiłeś filtr. Teraz sprawdzisz, czego żądali zamawiający i które decyzje nadal są otwarte. **Dobry plan powinien ujawniać niewiadome, zamiast uzupełniać je po cichu.**
 
 ## 1. Poznaj dwa różne zakresy — 5 min
 
@@ -17,7 +17,7 @@ Nie traktuj uproszczeń demonstratora jako ogólnych zasad produktu. **Kryterium
 
 ## 2. Poproś o propozycję — 8 min
 
-W nowym czacie w trybie **Ask** dołącz oba pliki przez **Add Context / Dodaj kontekst**. Nie musisz dołączać kodu modułu limitów — najpierw ustalasz, czego wymagasz. Wklej:
+W nowym czacie w trybie **Ask** dołącz oba pliki przez **Add Context / Dodaj kontekst**. Nie musisz dołączać kodu modułu limitów kredytowych — najpierw ustalasz, czego wymagasz. Wklej:
 
 ```text
 Przejmuję aplikację po Franku. Przeczytaj dwa dołączone dokumenty:
@@ -47,7 +47,7 @@ Nie oceniaj planu tylko po tym, czy brzmi rozsądnie. Porównaj jego stwierdzeni
 
 Nie każda propozycja jest błędem. Możesz przyjąć ją **dla demonstratora**, odłożyć lub odrzucić; zapisz powód. Decyzje dotyczące szerszego produktu pozostają pytaniami do zamawiających.
 
-Sprawdź szczególnie: sumowanie operacji, walutę, obowiązywanie limitu w czasie, różnicę między brakiem limitu a zerem oraz ewentualne blokowanie operacji. **Jeżeli model poprawnie wypisał niewiadome, nie musisz szukać błędu na siłę.**
+Sprawdź szczególnie: sumowanie operacji, walutę, obowiązywanie limitu kredytowego w czasie, różnicę między brakiem limitu kredytowego a zerem oraz ewentualne blokowanie operacji. **Jeżeli model poprawnie wypisał niewiadome, nie musisz szukać błędu na siłę.**
 
 ## 4. Zapisz materiał do kolejnych ćwiczeń — 5 min
 
@@ -60,7 +60,7 @@ Utwórz **jeden plik `portfolio/kryteria-limitow.md`** z czterema sekcjami:
 
 Przykład formatu kryterium, nie kompletne rozwiązanie:
 
-> Dla obciążeń 60, 50 i 20 PLN oraz limitu 100 PLN, przy widocznych wszystkich operacjach, wiersz FR-002 pokazuje kwotę 50 PLN, wykorzystanie 110 PLN i przekroczenie 10 PLN.
+> Dla obciążeń 60, 50 i 20 PLN oraz limitu kredytowego 100 PLN, przy widocznych wszystkich operacjach, wiersz FR-002 pokazuje kwotę 50 PLN, wykorzystanie 110 PLN i przekroczenie 10 PLN.
 
 Pozostałe kryteria powinny obejmować także zachowanie ekranu i pochodzenie wyniku. Nie obiecuj w finale reguł, których brief nie obejmuje.
 

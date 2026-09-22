@@ -1,6 +1,6 @@
 let report;
 const $ = id => document.getElementById(id);
-const labels = { w_limicie: 'W limicie', przekroczenie: 'Przekroczenie', brak_limitu: 'Brak limitu', inna_waluta: 'Wymaga decyzji' };
+const labels = { w_limicie: 'W limicie kredytowym', przekroczenie: 'Przekroczenie', brak_limitu: 'Brak limitu kredytowego', inna_waluta: 'Wymaga decyzji' };
 const money = (value, currency) => value === null ? 'Brak' : new Intl.NumberFormat('pl-PL', { style: 'currency', currency }).format(value / 100);
 
 // Ćwiczenie MOST: checkbox istnieje. Dopisz filtrowanie bez zmiany raportu i obliczeń.
@@ -14,7 +14,7 @@ function render() {
   $('mode').textContent = report.tryb === 'demo'
     ? 'DEMO: wzorcowe dane do projektowania. Ten widok nie potwierdza działania integracji.'
     : ready ? `DANE Z REPO / EKSPORTU: ${report.zrodlo}`
-    : 'Raport odczytuje dane repo, ale moduł limitów nie jest jeszcze podłączony. Brak wyniku nie oznacza braku przekroczeń.';
+    : 'Raport odczytuje dane repo, ale moduł limitów kredytowych nie jest jeszcze podłączony. Brak wyniku nie oznacza braku przekroczeń.';
   const rows = ready ? visibleRows(report.wiersze, $('only').checked) : [];
   $('summary').textContent = `Operacji wejściowych: ${report.liczbaOperacji}. Widocznych wierszy: ${rows.length}.`;
   $('empty').hidden = !ready || rows.length > 0;
@@ -38,7 +38,7 @@ function validate(value) {
     if (!['PLN','EUR','USD'].includes(row.waluta) || !Object.hasOwn(labels, row.status)) throw new Error('Nieznana waluta lub status');
     for (const key of ['id','nrRachunku','dataWaluty','powod']) if(typeof row[key] !== 'string') throw new Error(`Brak pola ${key}`);
     for (const key of ['kwotaGrosze','wykorzystanieGrosze','przekroczenieGrosze']) if(!Number.isSafeInteger(row[key]) || row[key]<0) throw new Error(`Niepoprawne grosze: ${key}`);
-    if(row.limitGrosze !== null && (!Number.isSafeInteger(row.limitGrosze) || row.limitGrosze<0)) throw new Error('Niepoprawny limit');
+    if(row.limitGrosze !== null && (!Number.isSafeInteger(row.limitGrosze) || row.limitGrosze<0)) throw new Error('Niepoprawny limit kredytowy');
   }
   return value;
 }
