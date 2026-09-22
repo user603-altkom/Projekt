@@ -29,6 +29,7 @@ Możesz wykonać je w dniu 2 lub 3. Każda karta zawiera komplet instrukcji i wa
 | --- | --- | --- | --- |
 | [cw16b](cwiczenia/cw16b/README.md) | Agent testuje Twój ekran: Playwright MCP i testy E2E | 75–90 min | Trzy testy, raport, trace i wykryta celowa usterka; dołączone demo, gdy nie masz własnego UI |
 | [cw17b](cwiczenia/cw17b/README.md) | Centrum dowodzenia awarią | 90–120 min | Działający symulator, wykres kolejki i obsługa incydentu |
+| [cw18b](cwiczenia/cw18b/README.md) | Skill ze skryptem, credentialem i hookiem | 20–30 min | Pogoda w Warszawie na żądanie i przy pierwszej wiadomości nowej sesji |
 
 ## Co masz mieć lokalnie?
 
