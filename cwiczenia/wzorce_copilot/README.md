@@ -1,17 +1,55 @@
 # D2-03 — Podpatrz wzorzec, sprawdź go u siebie
 
-**45 min · czytanie przed przerwą, adaptacja po przerwie · Copilot**
+**45 min · praca w parach · przeglądarka i Copilot**
 
-**Po co:** zobaczysz, jak autorzy rzeczywistych repo zapisują instrukcje, role i procedury. Wynikiem jest jedna przydatna reguła we Franku, nie instalacja całego pakietu.
+Zobacz, jak inni zapisują reguły dla Copilota. Wybierz jeden pomysł, który przyda się w Twojej pracy, i sprawdź go na małym przykładzie.
 
-1. **Wybierz z partnerem jedną ścieżkę.** Otwórz [materiały i przypięte źródła](../../materialy/wzorce/README.md). Początkujący: GitHub Skills, krok 1. Pozostali: krótki fragment instrukcji VS Code oraz jeden plik — review, agent planujący albo skill testowania. Nie klonuj i nie buduj obcej aplikacji.
-2. **Odpowiedz na pięć pytań.** Kiedy plik jest dołączany? Co zmienia? Jakich narzędzi potrzebuje? Co ma sens we Franku? Co odrzucasz i dlaczego? W `portfolio/wzorzec.md` wystarczy po zdaniu oraz link do konkretnej wersji źródła. Pokaż partnerowi jedną linię, na której opierasz wniosek.
-3. **Przenieś jeden pomysł.** Po przerwie zapisz własną krótką regułę, rolę albo procedurę. Najprościej: zasada testowania kwot w instrukcjach. W nowej sesji zleć małą próbę bez implementacji i sprawdź dostępny ślad kontekstu oraz zachowanie. Zapisz wynik, także gdy nie udało się potwierdzić użycia.
+## 1. Otwórz repozytoria ze slajdu
 
-**Przykład adaptacji:** zamiast reguły budowania całego VS Code: „Wynik w groszach ustal z przykładu biznesowego. Nie obliczaj oczekiwania funkcją, którą testujesz”.
+Wszystkie materiały są publicznie dostępne pod poniższymi linkami. Do ich przeglądania nie potrzebujesz plików prowadzącego ani klonowania repozytoriów.
 
-**Gotowe:** jeden przyjęty pomysł, jeden odrzucony z uzasadnieniem, plik lokalnej konfiguracji i wynik próby. Nie kopiuj arbitralnych limitów długości funkcji ani narzędzi, których nie masz.
+| Repozytorium | Od czego zacząć? | Na co zwrócić uwagę? |
+| --- | --- | --- |
+| **[VS Code — microsoft/vscode](https://github.com/microsoft/vscode)** | Otwórz [`.github/copilot-instructions.md`](https://github.com/microsoft/vscode/blob/main/.github/copilot-instructions.md). Przeczytaj opis projektu i jedną sekcję zasad. | Które informacje pomagają agentowi poruszać się po kodzie? Które reguły mają sens tylko w tym projekcie? |
+| **[Awesome Copilot — github/awesome-copilot](https://github.com/github/awesome-copilot)** | Zajrzyj do katalogów [`instructions`](https://github.com/github/awesome-copilot/tree/main/instructions), [`agents`](https://github.com/github/awesome-copilot/tree/main/agents) i [`skills`](https://github.com/github/awesome-copilot/tree/main/skills). Wybierz jeden konkretny plik do przeczytania. | Czy opisuje stałą zasadę, rolę agenta czy procedurę wykonania zadania? Co musisz mieć w środowisku, żeby go użyć? |
+| **[GitHub Skills — customize-your-github-copilot-experience](https://github.com/skills/customize-your-github-copilot-experience)** | Przeczytaj README kursu i [instrukcję pierwszego kroku](https://github.com/skills/customize-your-github-copilot-experience/blob/main/.github/steps/1-step.md). | Jak kurs prowadzi od potrzeby do utworzenia pliku konfiguracji? Jak proponuje sprawdzić rezultat? |
 
-**Pomoc:** poproś Ask: „Wyjaśnij nagłówek i trzy reguły tego pliku. Oddziel format narzędzia od konwencji projektu”. Sprawdź odpowiedź w źródle. Awesome Copilot to kolekcja społecznościowa w organizacji GitHub, nie gwarancja jakości każdego wzorca.
+**Nie wiesz, co wybrać?** Zacznij od GitHub Skills. Jeśli pracujesz już z instrukcjami, wybierz VS Code albo Awesome Copilot. W tym ćwiczeniu wystarczy przeczytać wybrany fragment; nie musisz uruchamiać całego kursu ani instalować kolekcji.
 
-**Dla szybszych:** instrukcja `.github/instructions/testy.instructions.md` z `applyTo: "tests/**/*.ts"`; porównaj zadanie dotyczące testu i UI. Nie wymagaj zmiany zachowania, gdy oba zadania już spełniały zasadę. Odczyt obcych przykładów nie wymaga włączania ich narzędzi ani workspace trust.
+Uwaga na nazwę: **GitHub Skills to platforma kursów**, a katalog `skills` w Awesome Copilot zawiera **skille dla agentów**.
+
+## 2. Wybierz jeden przykład i omów go z partnerem
+
+Zapisz link do wybranego pliku i odpowiedz krótko:
+
+- Co ta instrukcja, agent lub skill ma zmienić w zachowaniu Copilota?
+- Jak według opisu w repo należy go włączyć lub wywołać? Jeśli opis tego nie wyjaśnia, zaznacz, co trzeba jeszcze sprawdzić.
+- Który pomysł wykorzystasz u siebie, a którego nie przeniesiesz? Dlaczego?
+
+Pokaż partnerowi konkretny fragment pliku, na którym opierasz odpowiedź.
+
+Możesz poprosić Copilota w trybie **Ask** o pomoc. Wklej wybrany fragment, aby miał dostęp do jego treści:
+
+```text
+Wyjaśnij poniższy fragment konfiguracji Copilota.
+Co ma zmienić w zachowaniu agenta? Które zapisy dotyczą tylko projektu autora?
+Oddziel to, co wynika z tekstu, od rzeczy wymagających sprawdzenia.
+
+[Tu wklej wybrany fragment pliku.]
+```
+
+## 3. Wypróbuj jeden pomysł u siebie
+
+Wybierz swój projekt albo folder `proba-regul` z poprzedniego ćwiczenia. Nie musisz używać aplikacji Franka.
+
+1. Na podstawie przeczytanego przykładu napisz **jedną krótką własną regułę**. Zapisz ją w pliku instrukcji, którego odczyt sprawdziłeś w poprzednim ćwiczeniu. Nie kopiuj całej konfiguracji obcego projektu.
+2. Przygotuj małe polecenie, na którym zobaczysz działanie reguły. Uruchom je w nowej rozmowie, bez powtarzania samej reguły w prompcie.
+3. Sprawdź odpowiedź i dostępne informacje o użytych instrukcjach. Zapisz także wynik negatywny lub brak potwierdzenia odczytu.
+
+**Przykład, jeśli potrzebujesz punktu startowego:** reguła „Gdy proponujesz testy, podaj dla każdego wejście i konkretny oczekiwany wynik”. Prompt do próby: „Zaproponuj trzy testy funkcji, która oblicza cenę po rabacie procentowym. Nie pisz kodu”. Sprawdź, czy dostałeś wartości liczbowe i wyniki, a nie same nazwy przypadków.
+
+## Kiedy zadanie jest gotowe?
+
+W swojej notatce zapisz: link do źródła, wybrany pomysł, treść własnej reguły, użyty prompt i wynik próby. Pokaż partnerowi jedną rzecz, którą wykorzystasz po szkoleniu.
+
+**Dla szybszych:** zamiast kolejnej reguły przeanalizuj jednego agenta albo skilla z Awesome Copilot. Wyjaśnij partnerowi jego sposób uruchamiania, wymagane narzędzia i sytuację, w której byłby przydatny. Awesome Copilot jest kolekcją społecznościową w organizacji GitHub; oceniaj każdy przykład osobno.
