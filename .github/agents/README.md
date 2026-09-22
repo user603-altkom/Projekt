@@ -1,6 +1,6 @@
 # Właśni agenci (`.github/agents/`)
 
-Rozszerzenie ćw. 13. Własny agent definiuje rolę i zestaw dostępnych narzędzi. Dla recenzenta dobierz narzędzia do odczytu. Sama treść „nie zmieniaj plików” nie jest techniczną blokadą zapisu.
+Rozszerzenie D3-03/05. Szablon zapisujesz dopiero podczas ćwiczenia; ten README sam nie aktywuje roli. Własny agent definiuje rolę i zestaw dostępnych narzędzi. Dla recenzenta dobierz narzędzia do odczytu. Sama treść „nie zmieniaj plików” nie jest techniczną blokadą zapisu.
 
 Plik `.github/agents/recenzent.agent.md` zawiera YAML i instrukcję:
 

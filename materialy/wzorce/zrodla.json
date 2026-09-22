@@ -1,0 +1,56 @@
+[
+  {
+    "repo": "github/awesome-copilot",
+    "sha": "ad4c196b933c5ca7f82a5ba78969ddcd2603ba80",
+    "path": "awesome-copilot/instructions/code-review-generic.instructions.md",
+    "url": "https://github.com/github/awesome-copilot/blob/ad4c196b933c5ca7f82a5ba78969ddcd2603ba80/instructions/code-review-generic.instructions.md"
+  },
+  {
+    "repo": "github/awesome-copilot",
+    "sha": "ad4c196b933c5ca7f82a5ba78969ddcd2603ba80",
+    "path": "awesome-copilot/agents/plan.agent.md",
+    "url": "https://github.com/github/awesome-copilot/blob/ad4c196b933c5ca7f82a5ba78969ddcd2603ba80/agents/plan.agent.md"
+  },
+  {
+    "repo": "github/awesome-copilot",
+    "sha": "ad4c196b933c5ca7f82a5ba78969ddcd2603ba80",
+    "path": "awesome-copilot/skills/webapp-testing/SKILL.md",
+    "url": "https://github.com/github/awesome-copilot/blob/ad4c196b933c5ca7f82a5ba78969ddcd2603ba80/skills/webapp-testing/SKILL.md"
+  },
+  {
+    "repo": "github/awesome-copilot",
+    "sha": "ad4c196b933c5ca7f82a5ba78969ddcd2603ba80",
+    "path": "awesome-copilot/LICENSE",
+    "url": "https://github.com/github/awesome-copilot/blob/ad4c196b933c5ca7f82a5ba78969ddcd2603ba80/LICENSE"
+  },
+  {
+    "repo": "microsoft/vscode",
+    "sha": "4a613ca89249e6cee903e020730301c4f54b3a49",
+    "path": "vscode/.github/copilot-instructions.md",
+    "url": "https://github.com/microsoft/vscode/blob/4a613ca89249e6cee903e020730301c4f54b3a49/.github/copilot-instructions.md"
+  },
+  {
+    "repo": "microsoft/vscode",
+    "sha": "4a613ca89249e6cee903e020730301c4f54b3a49",
+    "path": "vscode/LICENSE.txt",
+    "url": "https://github.com/microsoft/vscode/blob/4a613ca89249e6cee903e020730301c4f54b3a49/LICENSE.txt"
+  },
+  {
+    "repo": "skills/customize-your-github-copilot-experience",
+    "sha": "a44ff805fc7dda80a456d492a2d9105e9b478059",
+    "path": "customize-your-github-copilot-experience/.github/steps/1-step.md",
+    "url": "https://github.com/skills/customize-your-github-copilot-experience/blob/a44ff805fc7dda80a456d492a2d9105e9b478059/.github/steps/1-step.md"
+  },
+  {
+    "repo": "skills/customize-your-github-copilot-experience",
+    "sha": "a44ff805fc7dda80a456d492a2d9105e9b478059",
+    "path": "customize-your-github-copilot-experience/.github/steps/3-step.md",
+    "url": "https://github.com/skills/customize-your-github-copilot-experience/blob/a44ff805fc7dda80a456d492a2d9105e9b478059/.github/steps/3-step.md"
+  },
+  {
+    "repo": "skills/customize-your-github-copilot-experience",
+    "sha": "a44ff805fc7dda80a456d492a2d9105e9b478059",
+    "path": "customize-your-github-copilot-experience/LICENSE",
+    "url": "https://github.com/skills/customize-your-github-copilot-experience/blob/a44ff805fc7dda80a456d492a2d9105e9b478059/LICENSE"
+  }
+]
