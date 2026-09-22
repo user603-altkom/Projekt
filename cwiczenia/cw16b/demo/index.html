@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel do testów Playwright</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef3f7;color:#183044;font:18px system-ui}main{max-width:960px;margin:auto;padding:32px 20px}h1{font-size:clamp(26px,5vw,40px)}.card{background:white;padding:24px;border-radius:16px;margin:20px 0;box-shadow:0 6px 25px #1830440a}.controls{display:flex;gap:20px;align-items:center;flex-wrap:wrap}input[type=search]{display:block;padding:10px;font:inherit;max-width:100%;border:1px solid #637587;border-radius:6px}input[type=checkbox]{width:20px;height:20px}button{font:inherit;border:0;border-radius:6px;padding:12px;background:#087e82;color:white;cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #e39700;outline-offset:3px}.table{overflow:auto}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:14px 10px;border-bottom:1px solid #dce5eb;white-space:nowrap}caption{text-align:left;font-weight:600;padding:12px 0}.note{color:#52677a}strong{color:#087e82}
+</style>
+</head>
+<body><main>
+<p class="note">Samodzielne demo · dane syntetyczne</p>
+<h1>Panel przekroczeń</h1>
+<section class="card controls" aria-label="Filtry">
+<label>Szukaj kontrahenta<input type="search" id="search" placeholder="Np. Beta" autocomplete="off"></label>
+<label><input type="checkbox" id="exceeded"> Tylko przekroczenia</label>
+<button type="button" id="reset">Wyczyść filtry</button>
+</section>
+<section class="card">
+<p role="status" id="summary"></p>
+<div class="table"><table><caption>Limity kontrahentów</caption><thead><tr><th scope="col">Kontrahent</th><th scope="col">Limit</th><th scope="col">Wykorzystanie</th><th scope="col">Przekroczenie</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p id="empty" hidden>Brak wyników</p>
+</section>
+<p class="note">Kwoty są obliczane w groszach. Filtry działają łącznie; wyczyszczenie przywraca trzy pozycje.</p>
+</main>
+<script>
+const dane = [
+  {nazwa:'Alfa', limit:10000, wykorzystanie:11000},
+  {nazwa:'Beta', limit:10000, wykorzystanie:8000},
+  {nazwa:'Gamma', limit:10000, wykorzystanie:15000}
+];
+const search = document.querySelector('#search');
+const exceeded = document.querySelector('#exceeded');
+const pln = value => new Intl.NumberFormat('pl-PL',{style:'currency',currency:'PLN'}).format(value/100);
+function render() {
+  const query = search.value.trim().toLocaleLowerCase('pl');
+  const rows = dane.filter(r => r.nazwa.toLocaleLowerCase('pl').includes(query) && (!exceeded.checked || r.wykorzystanie > r.limit));
+  document.querySelector('#rows').replaceChildren(...rows.map(r => {
+    const tr = document.createElement('tr');
+    for (const value of [r.nazwa, pln(r.limit), pln(r.wykorzystanie), pln(Math.max(0,r.wykorzystanie-r.limit))]) {
+      const td=document.createElement('td');td.textContent=value;tr.append(td);
+    }
+    return tr;
+  }));
+  document.querySelector('#summary').textContent = `Widoczne pozycje: ${rows.length}`;
+  document.querySelector('#empty').hidden = rows.length !== 0;
+}
+search.addEventListener('input',render);
+exceeded.addEventListener('change',render);
+document.querySelector('#reset').addEventListener('click',()=>{search.value='';exceeded.checked=false;render();});
+render();
+</script></body></html>

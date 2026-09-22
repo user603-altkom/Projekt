@@ -21,6 +21,15 @@
 - **Dzień 3:** cw10b–cw15b. Review, wydanie, utrzymanie i utrwalenie procesu.
 - [Plan dnia 2](DZIEN-2.md) · [plan dnia 3](DZIEN-3.md).
 
+## Ćwiczenia dodatkowe — niezależne od głównej ścieżki
+
+Możesz wykonać je w dniu 2 lub 3. Każda karta zawiera komplet instrukcji i wariant dla szybszych.
+
+| Numer | Temat | Czas | Efekt |
+| --- | --- | --- | --- |
+| [cw16b](cwiczenia/cw16b/README.md) | Agent testuje Twój ekran: Playwright MCP i testy E2E | 75–90 min | Trzy testy, raport, trace i wykryta celowa usterka; dołączone demo, gdy nie masz własnego UI |
+| [cw17b](cwiczenia/cw17b/README.md) | Centrum dowodzenia awarią | 90–120 min | Działający symulator, wykres kolejki i obsługa incydentu |
+
 ## Co masz mieć lokalnie?
 
 Wszystkie wejścia są w tym repo. Publiczne repozytoria i dokumentacja mają linki internetowe. **Nie potrzebujesz plików prowadzącego ani prezentacji, aby wykonać kartę.**
