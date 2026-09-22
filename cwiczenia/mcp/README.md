@@ -1,63 +1,17 @@
-# Dokumentacja na żądanie: Context7 i CLI
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw14b](../cw14b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
 
-**Dzień 3 · 11:40–12:00 · 20 min · demo + krótka próba**
+# D3-08 — MCP, CLI i hook w konkretnym zadaniu
 
-> Franek: „Pamiętałem składnię. Biblioteka pamiętała inną”.
+**20 min · dwa krótkie pokazy i wybór w parach**
 
-Sprawdź w dokumentacji Vitest składnię `test.each`, a potem użyj jej w małym teście. **Context7 dostarcza dokumentację; lokalne uruchomienie sprawdza, czy kod działa w tym repo.**
+Nie instalujemy kolejnej platformy. Dobieramy narzędzie do czynności.
 
-## Przygotowanie i demo — 5 min
+1. **Dokumentacja i wykonanie.** Prowadzący sprawdza `npm ls vitest --depth=0`, pyta przygotowany Context7 o `test.each`, pokazuje źródło i uruchamia mały test. Pobranie dokumentacji i wykonanie kodu to dwa różne dowody. Bez MCP korzystamy z [dokumentacji Vitest](https://vitest.dev/api/test#test-each); wersja strony nie musi odpowiadać lokalnej bibliotece.
+2. **Hook.** Na osobnej kopii prowadzący pokazuje hook przed narzędziem oraz jego skutek. `PreToolUse` może zatrzymać wywołanie w obsługiwanym harnessie. `PostToolUse` nie cofa już wykonanej operacji. Format i dostępność zależą od narzędzia; plik JSON sam nie dowodzi działania.
+3. **W parze wybierz mechanizm.** Aktualna składnia biblioteki; test lokalnego projektu; kontrola przed wywołaniem narzędzia. Dla każdego wskaż narzędzie, wymagany dostęp i dowód wyniku. Nie musisz wybierać MCP do wszystkiego: CLI i MCP mogą udostępniać podobne możliwości.
 
-Otwórz terminal w głównym katalogu repo i uruchom:
+**Gotowe:** trzy uzasadnienia w `portfolio/narzedzia.md`. Np. „`npm test` wykonuje nasze testy; odpowiedź Context7 ich nie uruchomiła”.
 
-```bash
-npm ls vitest --depth=0
-```
+**Dla szybszych / po szkoleniu:** [pełna próba Context7](ROZSZERZENIE.md) oraz [.github/hooks](../../.github/hooks/README.md). Konfiguracji nie włączamy globalnie na wszystkich stanowiskach.
 
-Zapisz zainstalowaną wersję. `package-lock.json` opisuje wersję przypiętą; jeśli jej nie masz lokalnie, wróć do przygotowania środowiska z [START.md](../../START.md).
-
-Prowadzący pokazuje Context7 w Copilot Agent: wybór biblioteki przez `resolve-library-id`, potem pobranie dokumentacji przez `query-docs`. Rozszerzenie `Upstash.context7-mcp` i serwer widoczny w **MCP: List Servers** powinny być przygotowane przed blokiem. Jeśli serwer nie działa, po maksymalnie 3 minutach przejdź do planu B — nie poświęcaj ćwiczenia na instalację.
-
-## Własna próba — 10 min
-
-Otwórz `src/interest/valueDate.ts` i znajdź `isWeekend`. Sprawdzasz wyłącznie, czy data jest sobotą lub niedzielą, nie cały kalendarz świąt. Dołącz plik w Copilocie i podaj prompt, uzupełniając wersję z terminala:
-
-```text
-Używamy Vitest w wersji [wpisz wynik npm ls]. Przez Context7 znajdź
-składnię test.each do testu parametryzowanego. Do serwera wyślij tylko
-pytanie o bibliotekę i wersję, bez treści repozytorium.
-Podaj źródło i wersję dokumentacji. Jeśli tej wersji nie ma, zaznacz to.
-
-Następnie dopisz tests/interest/isWeekend.mcp.test.ts dla isWeekend:
-2026-08-14 → false, 2026-08-15 → true, 2026-08-16 → true.
-Nie zmieniaj funkcji ani zależności. Użyj trzech wierszy test.each,
-zgodnie ze stylem istniejących testów.
-```
-
-Sprawdź, czy widać rzeczywiste wywołanie Context7 i jego odpowiedź. Potem uruchom:
-
-```bash
-npm test -- tests/interest/isWeekend.mcp.test.ts
-```
-
-Jeżeli plik już istnieje, uzupełnij go zamiast nadpisywać. Zapisz w `portfolio/mcp.md`: wersję zainstalowaną, źródło dokumentacji, wersję potwierdzoną przez źródło lub „nieustalona” i wynik testu. Nie zakładaj, że Context7 ma dokumentację każdego wydania. Nie aktualizuj biblioteki tylko po to, by dopasować ją do odpowiedzi.
-
-**Plan B:** otwórz [oficjalną dokumentację `test.each`](https://vitest.dev/api/test#test-each) i wykonaj ten sam test. Zaznacz, że nie użyłeś MCP; bieżąca strona nie musi odpowiadać przypiętej wersji. Uruchomienie testu weryfikuje ten przykład w Twoim środowisku.
-
-## Odbiór — 5 min
-
-**Gotowe:** trzy przypadki przechodzą, masz źródło i jawny status wersji dokumentacji. Partner potrafi wskazać osobno dowód pobrania informacji oraz dowód wykonania kodu.
-
-Porównaj: MCP jest interfejsem udostępniania narzędzi, CLI sposobem wywołania programu. Mogą służyć różnym lub podobnym zadaniom. MCP nie jest z definicji lepsze ani oszczędniejsze tokenowo — znaczenie ma treść wyniku, uprawnienia i obsługa błędów.
-
-Po przejrzeniu nowego testu:
-
-```bash
-git add tests/interest/isWeekend.mcp.test.ts
-git diff --cached
-git commit -m "Test parametryzowany dni weekendowych"
-```
-
-**Rozszerzenie:** porównaj przydatność odpowiedzi na szerokie pytanie „jak testować w Vitest?” i konkretne pytanie o `test.each`.
-
-Konfiguracja: [Context7 dla VS Code](https://context7.com/docs/clients/vscode), sprawdzona 21.09.2026.
+Źródła: [Context7](https://context7.com/docs/clients/vscode), [hooki VS Code](https://code.visualstudio.com/docs/agent-customization/hooks).

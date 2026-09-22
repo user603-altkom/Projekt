@@ -1,11 +1,62 @@
 <!doctype html>
-<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wyjątki rozliczeniowe</title><link rel="stylesheet" href="/style.css"></head>
-<body><main>
-<header><p class="eyebrow">APLIKACJA PO FRANKU · DANE SYNTETYCZNE</p><h1>Wyjątki rozliczeniowe</h1><p>Sprawdź operację, jej limit i przyczynę oznaczenia.</p></header>
-<section class="controls" aria-label="Źródło raportu"><label>Źródło <select id="source"><option value="demo">Przykład do projektowania</option><option value="raport">Wynik z repozytorium</option><option value="plik">Własny plik JSON (SQL)</option></select></label><input id="upload" type="file" accept=".json,application/json" hidden><button id="refresh">Odśwież</button><label><input id="only" type="checkbox"> Tylko przekroczenia</label></section>
-<p id="mode" class="notice" role="status"></p><p id="summary"></p>
-<div class="table-scroll"><table><thead><tr><th>Operacja</th><th>Rachunek</th><th>Kwota</th><th>Wykorzystanie</th><th>Limit</th><th>Przekroczenie</th><th>Status</th><th>Szczegóły</th></tr></thead><tbody id="rows"></tbody></table></div>
-<p id="empty" hidden>Brak wierszy spełniających warunki.</p>
-<section id="details" hidden aria-live="polite"><h2>Szczegóły operacji</h2><p id="detail-text"></p></section>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wyjątki rozliczeniowe</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="page">
+<header>
+  <div class="title-row">
+    <h1>Wyjątki rozliczeniowe</h1>
+    <span id="mode-tag" class="tag" hidden></span>
+  </div>
+  <p class="lede">Podgląd operacji rozliczeniowych z kontrolą limitu. Dla każdej operacji widać kwotę, wykorzystanie limitu narastająco oraz łączne przekroczenie po tej operacji.</p>
+  <p id="mode" class="notice-line" role="status"></p>
+</header>
+
+<section class="controls" aria-label="Źródło raportu">
+  <label>Źródło
+    <select id="source">
+      <option value="demo">Przykład do projektowania</option>
+      <option value="raport">Wynik z repozytorium</option>
+      <option value="plik">Własny plik JSON (SQL)</option>
+    </select>
+  </label>
+  <input id="upload" type="file" accept=".json,application/json" hidden>
+  <button id="refresh" class="btn btn-secondary">Odśwież</button>
+  <label class="only-toggle"><input id="only" type="checkbox"> Tylko przekroczenia</label>
+</section>
+
+<p id="summary" class="summary"></p>
+
+<div class="layout">
+  <div class="main-col">
+    <div class="howto">
+      <div class="eyebrow">Jak czytać tabelę</div>
+      <ol>
+        <li>Operacje czytaj w kolejności od góry, osobno dla każdego rachunku.</li>
+        <li><strong>Kwota operacji</strong> to wartość pojedynczego obciążenia. <strong>Wykorzystanie narastająco</strong> to suma obciążeń od początku partii, łącznie z tym wierszem.</li>
+        <li><strong>Przekroczenie</strong> to wykorzystanie minus limit, nie mniej niż zero — łącznie po tej operacji, a nie przyrost z samej operacji.</li>
+        <li>Przełącznik <strong>Tylko przekroczenia</strong> zmienia wyłącznie widoczność wierszy; kwoty pozostają liczone dla całej partii.</li>
+        <li>Przycisk <strong>Szczegóły</strong> pokazuje po prawej wyliczenie krok po kroku dla wybranej operacji.</li>
+      </ol>
+    </div>
+    <p id="empty" class="empty" hidden>Brak wierszy spełniających warunki.</p>
+    <div id="batches"></div>
+  </div>
+  <aside class="details-col" aria-live="polite">
+    <div class="eyebrow">Szczegóły operacji</div>
+    <div id="details-body">
+      <p class="details-placeholder">Wybierz „Szczegóły” przy operacji, aby zobaczyć, jak powstało jej wykorzystanie i przekroczenie.</p>
+    </div>
+  </aside>
+</div>
+
 <footer>Materiał szkoleniowy. Status na ekranie nie oznacza zablokowania operacji.</footer>
-</main><script type="module" src="/app.js"></script></body></html>
+</div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
