@@ -1,0 +1,3 @@
+2026-09-22T09:59:59Z request=W-001 effectiveLimitGrosze=15000 usedGrosze=12000 exceededGrosze=0
+2026-09-22T10:00:00Z request=W-001 effectiveLimitGrosze=15000 usedGrosze=12000 exceededGrosze=0
+2026-09-22T10:01:00Z request=W-001 effectiveLimitGrosze=10000 usedGrosze=12000 exceededGrosze=2000

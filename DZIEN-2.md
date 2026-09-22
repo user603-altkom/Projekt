@@ -1,26 +1,24 @@
-# Dzień 2 — Kontrola agenta i poprawne liczby
+# Dzień 2 — SDLC z AI
 
-Kontynuujesz własny ekran. Celem jest wynik obliczony z danych repo i kontrola nad kolejnymi krokami agenta.
-
-Najpierw [zasady pracy i aktualizacji](PRACA-WARSZTATOWA.md). Nie cofaj projektu ani nie nadpisuj własnego ekranu. Godziny są orientacyjnym planem prowadzącego.
+Obowiązuje [nowy spis ćwiczeń](CWICZENIA.md), od cw05a do cw09b. Wszystkie wejścia są w repo. Godziny to orientacyjna pomoc organizacyjna, na slajdach ich nie ma.
 
 | Godzina | Blok |
 |---|---|
-| 9:00–9:15 | Otwarcie i tag start |
-| 9:15–9:35 | [D2-01: Czy agent dostał moje reguły?](cwiczenia/kontrola_agenta/README.md) |
-| 9:35–10:15 | [D2-02: Odbiór własnego ekranu](cwiczenia/odbior_ekranu/README.md) |
-| 10:15–10:30 | [D2-03A: Czytanie źródeł](cwiczenia/wzorce_copilot/README.md) |
+| 9:00–9:15 | Wprowadzenie: instrukcja, agent, skill |
+| 9:15–9:40 | [cw05a](cwiczenia/cw05a/README.md): trzy próby reguł |
+| 9:40–9:50 | Omówienie wyników |
+| 9:50–10:30 | [cw05b](cwiczenia/cw05b/README.md): publiczne wzorce |
 | 10:30–10:45 | Przerwa |
-| 10:45–11:15 | [D2-03B: Adaptacja reguły](cwiczenia/wzorce_copilot/README.md) |
-| 11:15–12:15 | [D2-05A: Przykład i test importu](cwiczenia/cw06/README.md) |
+| 10:45–11:00 | Mapa SDLC i start laboratorium |
+| 11:00–12:00 | [cw06b](cwiczenia/cw06b/README.md): wymagania i grill-me |
+| 12:00–12:15 | Porównanie kryteriów |
 | 12:15–13:00 | Obiad |
-| 13:00–13:30 | [D2-05B: Diagnoza i poprawka](cwiczenia/cw07/README.md) |
-| 13:30–13:50 | D2-CLI: pokaz dwóch terminali |
-| 13:50–14:30 | [D2-04: Plan integracji i pierwszy krok](cwiczenia/mala_zmiana/README.md) |
+| 13:00–13:50 | [cw07b](cwiczenia/cw07b/README.md): projekt i architekt |
+| 13:50–14:10 | [Pokaz CLI](materialy/sdlc/CLI.md) |
+| 14:10–14:30 | [cw08b](cwiczenia/cw08b/README.md): pierwszy test |
 | 14:30–14:45 | Przerwa |
-| 14:45–15:50 | [D2-06: Wspólne obliczenia, własny ekran](cwiczenia/zadanie_koncowe/README.md) |
-| 15:50–16:15 | [D2-07: Nowa sesja przejmuje zadanie](cwiczenia/cw09/README.md) |
-| 16:15–16:55 | Odbiór wtorku |
-| 16:55–17:00 | Domknięcie |
+| 14:45–15:55 | [cw08b](cwiczenia/cw08b/README.md): małe kroki implementacji |
+| 15:55–16:40 | [cw09b](cwiczenia/cw09b/README.md): testy graniczne |
+| 16:40–17:00 | cw09b: przekazanie do nowej sesji |
 
-Ćwiczenia dodatkowe: `cw05` (mapa kodu), `cw08`/`cw08_sql` (refaktoryzacja), `cw11` (log i injection), `cw12` i `rezerwa/`. Dawne godziny na starszych kartach nie określają obecnej kolejności; obowiązuje ten indeks.
+405 minut pracy i 75 minut przerw. Własny ekran z dnia 1 pozostaje osobnym projektem; podstawę realizujemy w laboratorium. Starsze karty są dodatkami, nie kolejną obowiązkową ścieżką.

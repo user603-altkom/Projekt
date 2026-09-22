@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw06b](../cw06b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D3-01/02 — Nowe wymaganie operatora
 
 **45 min wymagania + 30 min projekt + 90 min implementacja · Copilot**

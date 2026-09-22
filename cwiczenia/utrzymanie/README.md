@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw12b](../cw12b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D3-04 — Operator wyczyścił pole
 
 **15 min · odtworzenie i kontrola regresji**

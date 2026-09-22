@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw14b](../cw14b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D3-08 — MCP, CLI i hook w konkretnym zadaniu
 
 **20 min · dwa krótkie pokazy i wybór w parach**

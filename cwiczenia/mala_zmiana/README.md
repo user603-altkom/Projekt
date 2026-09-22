@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw08b](../cw08b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D2-04 — Plan integracji i pierwszy krok
 
 **40 min · Copilot: plan, potem Agent · kontynuacja w D2-06**

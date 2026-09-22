@@ -1,5 +1,7 @@
 # Przejmujemy aplikację Franka
 
+> **Dni 2–3: nowa ścieżka SDLC (22.09).** Otwórz [CWICZENIA.md](CWICZENIA.md). Start: [cw05a](cwiczenia/cw05a/README.md) i [cw05b](cwiczenia/cw05b/README.md). Następnie [samodzielne laboratorium](laboratorium/limity/README.md). Poniższy opis starej ścieżki Franka pozostaje materiałem dnia 1 i dodatkiem; nie określa obecnej kolejności dni 2–3.
+
 Franek odszedł z zespołu. Zostawił działające rozliczenia, kilka skrótów i obietnicę ekranu dla operatorów. Przez trzy dni przejmiesz system i dostarczysz fragment tego ekranu. Franek, wiadomości i wszystkie dane są fikcyjne.
 
 ## Zanim zaczniemy

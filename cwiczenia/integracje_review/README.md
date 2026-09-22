@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw10b](../cw10b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D3-03/05 — Review, test i przekazanie zmiany
 
 **75 min łącznie z pokazami · 25 min pracy w parach · głównie Copilot**

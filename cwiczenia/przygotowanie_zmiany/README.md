@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw11b](../cw11b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D3-05 — Opis, po którym da się zrobić review
 
 **W ramach D3-03/05 · bez dodatkowego bloku**

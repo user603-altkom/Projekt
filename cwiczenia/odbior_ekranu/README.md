@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw09b](../cw09b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D2-02 — Czy nasz ekran robi to, co obiecaliśmy?
 
 **40 min · praca w parze · najpierw bez zmian kodu**

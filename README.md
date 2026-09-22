@@ -1,5 +1,7 @@
 # szkolenie-ai-rejestr-rozliczen
 
+> **Dni 2–3: nowa ścieżka SDLC (22.09).** Otwórz [CWICZENIA.md](CWICZENIA.md). Start: [cw05a](cwiczenia/cw05a/README.md) i [cw05b](cwiczenia/cw05b/README.md). Następnie [samodzielne laboratorium](laboratorium/limity/README.md). Poniższy opis starej ścieżki Franka pozostaje materiałem dnia 1 i dodatkiem; nie określa obecnej kolejności dni 2–3.
+
 Repozytorium ćwiczeniowe do trzydniowego szkolenia z AI w pracy programisty. Udaje zastany system rozliczeniowy: rejestr transakcji, naliczanie odsetek, raport dzienny i schemat księgowania operacji.
 
 **Wszystko w `dane/` jest zmyślone.** Numery rachunków mają nieistniejący kod banku i niepoprawne cyfry kontrolne, nazwiska i firmy nie istnieją, zgłoszenia klientów zostały napisane na potrzeby ćwiczeń. Żaden plik w tym repozytorium nie pochodzi z systemu produkcyjnego ani z żadnej instytucji finansowej. To materiał dydaktyczny, nie aplikacja.

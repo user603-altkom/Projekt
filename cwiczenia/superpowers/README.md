@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw15b](../cw15b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D3-06 — Czy gotowa metoda pomaga?
 
 **50 min: pokaz, krótka próba i porównanie · Claude Code, potem transfer do Copilota**

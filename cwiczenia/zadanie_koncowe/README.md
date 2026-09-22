@@ -1,3 +1,5 @@
+> **Materiał wcześniejszej ścieżki.** Na aktualnych zajęciach otwórz [cw08b](../cw08b/README.md) oraz [spis ćwiczeń](../../CWICZENIA.md).
+
 # D2-06 — Wspólne obliczenia, własny ekran
 
 **65 min + odbiór dnia · Copilot Agent · kontynuacja D2-04**

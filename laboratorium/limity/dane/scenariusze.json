@@ -1,0 +1,66 @@
+[
+  {
+    "nazwa": "Bez wniosku",
+    "wejscie": {
+      "kontrahent": "K-001",
+      "limitBazowyGrosze": 10000,
+      "wykorzystanieGrosze": 12000,
+      "teraz": "2026-09-22T09:00:00Z",
+      "wniosek": null
+    }
+  },
+  {
+    "nazwa": "Zgoda aktywna",
+    "wejscie": {
+      "kontrahent": "K-001",
+      "limitBazowyGrosze": 10000,
+      "wykorzystanieGrosze": 12000,
+      "teraz": "2026-09-22T09:00:00Z",
+      "wniosek": {
+        "id": "W-001",
+        "limitGrosze": 15000,
+        "autor": "operator-1",
+        "zatwierdzil": "operator-2",
+        "status": "zatwierdzony",
+        "od": "2026-09-22T08:00:00Z",
+        "do": "2026-09-22T10:00:00Z"
+      }
+    }
+  },
+  {
+    "nazwa": "Dokladnie koniec zgody",
+    "wejscie": {
+      "kontrahent": "K-001",
+      "limitBazowyGrosze": 10000,
+      "wykorzystanieGrosze": 12000,
+      "teraz": "2026-09-22T10:00:00Z",
+      "wniosek": {
+        "id": "W-001",
+        "limitGrosze": 15000,
+        "autor": "operator-1",
+        "zatwierdzil": "operator-2",
+        "status": "zatwierdzony",
+        "od": "2026-09-22T08:00:00Z",
+        "do": "2026-09-22T10:00:00Z"
+      }
+    }
+  },
+  {
+    "nazwa": "Zgoda cofnieta",
+    "wejscie": {
+      "kontrahent": "K-001",
+      "limitBazowyGrosze": 10000,
+      "wykorzystanieGrosze": 12000,
+      "teraz": "2026-09-22T09:00:00Z",
+      "wniosek": {
+        "id": "W-001",
+        "limitGrosze": 15000,
+        "autor": "operator-1",
+        "zatwierdzil": "operator-2",
+        "status": "cofniety",
+        "od": "2026-09-22T08:00:00Z",
+        "do": "2026-09-22T10:00:00Z"
+      }
+    }
+  }
+]
