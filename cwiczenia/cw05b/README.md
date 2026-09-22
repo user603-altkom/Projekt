@@ -4,9 +4,9 @@
 
 Zobacz, jak inni zapisują reguły dla Copilota. Wybierz jeden pomysł, który przyda się w Twojej pracy, i sprawdź go na małym przykładzie.
 
-## 1. Otwórz repozytoria ze slajdu
+## 1. Otwórz publiczne repozytoria
 
-Wszystkie materiały są publicznie dostępne pod poniższymi linkami. Do ich przeglądania nie potrzebujesz plików prowadzącego ani klonowania repozytoriów.
+Wszystkie materiały są publicznie dostępne pod poniższymi linkami. Możesz je przeglądać bezpośrednio w przeglądarce, bez klonowania.
 
 | Repozytorium | Od czego zacząć? | Na co zwrócić uwagę? |
 | --- | --- | --- |

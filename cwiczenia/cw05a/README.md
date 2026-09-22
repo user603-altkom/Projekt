@@ -2,7 +2,7 @@
 
 **20–25 min · Copilot lub Claude Code · bez pisania kodu**
 
-Sprawdzisz trzy rzeczy z prezentacji:
+Sprawdzisz trzy sposoby wpływania na zachowanie agenta:
 
 1. Czy narzędzie korzysta z reguły zapisanej tylko w `AGENTS.md`?
 2. Czy odwołanie `@` w pliku instrukcji prowadzi do innego pliku Markdown?

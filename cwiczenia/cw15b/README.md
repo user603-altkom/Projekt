@@ -22,7 +22,7 @@ zaproponuj mały projekt i sprawdzenie. Poczekaj na decyzję przed kodowaniem.
 Nie zmieniaj algorytmu oceny ani kontraktu. Nie commituj i nie publikuj.
 ```
 
-Jeśli instalacja nie działa, obserwuj rzeczywisty pokaz prowadzącego, a swój krok wykonaj w Copilocie z własnym planem. Zapisz ten wariant. Nie nazywaj go użyciem skilla, którego nie załadowano.
+Jeśli instalacja nie działa, swój krok wykonaj w Copilocie z własnym planem. Zapisz ten wariant. Nie nazywaj go użyciem skilla, którego nie załadowano.
 
 ## 3. Porównaj i odbierz
 

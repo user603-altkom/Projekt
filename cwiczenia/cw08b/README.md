@@ -1,6 +1,6 @@
 # cw08b — Implementacja: jeden krok na raz
 
-**90 min, z przerwą po pierwszym teście · Copilot Agent; CLI jako pokaz**
+**90 min, z przerwą po pierwszym teście · Copilot Agent**
 
 **Cel:** wdrożyć uzgodniony moduł oceny limitu. Kontrolujesz zakres zmiany i zatrzymujesz agenta po każdym kroku.
 
@@ -17,7 +17,21 @@ Na starcie test bazowy przechodzi, a raport ignoruje wnioski. To oczekiwany punk
 
 ## 1. Dodaj instrukcję dla modułu
 
-Przeczytaj [szablon instrukcji](../../materialy/sdlc/limity.instructions.md). Skopiuj go do **nowego pliku** `.github/instructions/limity.instructions.md`. Zawiera zakres `applyTo` dla laboratorium. Zacznij nową sesję Copilota i sprawdź odczyt instrukcji. W Claude Code jawnie dołącz te zasady lub zapisz je w obsługiwanym pliku instrukcji; nie zakładaj odczytu pliku Copilota.
+Utwórz **nowy plik** `.github/instructions/limity.instructions.md` i wklej poniższą treść:
+
+```markdown
+---
+applyTo: "laboratorium/limity/**/*.mjs"
+---
+Kwoty są w całkowitych groszach; zero jest prawidłową wartością.
+Źródło wymagań: laboratorium/limity/BRIEF.md i KONTRAKT.md.
+Nie zmieniaj kontraktu ani danych wejściowych. Czas przyjmuj jako argument.
+Przed implementacją pokaż mały test z oczekiwaniem wyprowadzonym z briefu.
+Po kroku uruchom node --test laboratorium/limity/test/ocena.node.mjs.
+Podaj faktyczny wynik. Nie usuwaj testów, aby ukryć błąd. Nie dodawaj zależności.
+```
+
+Pole `applyTo` określa zakres instrukcji dla laboratorium. Zacznij nową sesję Copilota i sprawdź odczyt instrukcji. W Claude Code jawnie dołącz te zasady lub zapisz je w obsługiwanym pliku instrukcji; nie zakładaj odczytu pliku Copilota.
 
 ## 2. Najpierw jeden test
 
@@ -53,8 +67,6 @@ node laboratorium/limity/serwer.mjs
 Otwórz http://127.0.0.1:4179. Dla scenariuszy z pliku danych oczekujesz kolejno przekroczeń **20 zł, 0 zł, 20 zł, 20 zł**. Zwróć uwagę, czy zgoda aktywna ma źródło `czasowy`. Po zmianie modułu zrestartuj serwer.
 
 **Gotowe:** potrafisz wskazać wymaganie, jego test i fragment implementacji. Raport i ekran korzystają z tej samej funkcji. Pozostałe braki testów zapisujesz do cw09b.
-
-**Pokaz CLI prowadzącego:** [komendy i prompty](../../materialy/sdlc/CLI.md). Uczestnik może pozostać w VS Code.
 
 **Dla szybszych:** pokaż dane `/api/raport` we własnym ekranie. Możesz wyeksportować JSON do pliku i wczytać go w swoim projekcie; nie kopiuj algorytmu do UI. Jeśli używasz osobnego serwera UI, samodzielnie ustal proxy lub sposób pobrania danych.
 

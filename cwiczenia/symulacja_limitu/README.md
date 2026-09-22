@@ -28,6 +28,6 @@ Dołącz uzgodnione kryteria, `src/operator/limitRows.ts`, `src/operator/report.
 
 **Prompt pomocniczy:** „Najpierw wskaż luki wymagania, nie rozstrzygaj ich za operatora. Po moich odpowiedziach przygotuj mały plan. Implementuj tylko zatwierdzony krok i zatrzymaj się z diffem oraz wynikiem kontroli”.
 
-**Pomoc:** jeden formularz, jedna partia, bez nowej stylistyki. Jeśli obliczenia są już dobrze wydzielone, zamiast sztucznej refaktoryzacji użyj [małego przykładu](../../materialy/refaktoryzacja/README.md).
+**Pomoc:** jeden formularz, jedna partia, bez nowej stylistyki. Jeśli obliczenia są już dobrze wydzielone, pomiń refaktoryzację i przejdź do formularza.
 
 **Dla szybszych:** porównanie bazowego i symulowanego limitu albo obsługa klawiaturą. Kryterium dodatkowej funkcji ustal przed kodowaniem.

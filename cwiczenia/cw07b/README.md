@@ -10,7 +10,22 @@ Otwórz [BRIEF.md](../../laboratorium/limity/BRIEF.md), [KONTRAKT.md](../../labo
 
 ## 1. Utwórz rolę
 
-Przeczytaj [szablon architekta](../../materialy/sdlc/architekt.agent.md). Skopiuj jego treść do **nowego pliku** `.github/agents/architekt-limity.agent.md`. W panelu Copilot wybierz agenta `architekt-limity`.
+Utwórz **nowy plik** `.github/agents/architekt-limity.agent.md` i wklej poniższą treść:
+
+```markdown
+---
+name: architekt-limity
+description: Projektuje mały moduł oceny limitu na podstawie uzgodnionych wymagań.
+tools: ['read', 'search']
+---
+Przeczytaj wskazane wymagania, kontrakt i kod. Oddziel fakty z repo od decyzji.
+Zaproponuj najmniejszą zmianę zachowującą kontrakt. Czas przyjmuj jako dane.
+Podaj najwyżej cztery kroki, pierwszy test i punkt zatrzymania.
+Nie edytuj plików. Nie uruchamiaj terminala. Wynik oddaj w czacie.
+Gdy wymaganie jest niejasne, wskaż decyzję do podjęcia zamiast zgadywać.
+```
+
+W panelu Copilot wybierz agenta `architekt-limity`.
 
 Sprawdź w konfiguracji narzędzia odczytu i wyszukiwania. Nie dodawaj terminala ani edycji do tej roli. Jeżeli nazwy narzędzi w szablonie nie pasują do wersji VS Code, wybierz dostępne odpowiedniki w edytorze konfiguracji agenta. Sam opis „tylko czytaj” nie zastępuje doboru narzędzi.
 
