@@ -69,7 +69,7 @@ git commit -m "Instrukcje: zasady malych zmian i weryfikacji"
 2. Otwórz **nowy czat**. Dołącz notatkę, brief i najważniejszy plik zmiany. Poproś o odtworzenie stanu oraz plan następnego kroku, bez zmian kodu. Nie wklejaj całej poprzedniej rozmowy.
 3. Partner porównuje odpowiedź z kodem i wynikami komend. Popraw jedno pominięcie, jeśli istnieje, i ponów pytanie. Jeżeli wszystko się zgadza, nazwij sprawdzony zakres.
 
-Przykład zdania: „Adapter przechodzi odbiór, UI czyta eksport JSON; po zmianie wejścia trzeba ponowić eksport. Nie sprawdziliśmy jeszcze pustego limitu”. Zapisz tylko to, co jest prawdą w Twojej kopii.
+Przykład zdania: „Adapter przechodzi odbiór, UI czyta eksport JSON; po zmianie wejścia trzeba ponowić eksport. Nie sprawdziliśmy jeszcze pustego limitu kredytowego”. Zapisz tylko to, co jest prawdą w Twojej kopii.
 
 ```text
 Odtwórz cel, aktualny stan i następny krok z dołączonego przekazania.

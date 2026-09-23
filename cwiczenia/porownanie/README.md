@@ -24,7 +24,7 @@ Zapisz `git status --short` i `git diff` przed próbą. W obu narzędziach zaczn
 Przejmujemy aplikację po Franku. Przeczytaj historia/brief_operatora.md,
 src/operator/limitRows.ts i src/limits/creditLimit.ts. Jeśli potrzebujesz
 kolejnego pliku do planu, przeczytaj go i wskaż dlaczego.
-Bez edycji plików zaproponuj plan integracji limitów z ekranem:
+Bez edycji plików zaproponuj plan integracji limitów kredytowych z ekranem:
 maksymalnie pięć kroków oraz trzy kontrole odbioru.
 Oddziel podstawę demonstratora od rozszerzeń i decyzji człowieka.
 Nie implementuj planu.

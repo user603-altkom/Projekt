@@ -4,7 +4,7 @@
 
 > Franek: „Testy są zielone. Tego przypadku nie pytały”.
 
-**Cel:** napisać test z oczekiwaniem ustalonym niezależnie od kodu. Po obiedzie ten sam test poprowadzi diagnozę w [D2-05B](../cw07/README.md). Import jest osobnym modułem aplikacji; jego naprawa nie podłączy limitów do UI.
+**Cel:** napisać test z oczekiwaniem ustalonym niezależnie od kodu. Po obiedzie ten sam test poprowadzi diagnozę w [D2-05B](../cw07/README.md). Import jest osobnym modułem aplikacji; jego naprawa nie podłączy limitów kredytowych do UI.
 
 **Otwórz:** `src/import/parseBankFile.ts`, `src/model.ts`, `tests/transactions/validate.test.ts`, `dane/wyciag_probka.csv`. Wszystkie polecenia z katalogu repo.
 

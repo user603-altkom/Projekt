@@ -52,7 +52,7 @@ Dodawanie plików opisuje [oficjalna dokumentacja kontekstu VS Code](https://cod
 
 - **Dzień 1:** prototyp, poznanie repo, pierwsze reguły, kryteria oraz Presidio. Pracę nad własnym ekranem zachowujesz na kolejne dni.
 - **[Dzień 2 — kontrola agenta i poprawne liczby](DZIEN-2.md):** nowe karty D2, test importu, integracja własnego ekranu i przekazanie do nowej sesji.
-- **[Dzień 3 — nowa funkcja przez SDLC](DZIEN-3.md):** symulacja limitu, review i integracje, Superpowers, własny skill, MCP i hook.
+- **[Dzień 3 — domknięcie SDLC i projekt końcowy](DZIEN-3.md):** review kodu Franka i review przez CLI, utrzymanie od zgłoszenia do poprawki, potem własny kalkulator harmonogramu na POLSTR od zera metodyką spec-kit (cw19b).
 
 Przed aktualizacją repo przeczytaj [PRACA-WARSZTATOWA.md](PRACA-WARSZTATOWA.md). Nie nadpisuj wczorajszego projektu. Stare katalogi `cwXX` zostają, ale kolejność wyznaczają indeksy dni.
 
@@ -66,6 +66,6 @@ Notatki trzymaj w `portfolio/` (katalog celowo ignorowany przez Git). Pliki kodu
 
 ## Gdy zostaniesz z tyłu
 
-Nie kasuj pracy. Zachowaj notatki i commit albo kopię folderu. Poproś prowadzącego o czysty starter w osobnym katalogu. Finał wymaga startera, kryteriów z briefu i review limitów; naprawa importu ani refaktoryzacja odsetek nie są jego technicznym warunkiem. Starter zawiera już moduł limitów i UI.
+Nie kasuj pracy. Zachowaj notatki i commit albo kopię folderu. Poproś prowadzącego o czysty starter w osobnym katalogu. Finał wymaga startera, kryteriów z briefu i review limitów kredytowych; naprawa importu ani refaktoryzacja odsetek nie są jego technicznym warunkiem. Starter zawiera już moduł limitów kredytowych i UI.
 
 `npm test` ma być zielone na starcie. **`npm run odbior` ma wtedy nie przechodzić**: adapter finału jest celowo pusty. Zielone testy obecnego kodu nie oznaczają ukończonej funkcji.

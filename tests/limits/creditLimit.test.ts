@@ -56,7 +56,7 @@ describe('creditLimitUsage', () => {
     expect(wykorzystanie).toBe(200000);
   });
 
-  it('nie wlicza uznań do wykorzystania limitu', () => {
+  it('nie wlicza uznań do wykorzystania limitu kredytowego', () => {
     const wykorzystanie = creditLimitUsage([
       transakcja({ id: 'OP-1', kwotaGrosze: 120000 }),
       transakcja({ id: 'OP-2', kwotaGrosze: 900000, typ: 'UZNANIE' }),
@@ -67,7 +67,7 @@ describe('creditLimitUsage', () => {
 });
 
 describe('checkCreditLimit', () => {
-  it('przepuszcza obciążenie mieszczące się w limicie', () => {
+  it('przepuszcza obciążenie mieszczące się w limicie kredytowym', () => {
     const wynik = checkCreditLimit(limit(), transakcja({ kwotaGrosze: 499999 }));
 
     expect(wynik.ok).toBe(true);
@@ -75,20 +75,20 @@ describe('checkCreditLimit', () => {
     expect(wynik.bledy).toEqual([]);
   });
 
-  it('przepuszcza obciążenie równe limitowi', () => {
+  it('przepuszcza obciążenie równe limitowi kredytowemu', () => {
     const wynik = checkCreditLimit(limit(), transakcja({ kwotaGrosze: 500000 }));
 
     expect(wynik.ok).toBe(true);
   });
 
-  it('odrzuca obciążenie przekraczające limit choćby o grosz', () => {
+  it('odrzuca obciążenie przekraczające limit kredytowy choćby o grosz', () => {
     const wynik = checkCreditLimit(limit(), transakcja({ kwotaGrosze: 500001 }));
 
     expect(wynik.ok).toBe(false);
     expect(wynik.przekroczenieGrosze).toBe(1);
   });
 
-  it('podaje w komunikacie kwotę przekroczenia i kwotę limitu', () => {
+  it('podaje w komunikacie kwotę przekroczenia i kwotę limitu kredytowego', () => {
     const wynik = checkCreditLimit(limit(), transakcja({ kwotaGrosze: 750000 }));
 
     expect(wynik.bledy).toHaveLength(1);
@@ -97,7 +97,7 @@ describe('checkCreditLimit', () => {
     expect(wynik.bledy[0]).toContain('5 000,00 PLN');
   });
 
-  it('przepuszcza uznanie, nawet gdy jego kwota jest wyższa niż limit', () => {
+  it('przepuszcza uznanie, nawet gdy jego kwota jest wyższa niż limit kredytowy', () => {
     const wynik = checkCreditLimit(
       limit(),
       transakcja({ kwotaGrosze: 9900000, typ: 'UZNANIE' }),
@@ -107,7 +107,7 @@ describe('checkCreditLimit', () => {
     expect(wynik.bledy).toEqual([]);
   });
 
-  it('dolicza do limitu wcześniejsze obciążenia rachunku', () => {
+  it('dolicza do limitu kredytowego wcześniejsze obciążenia rachunku', () => {
     const wynik = checkCreditLimit(limit(), transakcja({ id: 'OP-3', kwotaGrosze: 200000 }), [
       transakcja({ id: 'OP-1', kwotaGrosze: 200000 }),
       transakcja({ id: 'OP-2', kwotaGrosze: 150000 }),
@@ -117,7 +117,7 @@ describe('checkCreditLimit', () => {
     expect(wynik.przekroczenieGrosze).toBe(50000);
   });
 
-  it('nie odrzuca operacji, gdy wcześniejsze obciążenia mieszczą się razem z nią w limicie', () => {
+  it('nie odrzuca operacji, gdy wcześniejsze obciążenia mieszczą się razem z nią w limicie kredytowym', () => {
     const wynik = checkCreditLimit(limit(), transakcja({ id: 'OP-3', kwotaGrosze: 100000 }), [
       transakcja({ id: 'OP-1', kwotaGrosze: 200000 }),
       transakcja({ id: 'OP-2', kwotaGrosze: 150000 }),
@@ -126,7 +126,7 @@ describe('checkCreditLimit', () => {
     expect(wynik.ok).toBe(true);
   });
 
-  it('limit zerowy blokuje każde obciążenie', () => {
+  it('limit kredytowy zerowy blokuje każde obciążenie', () => {
     const wynik = checkCreditLimit(limit({ limitGrosze: 0 }), transakcja({ kwotaGrosze: 1 }));
 
     expect(wynik.ok).toBe(false);
@@ -141,29 +141,29 @@ describe('findCreditLimit', () => {
     limit({ nrRachunku: INNY_RACHUNEK, limitGrosze: 100000, effectiveFrom: '2026-01-01' }),
   ];
 
-  it('zwraca null dla rachunku bez skonfigurowanego limitu', () => {
+  it('zwraca null dla rachunku bez skonfigurowanego limitu kredytowego', () => {
     expect(findCreditLimit(limity, '99000044170000456123789045', '2026-08-12')).toBeNull();
   });
 
-  it('zwraca limit obowiązujący na wskazany dzień', () => {
+  it('zwraca limit kredytowy obowiązujący na wskazany dzień', () => {
     expect(findCreditLimit(limity, RACHUNEK, '2026-08-12')?.limitGrosze).toBe(900000);
   });
 
-  it('pomija limit, który jeszcze nie wszedł w życie', () => {
+  it('pomija limit kredytowy, który jeszcze nie wszedł w życie', () => {
     expect(findCreditLimit(limity, RACHUNEK, '2026-06-30')?.limitGrosze).toBe(500000);
   });
 
-  it('zwraca null, gdy żaden limit rachunku nie wszedł jeszcze w życie', () => {
+  it('zwraca null, gdy żaden limit kredytowy rachunku nie wszedł jeszcze w życie', () => {
     expect(findCreditLimit(limity, RACHUNEK, '2025-12-31')).toBeNull();
   });
 
-  it('nie miesza limitów różnych rachunków', () => {
+  it('nie miesza limitów kredytowych różnych rachunków', () => {
     expect(findCreditLimit(limity, INNY_RACHUNEK, '2026-08-12')?.limitGrosze).toBe(100000);
   });
 });
 
 describe('parseCreditLimits', () => {
-  it('czyta wpisy z pola limity', () => {
+  it('czyta wpisy z pola limity kredytowe', () => {
     const limity = parseCreditLimits(
       JSON.stringify({
         limity: [
@@ -210,7 +210,7 @@ describe('parseCreditLimits', () => {
 });
 
 describe('loadCreditLimits', () => {
-  it('wczytuje konfigurację limitów z katalogu dane', () => {
+  it('wczytuje konfigurację limitów kredytowych z katalogu dane', () => {
     const limity = loadCreditLimits('dane/limity_rachunkow.json');
 
     expect(limity.length).toBeGreaterThan(0);
@@ -228,7 +228,7 @@ describe('checkCreditLimits', () => {
     expect(wynik.bledy).toEqual([]);
   });
 
-  it('przepuszcza operacje rachunków bez skonfigurowanego limitu', () => {
+  it('przepuszcza operacje rachunków bez skonfigurowanego limitu kredytowego', () => {
     const wynik = checkCreditLimits(limity, [
       transakcja({ id: 'OP-1', nrRachunku: INNY_RACHUNEK, kwotaGrosze: 9900000 }),
     ]);
@@ -247,7 +247,7 @@ describe('checkCreditLimits', () => {
     expect(wynik.bledy[0]).toContain('OP-2');
   });
 
-  it('nie miesza wykorzystania limitu między rachunkami', () => {
+  it('nie miesza wykorzystania limitu kredytowego między rachunkami', () => {
     const wynik = checkCreditLimits(
       [limit({ limitGrosze: 500000 }), limit({ nrRachunku: INNY_RACHUNEK, limitGrosze: 500000 })],
       [
@@ -259,7 +259,7 @@ describe('checkCreditLimits', () => {
     expect(wynik.ok).toBe(true);
   });
 
-  it('raportuje każdą operację ponad limitem, nie tylko pierwszą', () => {
+  it('raportuje każdą operację ponad limitem kredytowym, nie tylko pierwszą', () => {
     const wynik = checkCreditLimits(limity, [
       transakcja({ id: 'OP-1', kwotaGrosze: 600000 }),
       transakcja({ id: 'OP-2', kwotaGrosze: 100000 }),
@@ -277,7 +277,7 @@ describe('checkCreditLimits', () => {
     expect(wynik.przekroczenieGrosze).toBe(200000);
   });
 
-  it('uwzględnia limit obowiązujący na datę waluty operacji', () => {
+  it('uwzględnia limit kredytowy obowiązujący na datę waluty operacji', () => {
     const wynik = checkCreditLimits(
       [
         limit({ limitGrosze: 100000, effectiveFrom: '2026-01-01' }),

@@ -7,7 +7,7 @@ try {
   const useSql = process.argv.includes('--sql');
   const inputs = loadOperatorInputs();
   const report = useSql ? buildSqlReport(inputs.operacje,inputs.limity) : buildOperatorReport();
-  assert.equal(report.stan, 'gotowe', 'Moduł limitów nie został podłączony. To oczekiwany stan przed finałem.');
+  assert.equal(report.stan, 'gotowe', 'Moduł limitów kredytowych nie został podłączony. To oczekiwany stan przed finałem.');
   assert.equal(report.wiersze.length, 3, 'Każda z trzech operacji ma mieć wiersz.');
   const expected = [
     ['FR-001', 6000, 0, 'w_limicie'],

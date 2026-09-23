@@ -39,4 +39,8 @@ Następny krok, po zweryfikowaniu uwagi: „Dopisz test dla wykorzystania 6000 g
 
 To jest integracja przez CLI oraz lokalną sesję. Sam `glab` nie wykonuje review AI. Automatyczne review GitLaba w CI wymaga runnera, wyzwalacza i uwierzytelnienia do usługi modelu; tego na warsztacie nie zakładamy. Przygotowany komentarz pozostaje szkicem do przeczytania, nie publikujemy go automatycznie.
 
+## Ten sam wzorzec jako skrypt
+
+Trzy kroki (pobierz diff, oceń z regułami, opublikuj) jako gotowa rutyna z terminala przez Copilot CLI, dla GitHuba i GitLaba, z trybem na sucho do ćwiczeń na publicznym PR: [REVIEW-CLI.md](REVIEW-CLI.md), skrypty w [skrypty/](skrypty/).
+
 Źródła: [Copilot review](https://docs.github.com/en/copilot/concepts/agents/code-review), [glab MR](https://docs.gitlab.com/cli/mr/), [Claude w GitLab CI](https://code.claude.com/docs/en/gitlab-ci-cd).

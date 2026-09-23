@@ -1,3 +1,5 @@
+> **Materiał rezerwowy dnia 3.** Główna ścieżka: [cw19b](../cw19b/README.md), [plan dnia](../../DZIEN-3.md).
+
 # cw13b — Własny skill do odbioru zmiany
 
 **45 min · Copilot, opcjonalnie Claude Code**

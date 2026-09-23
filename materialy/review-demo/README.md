@@ -4,9 +4,9 @@ Mały syntetyczny przykład do pokazania review Copilota na GitHubie i lokalnego
 
 ## Wymaganie
 
-Kwoty to nieujemne całkowite grosze. Funkcja `exceeded` oblicza przekroczenie przy narastającym wykorzystaniu. Limit zero jest prawidłową wartością. Brak limitu (`null` lub `undefined`) oznacza brak ograniczenia. Równość wykorzystania i limitu nie jest przekroczeniem.
+Kwoty to nieujemne całkowite grosze. Funkcja `exceeded` oblicza przekroczenie przy narastającym wykorzystaniu. Limit kredytowy zero jest prawidłową wartością. Brak limitu kredytowego (`null` lub `undefined`) oznacza brak ograniczenia. Równość wykorzystania i limitu kredytowego nie jest przekroczeniem.
 
-FR-001–003: kwoty 6000, 5000, 2000 groszy; wykorzystanie 6000, 11000, 13000. Limit 10000 daje przekroczenia 0, 1000, 3000. Limit 0 daje 6000, 11000, 13000.
+FR-001–003: kwoty 6000, 5000, 2000 groszy; wykorzystanie 6000, 11000, 13000. Limit kredytowy 10000 daje przekroczenia 0, 1000, 3000. Limit kredytowy 0 daje 6000, 11000, 13000.
 
 ## Pokaz
 

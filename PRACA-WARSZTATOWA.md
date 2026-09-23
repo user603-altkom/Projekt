@@ -22,4 +22,4 @@ Kontynuuj swój projekt i tę samą gałąź. Copilot jest narzędziem domyślny
 
 Zatrzymaj wykonanie. Przeczytaj diff. Oddziel uzgodnione zmiany od pozostałych. Przywróć wyłącznie niechciane fragmenty po sprawdzeniu, że nie zawierają Twojej pracy; w razie wątpliwości zachowaj kopię i poproś o pomoc. Zleć następny krok mniejszym zakresem, z warunkiem zatrzymania.
 
-`npm test` i `npm run typecheck` sprawdzają istniejący kod. `npm run odbior` sprawdza bazową integrację limitów; w starterze celowo nie przechodzi. Żadne z tych poleceń nie sprawdza automatycznie całego własnego interfejsu.
+`npm test` i `npm run typecheck` sprawdzają istniejący kod. `npm run odbior` sprawdza bazową integrację limitów kredytowych; w starterze celowo nie przechodzi. Żadne z tych poleceń nie sprawdza automatycznie całego własnego interfejsu.

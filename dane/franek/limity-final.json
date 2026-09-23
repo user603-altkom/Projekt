@@ -1,5 +1,5 @@
 {
-  "opis": "Dane syntetyczne; scenariusz jednej partii PLN. Limit 100,00 PLN.",
+  "opis": "Dane syntetyczne; scenariusz jednej partii PLN. Limit kredytowy 100,00 PLN.",
   "limity": [
     {
       "nrRachunku": "20000089180903978540630428",

@@ -1,3 +1,5 @@
+> **Materiał rezerwowy dnia 3.** Główna ścieżka: [cw19b](../cw19b/README.md), [plan dnia](../../DZIEN-3.md).
+
 # cw11b — Wydanie: co właściwie przekazujemy?
 
 **60 min · Copilot + Git · lokalne wydanie warsztatowe**

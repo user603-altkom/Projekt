@@ -46,7 +46,7 @@ Wszystkie pliki łączą się po kolumnie `nr_rachunku`, więc dają się zestaw
 | `wyciag_2026_08.csv` | 400 operacji za sierpień, z sumą kontrolną w nagłówku |
 | `wyciag_probka.csv` | 23 operacje, celowo różnorodne formaty - materiał do testów importu |
 | `rachunki.csv` | katalog 24 rachunków: nazwa klienta, segment, produkt, oddział, status |
-| `karty_platnicze.csv` | 40 kart wydanych do tych rachunków, z limitami i statusami |
+| `karty_platnicze.csv` | 40 kart wydanych do tych rachunków, z limitami kredytowymi i statusami |
 | `przelewy_zaplanowane.csv` | 37 zleceń na wrzesień i październik, jednorazowych i cyklicznych |
 | `odsetki_przypadki.json` | 20 wejść do naliczania odsetek, bez oczekiwanych wyników |
 | `aplikacja.log` | log aplikacji za okres 13-21.08 |

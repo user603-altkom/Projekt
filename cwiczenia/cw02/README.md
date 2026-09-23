@@ -4,7 +4,7 @@
 
 > Franek: „Routing działa. Tylko nikt nie wie, dlaczego akurat to konto”.
 
-**Routing** to tutaj wybór reguły, według której operacja trafia na konto księgowe. To inna część tej samej aplikacji niż ekran limitów. Nie musisz znać jej wcześniej. Nauczysz się prosić o wyjaśnienie, które da się sprawdzić w kodzie i wyniku polecenia.
+**Routing** to tutaj wybór reguły, według której operacja trafia na konto księgowe. To inna część tej samej aplikacji niż ekran limitów kredytowych. Nie musisz znać jej wcześniej. Nauczysz się prosić o wyjaśnienie, które da się sprawdzić w kodzie i wyniku polecenia.
 
 ## Przygotuj — 3 min
 
