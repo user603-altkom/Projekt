@@ -1,0 +1,48 @@
+# 03-testy
+
+## Macierz przypadków
+
+Wspólne dane dla przypadków z wnioskiem: `kontrahent: "K-001"`,
+`limitBazowyGrosze: 10000`, `wykorzystanieGrosze: 12000`, wniosek `W-001`
+z limitem `15000`, autorem `operator-1`, zatwierdzającym `operator-2`,
+statusem `zatwierdzony` oraz okresem od `2026-09-22T08:00:00Z` do
+`2026-09-22T10:00:00Z`. Oczekiwania poniżej wyprowadzono z BRIEF.md,
+bez używania `ocenLimit` do ich obliczenia.
+
+| Przypadek | Minimalna zmiana wejścia | Oczekiwany wynik | Wymaganie |
+| --- | --- | --- | --- |
+| Dokładny początek okresu | `teraz: "2026-09-22T08:00:00Z"` | limit `15000`, przekroczenie `0`, źródło `czasowy`, `wniosekId: "W-001"` | Początek jest włączony: `od <= teraz`. |
+| Dokładny koniec okresu | `teraz: "2026-09-22T10:00:00Z"` | limit `10000`, przekroczenie `2000`, źródło `bazowy`, `wniosekId: null` | Koniec jest wyłączony: `teraz < do`; dokładnie w `do` obowiązuje baza. |
+| Wniosek cofnięty | `status: "cofniety"`, `teraz: "2026-09-22T09:00:00Z"` | limit `10000`, przekroczenie `2000`, źródło `bazowy`, `wniosekId: null` | Tylko status `zatwierdzony` może obowiązywać. |
+| Wniosek oczekujący lub odrzucony | Osobno `status: "oczekuje"` i `status: "odrzucony"`, `teraz: "2026-09-22T09:00:00Z"` | W obu przypadkach: `10000`, `2000`, `bazowy`, `null` | Tylko status `zatwierdzony` może obowiązywać. |
+| Limit zero bez wniosku | `limitBazowyGrosze: 0`, `wykorzystanieGrosze: 12000`, `wniosek: null` | limit `0`, przekroczenie `12000`, źródło `bazowy`, `wniosekId: null` | Kwoty są nieujemnymi całkowitymi groszami; zero jest prawidłowe. |
+| Zgoda tej samej osoby | `autor: "operator-1"`, `zatwierdzil: "operator-1"` | Rzucony `Error` wskazujący, że autor i zatwierdzający muszą być różni | Dla zgody identyfikatory muszą się różnić. |
+| Błędny okres równy | `od: "2026-09-22T10:00:00Z"`, `do: "2026-09-22T10:00:00Z"` | Rzucony `Error` dotyczący okresu | Okres `od >= do` jest błędny. |
+| Błędny okres odwrócony | `od: "2026-09-22T11:00:00Z"`, `do: "2026-09-22T10:00:00Z"` | Rzucony `Error` dotyczący okresu | Okres `od >= do` jest błędny. |
+| Wniosek nie podnosi limitu | `limitGrosze: 10000`, `teraz: "2026-09-22T09:00:00Z"` | limit `10000`, przekroczenie `2000`, źródło `bazowy`, `wniosekId: null` | Limit wniosku równy bazie nie podnosi limitu i nie jest błędem. |
+| Baza wzrosła ponad wniosek | `limitBazowyGrosze: 16000`, `teraz: "2026-09-22T09:00:00Z"` | limit `16000`, przekroczenie `0`, źródło `bazowy`, `wniosekId: null` | Porównanie odbywa się z bieżącym limitem bazowym. |
+| Nieznany status | `status: "anulowany"` | Rzucony `Error` dotyczący statusu | Dozwolone statusy to: `oczekuje`, `zatwierdzony`, `odrzucony`, `cofniety`. |
+| Błędna kwota | Osobno `limitBazowyGrosze: -1`, `wykorzystanieGrosze: 12.5` i `limitGrosze: -1` | W każdym przypadku rzucony `Error` dotyczący kwoty | Kwoty muszą być nieujemnymi całkowitymi groszami. |
+| Błędny czas | Np. `teraz: "2026-09-22 09:00:00"` | Rzucony `Error` dotyczący czasu | `od`, `do` i `teraz` mają być ISO 8601 UTC zakończonymi `Z`. |
+| Brak zatwierdzającego poza zgodą | `status: "oczekuje"`, brak pola `zatwierdzil`, `teraz: "2026-09-22T09:00:00Z"` | limit `10000`, przekroczenie `2000`, źródło `bazowy`, `wniosekId: null` | Brak zatwierdzającego jest dozwolony dla statusu innego niż `zatwierdzony`. |
+| Brak zmiany wejścia | Zachować głęboką kopię wejścia, wywołać funkcję i porównać wejście z kopią | Wejście, w tym zagnieżdżony `wniosek`, pozostaje identyczne | Funkcja nie zmienia danych wejściowych. |
+| Powtarzalność | Dwukrotnie wywołać funkcję z tym samym wejściem | Dwa identyczne wyniki i niezmienione wejście | Czas jest przekazywany jako argument, a dane wejściowe nie mogą być zmieniane. |
+
+## Komenda i faktyczny wynik
+
+`node --test laboratorium/limity/test/ocena.node.mjs`
+
+Przed dopisaniem kolejnych testów komenda zakończyła się kodem `0`.
+
+## Przypadek, który najpierw nie przechodził
+
+Do sprawdzenia po dodaniu testu końca okresu: świadoma zmiana warunku
+`teraz < do` na `teraz <= do` powinna spowodować błąd dla czasu `10:00Z`.
+Po eksperymencie należy cofnąć wyłącznie tę własną zmianę i ponownie uruchomić
+testy.
+
+## Ograniczenia testów
+
+Obecny plik `test/ocena.node.mjs` pokrywa brak wniosku oraz zatwierdzony
+wniosek wewnątrz okresu. Przypadki z macierzy nie zostały jeszcze dopisane do
+pliku testowego `.mjs`.
