@@ -13,7 +13,7 @@ test('bez wniosku: wykorzystanie 120 zl przy bazie 100 zl przekracza limit o 20 
   });
 });
 
-test('zatwierdzony wniosek czasowy wyzej od bazy ma zastosowanie w oknie czasu', () => {
+test('zatwierdzony wniosek czasowy wyżej od bazy ma zastosowanie w oknie czasu', () => {
   const wejscie = {
     kontrahent: 'K-001',
     limitBazowyGrosze: 10000,

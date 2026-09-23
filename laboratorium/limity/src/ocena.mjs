@@ -2,11 +2,11 @@ const STATUSY = new Set(['oczekuje', 'zatwierdzony', 'odrzucony', 'cofniety']);
 
 function asUtcMs(value, nazwa) {
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value)) {
-    throw new Error(`Nieprawidlowy format ${nazwa}`);
+    throw new Error(`Nieprawidłowy format ${nazwa}`);
   }
   const ms = Date.parse(value);
   if (Number.isNaN(ms)) {
-    throw new Error(`Nieprawidlowy format ${nazwa}`);
+    throw new Error(`Nieprawidłowy format ${nazwa}`);
   }
   return ms;
 }
@@ -23,10 +23,10 @@ export function ocenLimit(wejscie) {
   const wykorzystanieGrosze = wejscie.wykorzystanieGrosze;
 
   if (!Number.isInteger(limitBazowyGrosze) || limitBazowyGrosze < 0) {
-    throw new Error('Nieprawidlowy limit bazowy');
+    throw new Error('Nieprawidłowy limit bazowy');
   }
   if (!Number.isInteger(wykorzystanieGrosze) || wykorzystanieGrosze < 0) {
-    throw new Error('Nieprawidlowe wykorzystanie');
+    throw new Error('Nieprawidłowe wykorzystanie');
   }
 
   const bazowy = {
@@ -40,9 +40,11 @@ export function ocenLimit(wejscie) {
   if (!wniosek) {
     return bazowy;
   }
+
   if (!STATUSY.has(wniosek.status)) {
     throw new Error(`Nieznany status wniosku: ${wniosek.status}`);
   }
+
   if (wniosek.status !== 'zatwierdzony') {
     return bazowy;
   }
@@ -50,10 +52,11 @@ export function ocenLimit(wejscie) {
   const autor = wymagaTekst(wniosek.autor, 'autor');
   const zatwierdzil = wymagaTekst(wniosek.zatwierdzil, 'zatwierdzil');
   if (autor === zatwierdzil) {
-    throw new Error('Autor i zatwierdzajacy musza byc rozni');
+    throw new Error('Autor i zatwierdzający muszą być różni');
   }
+
   if (!Number.isInteger(wniosek.limitGrosze) || wniosek.limitGrosze < 0) {
-    throw new Error('Nieprawidlowy limit wniosku');
+    throw new Error('Nieprawidłowy limit wniosku');
   }
   if (wniosek.limitGrosze <= limitBazowyGrosze) {
     return bazowy;
@@ -62,16 +65,15 @@ export function ocenLimit(wejscie) {
   const terazMs = asUtcMs(wejscie.teraz, 'teraz');
   const odMs = asUtcMs(wniosek.od, 'od');
   const doMs = asUtcMs(wniosek.do, 'do');
-  if (odMs >= doMs) {
-    throw new Error('Okres wniosku musi miec od < do');
-  }
+
   if (!(odMs <= terazMs && terazMs < doMs)) {
     return bazowy;
   }
 
+  const limitEfektywnyGrosze = wniosek.limitGrosze;
   return {
-    limitEfektywnyGrosze: wniosek.limitGrosze,
-    przekroczenieGrosze: Math.max(0, wykorzystanieGrosze - wniosek.limitGrosze),
+    limitEfektywnyGrosze,
+    przekroczenieGrosze: Math.max(0, wykorzystanieGrosze - limitEfektywnyGrosze),
     zrodlo: 'czasowy',
     wniosekId: wniosek.id ?? null,
   };
