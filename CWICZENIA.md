@@ -37,7 +37,7 @@ Możesz wykonać je w dniu 2 lub 3. Każda karta zawiera komplet instrukcji i wa
 
 Wszystkie wejścia są w tym repo. Publiczne repozytoria i dokumentacja mają linki internetowe. **Nie potrzebujesz plików prowadzącego ani prezentacji, aby wykonać kartę.**
 
-Do cw05a używasz pustego folderu, do cw05b przeglądarki. Od cw06b wspólnym punktem odniesienia jest [laboratorium limitów](laboratorium/limity/README.md). Własny ekran z dnia 1 zachowujesz; jego stan nie blokuje ćwiczeń. Używamy Node 24, a laboratorium nie wymaga instalacji zależności. Do cw19b potrzebujesz dodatkowo konta GitHub (`userNNN-altkom`), zalogowanego `gh` (jeśli brakuje: `winget install GitHub.cli`) i dostępu do github.com (szablon projektu); kopia szablonu jako zip leży w `cwiczenia/cw19b/`, a `npm install` robisz w sklonowanym szablonie, nie w tym repo.
+Do cw05a używasz pustego folderu, do cw05b przeglądarki. Od cw06b wspólnym punktem odniesienia jest [laboratorium limitów](laboratorium/limity/README.md). Własny ekran z dnia 1 zachowujesz; jego stan nie blokuje ćwiczeń. Używamy Node 24, a laboratorium nie wymaga instalacji zależności. Do cw19b potrzebujesz dodatkowo konta GitHub (`userNNN-altkom`), zalogowanego `gh` (jeśli brakuje: `winget install GitHub.cli`), dostępu do github.com (szablon projektu) i konta Vercel (Hobby, logowanie GitHubem); kopia szablonu jako zip leży w `cwiczenia/cw19b/`, a `npm install` robisz w sklonowanym szablonie, nie w tym repo.
 
 ## Pobranie nowej ścieżki bez ryzyka dla własnego ekranu
 
